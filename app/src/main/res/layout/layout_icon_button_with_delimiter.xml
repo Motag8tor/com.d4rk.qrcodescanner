@@ -25,7 +25,7 @@
             android:layout_height="@dimen/icon_button_icon_size"
             android:layout_gravity="center_vertical"
             tools:src="@drawable/ic_copy"
-            app:tint="@color/white" />
+            app:tint="@color/colorWhite" />
     </FrameLayout>
     <TextView
         android:id="@+id/text_view"

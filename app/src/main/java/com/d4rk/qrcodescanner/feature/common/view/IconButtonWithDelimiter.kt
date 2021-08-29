@@ -40,7 +40,7 @@ class IconButtonWithDelimiter : FrameLayout {
     }
 
     private fun showIconBackgroundColor(attributes: TypedArray) {
-        val color = attributes.getColor(R.styleable.IconButtonWithDelimiter_iconBackground, view.context.resources.getColor(R.color.green))
+        val color = attributes.getColor(R.styleable.IconButtonWithDelimiter_iconBackground, view.context.resources.getColor(R.color.colorGoogleGreen))
         (view.layout_image.background.mutate() as GradientDrawable).setColor(color)
     }
 

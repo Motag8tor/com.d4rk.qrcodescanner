@@ -19,7 +19,7 @@
             android:gravity="start|top"
             android:hint="@string/fragment_create_aztec_hint"
             android:inputType="textMultiLine"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             style="@style/EditTextStyle"
             />
     </com.google.android.material.textfield.TextInputLayout>

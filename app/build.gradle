@@ -9,6 +9,7 @@ android {
     defaultConfig {
         applicationId "com.d4rk.qrcodescanner"
         minSdkVersion 19
+        //noinspection OldTargetApi
         targetSdkVersion 29
         versionCode 1
         versionName '1.0_developer_preview1'
@@ -42,13 +43,13 @@ android {
         getApps {}
         xda {}
         googlePlay {
-            applicationId "org.barcodescanner"
+            applicationId "com.d4rk.qrcodescanner"
         }
         amazon {
-            applicationId "org.barcodescanner"
+            applicationId "com.d4rk.qrcodescanner"
         }
         aptoide {
-            applicationId "org.barcodescanner"
+            applicationId "com.d4rk.qrcodescanner"
         }
         fDroid {
             buildConfigField "boolean", "ERROR_REPORTS_ENABLED_BY_DEFAULT", "false"

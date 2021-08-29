@@ -17,7 +17,7 @@
         android:maxLines="1"
         android:hint="@string/barcode_schema_phone"
         android:imeOptions="actionDone"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/colorAccent"
         android:inputType="phone"
         android:digits="+0123456789"
         style="@style/EditTextStyle"

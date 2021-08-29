@@ -43,7 +43,7 @@ class IconButton : FrameLayout {
     private fun showIconBackgroundColor(attributes: TypedArray) {
         val color = attributes.getColor(
             R.styleable.IconButton_iconBackground,
-            ContextCompat.getColor(view.context, R.color.green)
+            ContextCompat.getColor(view.context, R.color.colorGoogleGreen)
         )
         (view.layout_image.background.mutate() as GradientDrawable).setColor(color)
     }

@@ -35,7 +35,7 @@ class ResultPointsView : View {
         context?.obtainStyledAttributes(attrs, R.styleable.ResultPointsView)?.apply {
             pointsPaint.color = getColor(
                 R.styleable.ResultPointsView_resultPointColor,
-                ContextCompat.getColor(context, R.color.blue)
+                ContextCompat.getColor(context, R.color.colorAccent)
             )
 
             pointsPaint.strokeWidth = getDimension(

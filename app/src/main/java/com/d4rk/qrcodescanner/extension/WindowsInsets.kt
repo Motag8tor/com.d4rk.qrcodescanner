@@ -1,10 +1,8 @@
 package com.d4rk.qrcodescanner.extension
-
 import android.annotation.SuppressLint
 import android.os.Build
 import android.view.View
 import android.view.WindowInsets
-
 fun View.applySystemWindowInsets(
     applyLeft: Boolean = false,
     applyTop: Boolean = false,

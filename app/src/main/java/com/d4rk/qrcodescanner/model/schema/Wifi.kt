@@ -37,7 +37,7 @@ class Wifi(
             val keysAndValues = PAIR_REGEX
                 .findAll(keysAndValuesSubstring)
                 .map { pair ->
-                    "${pair.groupValues[1].toUpperCase(Locale.US)}:" to pair.groupValues[2]
+                    "${pair.groupValues[1].uppercase(Locale.US)}:" to pair.groupValues[2]
                 }
                 .toMap()
 

@@ -36,6 +36,6 @@ fun BarcodeFormat.toColorId(): Int {
     return when (this) {
         BarcodeFormat.QR_CODE -> R.color.blue3
         BarcodeFormat.DATA_MATRIX, BarcodeFormat.AZTEC, BarcodeFormat.PDF_417, BarcodeFormat.MAXICODE -> R.color.orange
-        else -> R.color.green
+        else -> R.color.colorGoogleGreen
     }
 }

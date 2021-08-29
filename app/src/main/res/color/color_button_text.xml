@@ -4,5 +4,5 @@
         android:color="@color/blue2"/>
     <item
         android:state_enabled="true"
-        android:color="@color/white"/>
+        android:color="@color/colorWhite"/>
 </selector>

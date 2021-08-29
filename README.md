@@ -1,26 +1,67 @@
-## Overview
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-[![](https://img.shields.io/github/v/release/dmitriy-ilchenko/QrAndBarcodeScanner)](https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/releases/latest)
+<p align="center">
+<img src="/app/src/main/web_hi_res_512.png" width="200">
+</p>
 
-QR & Barcode Scanner is an ad-free, open-source scanner app. It uses the [ZXing][zxing] scanning library.
+![Works with Android](https://img.shields.io/badge/Works%20with-Android-blue)
+![GitHub issues](https://img.shields.io/github/issues/D4rK7355608/com.d4rk.qrcodescanner)
+![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.qrcodescanner?label=Pull%20requests)
+![GitHub license](https://img.shields.io/github/license/D4rK7355608/com.d4rk.qrcodescannerlabel=License)
+![code-grade](https://www.code-inspector.com/project/26545/status/svg)
 
-## Download
+## D4rK QR & Bar Code Scanner
 
-<a href="https://play.google.com/store/apps/details?id=org.barcodescanner"><img alt="Get it on Google Play" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/google_play/badge.png" height="60"/></a>   <a href="https://www.amazon.com/dp/B08GCTQ444/ref=apps_sf_sta"><img alt="Available at Amazon Appstore" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/amazon/badge.png" height="60"/></a>   <a href="https://ad-free-qr-barcode-scanner.en.aptoide.com/app"><img alt="Get it on Aptoide" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/aptoide_badge.svg" height="60"/></a>   <a href="https://appgallery7.huawei.com/#/app/C102717909"><img alt="Explore it on AppGallery" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/app_gallery/badge.png" height="60"/></a>   <a href="https://www.f-droid.org/en/packages/com.d4rk.qrcodescanner/"><img alt="Get it on FDroid" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/fdroid_badge.png" height="60"/></a>   <a href="https://apt.izzysoft.de/fdroid/index/apk/com.d4rk.qrcodescanner"><img alt="Get it on IzzyOnDroid" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/IzzyOnDroid.png" height="60"/></a>   <a href="https://labs.xda-developers.com/store/app/com.d4rk.qrcodescanner"><img alt="Get it on XDA Labs" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/xda-badge.png" height="60"/></a>   <a href="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/releases"><img alt="Get it on Github" src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/get-it-on-github.png" height="60"/></a>
+- ╔╦╦╦═╦╗╔═╦═╦══╦═╗
+- ║║║║╩╣╚╣═╣║║║║║╩╣
+- ╚══╩═╩═╩═╩═╩╩╩╩═╝
 
-## Screenshots
+# D4rK QR & Bar Code Scanner is an ad-free, open-source scanner app. It uses the [ZXing][zxing] scanning library. Soon will be available in Google Play Store.
 
-<img src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/screenshots/en/1_scan.png" width="180" height="320"/> <img src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/screenshots/en/2_scan_from_file.png" width="180" height="320"/> <img src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/screenshots/en/3_result.png" width="180" height="320"/> <img src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/screenshots/en/4_result_dark_theme.png" width="180" height="320"/> <img src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/screenshots/en/5_create.png" width="180" height="320"/> <img src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/screenshots/en/6_history.png" width="180" height="320"/> <img src="https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner/blob/develop/images/screenshots/en/7_settings.png" width="180" height="320"/>
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/google_play_store.png"
+alt="Get it on Google Play"
+height="90">](https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner)
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/youtube.png"
+alt="YouTube"
+height="90">](https://www.youtube.com/channel/UCLDi-rmSRry0pNL-oVvGJAw/featured)
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/patreon.png"
+alt="Patreon"
+height="90">](https://www.patreon.com/d4rk7355608)
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/paypal.png"
+alt="PayPall"
+height="90">](https://www.paypal.me/d4rkmichaeltutorials)
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/deviant_art.png"
+alt="PayPall"
+height="90">](https://www.deviantart.com/d4rk7355608)
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/screenshots/badges/gamejolt.png"
+alt="PayPall"
+height="90">](https://gamejolt.com/@D4rK_S-A-D)
 
-## Contributing
+Bugs can be reported here.
 
-You can contribute by adding a translation on [Transifex][transifex], reporting a bug or asking for a feature.
+## Opening Issues :warning:
 
-## Supported Barcode Formats
+> Only use the GitHub Issues section if you discovered issues with the code itself. Do not mistake the Issues page as a help desk. You can ask for help at [Stack Overflow](https://stackoverflow.com/questions/tagged/android).
+> For support, informations and requests, please contact <d4rk7355608@gmail.com>.
 
-### Read
+- Create an Android/general issue/bug.
 
-The app can read the following barcode formats:
+- Known bugs: You tell me XD
+
+__D4rK QR & Bar Code Scanner is 100% free, open source, ad free, and useful for everyone.__
+
+## Screenshots:
+
+<img src="/screenshots/1.png" width="500">
+
+<details>
+  <summary>Special Thanks</summary>
+
+- Thanks YoYo, UnderBenis96, Sonerie C8chilu' dă Haur a.k.a Băiatu' Pocnitoare (fostă petardă de elită pă vremea lu' Ștefan cel Mare) & Wiss Kill for testing;
+
+</details>
+
+<details>
+<summary>The app can read the following barcode formats:</summary>
+
 * [AZTEC][aztec]
 * [CODABAR][codabar]
 * [CODE-39][code_39]
@@ -54,6 +95,12 @@ The app can create the following barcode formats:
 * [QR CODE][qr_code]
 * [UPC-A][upc_a]
 * [UPC-E][upc_e]
+
+</details>
+
+__Privacy Policy:__ https://ghcdn.rawgit.org/D4rK7355608/com.d4rk.stickers/master/privacy_policy.html
+
+![license](https://imgur.com/QQlcEVT.png)
 
 [zxing]: https://github.com/zxing/zxing
 [transifex]: https://www.transifex.com/a-302/qr-barcode-scanner/

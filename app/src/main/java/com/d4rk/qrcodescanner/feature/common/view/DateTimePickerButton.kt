@@ -47,9 +47,9 @@ class DateTimePickerButton : FrameLayout {
 
     private fun showDateTimePickerDialog() {
         SingleDateAndTimePickerDialog.Builder(context)
-            .backgroundColor(context.resources.getColor(R.color.date_time_picker_dialog_background_color))
+            .backgroundColor(context.resources.getColor(R.color.colorWhite))
             .title(view.text_view_hint.text.toString())
-            .mainColor(context.resources.getColor(R.color.blue))
+            .mainColor(context.resources.getColor(R.color.colorAccent))
             .listener { newDateTime ->
                 dateTime = newDateTime.time
                 showDateTime()

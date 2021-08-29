@@ -21,7 +21,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_first_name_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="text"
             style="@style/EditTextStyle"
             />
@@ -43,7 +43,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_last_name_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="text"
             style="@style/EditTextStyle"
             />
@@ -65,7 +65,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_organization_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="text"
             style="@style/EditTextStyle"
             />
@@ -87,7 +87,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_job_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="text"
             style="@style/EditTextStyle"
             />
@@ -109,7 +109,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_email_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="textEmailAddress"
             style="@style/EditTextStyle"
             />
@@ -131,7 +131,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_phone_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="phone"
             android:digits="+0123456789"
             style="@style/EditTextStyle"
@@ -154,7 +154,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_fax_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="phone"
             android:digits="+0123456789"
             style="@style/EditTextStyle"
@@ -177,7 +177,7 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_contact_website_hint"
             android:imeOptions="actionDone"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:inputType="textUri"
             style="@style/EditTextStyle"
             />

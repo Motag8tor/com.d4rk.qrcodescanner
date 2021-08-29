@@ -21,7 +21,7 @@
             android:inputType="textCapCharacters"
             android:lines="1"
             android:maxLines="1"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/colorAccent"
             android:textAllCaps="true"
             style="@style/EditTextStyle"
             />
