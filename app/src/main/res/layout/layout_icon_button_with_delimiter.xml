@@ -58,6 +58,6 @@
         app:layout_constraintStart_toStartOf="@id/text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_image"
-        android:background="@color/delimiter_color"
+        android:background="@color/colorTest"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

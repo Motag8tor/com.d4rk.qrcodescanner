@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         custom:scv_crop_mode="free"
         custom:scv_background_color="@color/colorWhite"
-        custom:scv_overlay_color="@color/black_transparent"
+        custom:scv_overlay_color="@color/colorAccent"
         custom:scv_handle_show_mode="show_always"
         custom:scv_handle_color="@color/colorGoogleYellow"
         custom:scv_handle_size="14dp"

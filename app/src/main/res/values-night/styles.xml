@@ -2,7 +2,7 @@
 <resources>
 
     <style name="AppTheme" parent="BaseAppTheme">
-        <item name="colorControlHighlight">@color/gray14</item>
+        <item name="colorControlHighlight">@color/colorTest</item>
     </style>
 
     <style name="AppBarLayoutStyle" parent="BaseAppBarLayoutStyle">

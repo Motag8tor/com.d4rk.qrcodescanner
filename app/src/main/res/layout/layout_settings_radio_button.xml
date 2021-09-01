@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="@id/text_view_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_text"
-        android:background="@color/delimiter_color"
+        android:background="@color/colorTest"
         />
     <RadioButton
         android:id="@+id/radio_button"

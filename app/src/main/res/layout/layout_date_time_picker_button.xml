@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/gray10"
+        android:textColor="@color/colorTest"
         android:textSize="@dimen/default_text_size_extra_small"
         tools:text="Select time"
         />

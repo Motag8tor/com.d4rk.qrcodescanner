@@ -1,56 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">@color/colorWhite</color>
-    <color name="color_primary_dark">#000000</color>
-    <color name="text_color_secondary">#000000</color>
-    <color name="navigation_bar_color">@color/black2</color>
-    <color name="toolbar_title_color">#000000</color>
-    <color name="toolbar_menu_color">#000000</color>
-    <color name="toolbar_menu_create_barcode_button_disabled_color">@color/gray5</color>
-    <color name="toolbar_menu_create_barcode_button_enabled_color">#000000</color>
-    <color name="tab_layout_text_color_inactive">@color/gray_transparent2</color>
-    <color name="bottom_navigation_text_color_inactive">@color/gray11</color>
-    <color name="create_barcode_group_title_text_color">@color/gray6</color>
-    <color name="default_text_color">#000000</color>
-    <color name="secondary_text_color">@color/gray</color>
-    <color name="delimiter_color">@color/gray5</color>
-    <color name="delimiter_color2">@color/gray12</color>
-    <color name="switch_background_color">@color/gray17</color>
-    <color name="button_background_color_disabled">@color/gray4</color>
-    <color name="edit_text_text_color">#000000</color>
-    <color name="edit_text_hint_color">@color/gray10</color>
-    <color name="white_transparent">#2CFFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="black2">#202124</color>
-    <color name="black3">#3B3C40</color>
-    <color name="black4">#202124</color>
-    <color name="black_transparent">#2C000000</color>
-    <color name="black_transparent2">#5E000000</color>
-    <color name="black_transparent3">#40000000</color>
-    <color name="gray">#7D7D7D</color>
-    <color name="gray4">#F8F8F8</color>
-    <color name="gray5">#CCCCCC</color>
-    <color name="gray6">#666666</color>
-    <color name="gray10">#9E9E9E</color>
-    <color name="gray11">#5F6267</color>
-    <color name="gray12">#E0E0E0</color>
-    <color name="gray13">#757575</color>
-    <color name="gray14">#9BA0A6</color>
-    <color name="gray15">#9C9FA6</color>
-    <color name="gray16">#2A2A2E</color>
-    <color name="gray17">#636466</color>
-    <color name="gray18">#B2B2B2</color>
-    <color name="gray19">#424242</color>
-    <color name="gray_transparent2">#6B7D7D7D</color>
-    <color name="blue2">#9EDBF7</color>
-    <color name="blue3">#00BFC9</color>
-    <color name="orange">#FF9700</color>
-
-
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite">@android:color/white</color>
     <color name="colorDarkShortcuts">#2D2D2D</color>
     <color name="colorAccent">#4285F4</color>
     <color name="colorGoogleGreen">#0F9D58</color>
     <color name="colorGoogleRed">#DB4437</color>
     <color name="colorGoogleYellow">#F4B400</color>
+    <color name="colorAndroidGreen">#3DDC84</color>
+    <color name="colorFirebaseOrange">#F57C00</color>
+    <color name="colorTest">#E91E63</color>
+    <color name="colorTest2">#009688</color>
+    <color name="colorSecondary">#e0e0e0</color>
+    <color name="colorPrimaryText">@android:color/black</color>
+    <color name="colorSecondaryText">#7D7D7D</color>
 </resources>

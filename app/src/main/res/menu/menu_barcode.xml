@@ -8,7 +8,7 @@
         android:title="@string/activity_barcode_image_increase_brightness"
         android:icon="@drawable/ic_brightness_high"
         android:visible="false"
-        app:iconTint="@color/toolbar_menu_color"
+        app:iconTint="@color/colorTest"
         app:showAsAction="ifRoom"
         />
     <item
@@ -16,7 +16,7 @@
         android:title="@string/activity_barcode_image_decrease_brightness"
         android:icon="@drawable/ic_brightness_low"
         android:visible="false"
-        app:iconTint="@color/toolbar_menu_color"
+        app:iconTint="@color/colorTest"
         app:showAsAction="ifRoom"
         />
     <item
@@ -31,7 +31,7 @@
         android:title="@string/activity_barcode_show_barcode_image"
         android:icon="@drawable/ic_qr_code"
         android:visible="false"
-        app:iconTint="@color/toolbar_menu_color"
+        app:iconTint="@color/colorTest"
         app:showAsAction="ifRoom"
         />
     <item
@@ -39,7 +39,7 @@
         android:title="@string/activity_barcode_delete"
         android:icon="@drawable/ic_save"
         android:visible="false"
-        app:iconTint="@color/toolbar_menu_color"
+        app:iconTint="@color/colorTest"
         app:showAsAction="ifRoom"
         />
     <item
@@ -47,7 +47,7 @@
         android:title="@string/activity_barcode_delete"
         android:icon="@drawable/ic_delete"
         android:visible="false"
-        app:iconTint="@color/toolbar_menu_color"
+        app:iconTint="@color/colorTest"
         app:showAsAction="ifRoom"
         />
 </menu>

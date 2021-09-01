@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.usecase
-
 import android.content.Context
 import androidx.paging.DataSource
 import androidx.room.*
@@ -11,44 +10,32 @@ import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.google.zxing.BarcodeFormat
 import io.reactivex.Completable
 import io.reactivex.Single
-
-
 class BarcodeDatabaseTypeConverter {
-
     @TypeConverter
     fun fromBarcodeFormat(barcodeFormat: BarcodeFormat): String {
         return barcodeFormat.name
     }
-
     @TypeConverter
     fun toBarcodeFormat(value: String): BarcodeFormat {
         return BarcodeFormat.valueOf(value)
     }
-
     @TypeConverter
     fun fromBarcodeSchema(barcodeSchema: BarcodeSchema): String {
         return barcodeSchema.name
     }
-
     @TypeConverter
     fun toBarcodeSchema(value: String): BarcodeSchema {
         return BarcodeSchema.valueOf(value)
     }
 }
-
-
 @Database(entities = [Barcode::class], version = 2)
 abstract class BarcodeDatabaseFactory : RoomDatabase() {
     abstract fun getBarcodeDatabase(): BarcodeDatabase
 }
-
-
 @Dao
 interface BarcodeDatabase {
-
     companion object {
         private var INSTANCE: BarcodeDatabase? = null
-
         fun getInstance(context: Context): BarcodeDatabase {
             return INSTANCE ?: Room
                 .databaseBuilder(context.applicationContext, BarcodeDatabaseFactory::class.java, "db")
@@ -63,29 +50,21 @@ interface BarcodeDatabase {
                 }
         }
     }
-
     @Query("SELECT * FROM codes ORDER BY date DESC")
     fun getAll(): DataSource.Factory<Int, Barcode>
-
     @Query("SELECT * FROM codes WHERE isFavorite = 1 ORDER BY date DESC")
     fun getFavorites(): DataSource.Factory<Int, Barcode>
-
     @Query("SELECT date, format, text FROM codes ORDER BY date DESC")
     fun getAllForExport(): Single<List<ExportBarcode>>
-
     @Query("SELECT * FROM codes WHERE format = :format AND text = :text LIMIT 1")
     fun find(format: String, text: String): Single<List<Barcode>>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(barcode: Barcode): Single<Long>
-
     @Query("DELETE FROM codes WHERE id = :id")
     fun delete(id: Long): Completable
-
     @Query("DELETE FROM codes")
     fun deleteAll(): Completable
 }
-
 fun BarcodeDatabase.save(barcode: Barcode, doNotSaveDuplicates: Boolean): Single<Long> {
     return if (doNotSaveDuplicates) {
         saveIfNotPresent(barcode)
@@ -93,7 +72,6 @@ fun BarcodeDatabase.save(barcode: Barcode, doNotSaveDuplicates: Boolean): Single
         save(barcode)
     }
 }
-
 fun BarcodeDatabase.saveIfNotPresent(barcode: Barcode): Single<Long> {
     return find(barcode.format.name, barcode.text)
         .flatMap { found ->

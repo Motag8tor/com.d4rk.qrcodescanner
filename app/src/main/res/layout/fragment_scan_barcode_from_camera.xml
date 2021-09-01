@@ -21,7 +21,7 @@
         app:frameAspectRatioWidth="1"
         app:frameAspectRatioHeight="1"
         app:frameSize="0.6"
-        app:maskColor="@color/black_transparent3"
+        app:maskColor="@android:color/transparent"
         />
 
     <ImageView

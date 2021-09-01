@@ -83,6 +83,6 @@
         app:layout_constraintTop_toBottomOf="@id/text_view_format"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/delimiter_color"
+        android:background="@color/colorTest"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

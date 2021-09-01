@@ -30,7 +30,7 @@ fun String?.decodeBase32(): ByteArray? {
 }
 
 fun String.toCaps(): String {
-    return toUpperCase(Locale.ROOT)
+    return uppercase(Locale.ROOT)
 }
 
 fun String.removeStartAll(symbol: Char): String {
@@ -96,7 +96,7 @@ fun String.toCountryEmoji(): String {
         return ""
     }
 
-    val countryCodeCaps = toUpperCase(Locale.US)
+    val countryCodeCaps = uppercase(Locale.US)
     val firstLetter = Character.codePointAt(countryCodeCaps, 0) - 0x41 + 0x1F1E6
     val secondLetter = Character.codePointAt(countryCodeCaps, 1) - 0x41 + 0x1F1E6
 
@@ -108,7 +108,7 @@ fun String.toCountryEmoji(): String {
 }
 
 fun String.toEmailType(): Int? {
-    return when (toUpperCase(Locale.US)) {
+    return when (uppercase(Locale.US)) {
         "HOME" -> ContactsContract.CommonDataKinds.Email.TYPE_HOME
         "WORK" -> ContactsContract.CommonDataKinds.Email.TYPE_WORK
         "OTHER" -> ContactsContract.CommonDataKinds.Email.TYPE_OTHER
@@ -118,7 +118,7 @@ fun String.toEmailType(): Int? {
 }
 
 fun String.toPhoneType(): Int? {
-   return when (toUpperCase(Locale.US)) {
+   return when (uppercase(Locale.US)) {
        "HOME" -> ContactsContract.CommonDataKinds.Phone.TYPE_HOME
        "MOBILE", "CELL" -> ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE
        "WORK" -> ContactsContract.CommonDataKinds.Phone.TYPE_WORK
@@ -144,7 +144,7 @@ fun String.toPhoneType(): Int? {
 }
 
 fun String.toAddressType(): Int? {
-    return when (toUpperCase(Locale.US)) {
+    return when (uppercase(Locale.US)) {
         "HOME" -> ContactsContract.CommonDataKinds.StructuredPostal.TYPE_HOME
         "WORK" -> ContactsContract.CommonDataKinds.StructuredPostal.TYPE_WORK
         "OTHER" -> ContactsContract.CommonDataKinds.StructuredPostal.TYPE_OTHER

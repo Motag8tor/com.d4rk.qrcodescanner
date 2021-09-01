@@ -7,7 +7,7 @@
         android:id="@+id/item_increase_brightness"
         android:title="@string/activity_barcode_image_increase_brightness"
         android:icon="@drawable/ic_brightness_high"
-        app:iconTint="@color/toolbar_menu_color"
+        app:iconTint="@color/colorTest"
         app:showAsAction="ifRoom"
         />
     <item
@@ -15,7 +15,7 @@
         android:title="@string/activity_barcode_image_decrease_brightness"
         android:icon="@drawable/ic_brightness_low"
         android:visible="false"
-        app:iconTint="@color/toolbar_menu_color"
+        app:iconTint="@color/colorTest"
         app:showAsAction="ifRoom"
         />
 </menu>

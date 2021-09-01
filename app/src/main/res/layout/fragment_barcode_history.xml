@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabTextAppearance="@style/TabTextAppearance"
-            app:tabTextColor="@color/tab_layout_text_color_inactive"
+            app:tabTextColor="@color/colorTest"
             app:tabSelectedTextColor="@color/colorAccent"
             app:tabIndicatorColor="@color/colorAccent"
             app:tabIndicatorHeight="@dimen/tab_layout_indicator_height"

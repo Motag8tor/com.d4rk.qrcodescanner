@@ -38,7 +38,7 @@ class CreateQrCodeOtpFragment : BaseCreateBarcodeFragment() {
 
     override fun getBarcodeSchema(): Schema {
         return OtpAuth(
-            type = spinner_opt_types.selectedItem?.toString()?.toLowerCase(Locale.ENGLISH),
+            type = spinner_opt_types.selectedItem?.toString()?.lowercase(Locale.ENGLISH),
             algorithm = spinner_algorithms.selectedItem?.toString(),
             label = if (edit_text_issuer.isNotBlank()) {
                 "${edit_text_issuer.textString}:${edit_text_account.textString}"
