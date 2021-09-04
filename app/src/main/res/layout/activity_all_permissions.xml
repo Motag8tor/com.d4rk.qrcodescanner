@@ -4,30 +4,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
+    android:layout_height="match_parent">
     <com.google.android.material.appbar.AppBarLayout
-        style="@style/AppBarLayoutStyle"
-        >
+        style="@style/AppBarLayoutStyle">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             app:title="@string/activity_all_permissions_title"
-            style="@style/ToolbarWithBackButtonStyle"
-            />
+            style="@style/ToolbarWithBackButtonStyle"/>
     </com.google.android.material.appbar.AppBarLayout>
-
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_view"
-        style="@style/ScrollStyle"
-        >
+        style="@style/ScrollStyle">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-
-            <!--Normal permissions-->
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,34 +26,28 @@
                 android:layout_marginBottom="@dimen/default_margin_small"
                 android:layout_marginHorizontal="@dimen/default_margin"
                 android:text="@string/activity_all_permissions_normal_permissions"
-                style="@style/SettingsGroupTitleTextViewStyle"
-                />
+                style="@style/SettingsGroupTitleTextViewStyle"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_vibrate_title"
                 app:hint="@string/activity_all_permissions_vibrate_hint"
                 app:isDelimiterVisible="true"
-                app:isSwitchVisible="false"
-                />
+                app:isSwitchVisible="false"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_wifi_title"
                 app:hint="@string/activity_all_permissions_wifi_hint"
                 app:isDelimiterVisible="true"
-                app:isSwitchVisible="false"
-                />
+                app:isSwitchVisible="false"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_internet_title"
                 app:hint="@string/activity_all_permissions_internet_hint"
                 app:isDelimiterVisible="true"
-                app:isSwitchVisible="false"
-                />
-
-            <!--Dangerous permissions-->
+                app:isSwitchVisible="false"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,35 +55,28 @@
                 android:layout_marginBottom="@dimen/default_margin_small"
                 android:layout_marginHorizontal="@dimen/default_margin"
                 android:text="@string/activity_all_permissions_runtime_permissions"
-                style="@style/SettingsGroupTitleTextViewStyle"
-                />
+                style="@style/SettingsGroupTitleTextViewStyle"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_camera_title"
                 app:hint="@string/activity_all_permissions_camera_hint"
                 app:isDelimiterVisible="true"
-                app:isSwitchVisible="false"
-                />
+                app:isSwitchVisible="false"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_read_contacts_title"
                 app:hint="@string/activity_all_permissions_read_contacts_hint"
                 app:isDelimiterVisible="true"
-                app:isSwitchVisible="false"
-                />
+                app:isSwitchVisible="false"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_storage_title"
                 app:hint="@string/activity_all_permissions_storage_hint"
                 app:isDelimiterVisible="false"
-                app:isSwitchVisible="false"
-                />
-
-
+                app:isSwitchVisible="false"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

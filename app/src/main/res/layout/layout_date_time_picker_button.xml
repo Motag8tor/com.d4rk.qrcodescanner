@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     android:paddingVertical="@dimen/default_margin_small"
     android:paddingHorizontal="@dimen/default_margin"
-    style="@style/ClickableBackground"
-    >
+    style="@style/ClickableBackground">
     <TextView
         android:id="@+id/text_view_hint"
         android:layout_width="wrap_content"

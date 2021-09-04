@@ -57,7 +57,7 @@
                     android:layout_marginEnd="@dimen/default_margin"
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/ic_edit"
-                    app:tint="@color/colorTest"
+                    app:tint="@color/colorPrimaryText"
                     android:visibility="gone"
                     tools:visibility="visible"/>
             </LinearLayout>

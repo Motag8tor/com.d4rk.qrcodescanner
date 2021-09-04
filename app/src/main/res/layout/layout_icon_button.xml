@@ -8,15 +8,13 @@
     android:orientation="horizontal"
     android:paddingHorizontal="@dimen/default_margin"
     android:paddingVertical="@dimen/icon_button_vertical_padding"
-    style="@style/ClickableBackground"
-    >
+    style="@style/ClickableBackground">
     <FrameLayout
         android:id="@+id/layout_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/icon_button_icon_padding"
-        android:background="@drawable/background_circle"
-        >
+        android:background="@drawable/background_circle">
         <ImageView
             android:id="@+id/image_view_schema"
             android:layout_width="@dimen/icon_button_icon_size"
@@ -24,7 +22,7 @@
             android:layout_gravity="center_vertical"
             app:tint="@color/colorWhite"
             tools:src="@drawable/ic_copy"
-            />
+            tools:ignore="ContentDescription"/>
     </FrameLayout>
     <TextView
         android:id="@+id/text_view"
@@ -33,8 +31,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginStart="@dimen/default_margin"
         android:ellipsize="end"
-        android:textColor="@color/color_icon_button_icon_and_text"
+        android:textColor="@color/colorPrimaryText"
         tools:text="Copy"
-        style="@style/DefaultTextViewStyle"
-        />
+        style="@style/DefaultTextViewStyle"/>
 </LinearLayout>

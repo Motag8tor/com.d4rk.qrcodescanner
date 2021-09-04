@@ -19,7 +19,7 @@
             android:gravity="start|top"
             android:hint="@string/fragment_create_data_matrix_hint"
             android:inputType="textMultiLine"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/colorWhite"
             style="@style/EditTextStyle"
             />
     </com.google.android.material.textfield.TextInputLayout>

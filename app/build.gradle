@@ -8,7 +8,7 @@ android {
     buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId "com.d4rk.qrcodescanner"
-        minSdkVersion 19
+        minSdkVersion 21
         //noinspection OldTargetApi
         targetSdkVersion 29
         versionCode 1

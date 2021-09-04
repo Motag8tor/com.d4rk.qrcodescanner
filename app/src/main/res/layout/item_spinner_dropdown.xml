@@ -8,5 +8,4 @@
     android:paddingVertical="@dimen/default_margin_medium2"
     android:ellipsize="marquee"
     android:background="?attr/selectableItemBackground"
-    style="@style/DefaultTextViewStyle"
-    />
+    style="@style/DefaultTextViewStyle"/>

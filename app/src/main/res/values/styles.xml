@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@android:color/transparent</item>
         <item name="colorPrimaryDark">@android:color/transparent</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -103,7 +103,7 @@
         <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
         <item name="android:scrollIndicators" tools:targetApi="m">none</item>
     </style>
-    <style name="SwitchTheme" parent="Theme.AppCompat.Light">
+    <style name="SwitchTheme" parent="Theme.MaterialComponents.DayNight">
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="TextInputLayoutStyle">
@@ -112,10 +112,10 @@
     <style name="EditTextStyle">
         <item name="android:textColor">@color/colorAccent</item>
         <item name="hintTextColor">@color/colorTest</item>
-        <item name="android:textColorHint">@color/colorTest2</item>
+        <item name="android:textColorHint">@color/colorTest</item>
         <item name="android:backgroundTint" tools:targetApi="lollipop">@color/colorAccent</item>
     </style>
-    <style name="DialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+    <style name="DialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
         <item name="android:colorBackground">@color/colorWhite</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>

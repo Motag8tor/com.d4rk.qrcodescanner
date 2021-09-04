@@ -19,7 +19,7 @@
             android:gravity="start|top"
             android:hint="@string/fragment_create_code_128_hint"
             android:inputType="text"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/colorWhite"
             style="@style/EditTextStyle"
             />
     </com.google.android.material.textfield.TextInputLayout>

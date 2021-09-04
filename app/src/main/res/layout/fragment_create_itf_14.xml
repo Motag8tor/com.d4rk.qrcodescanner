@@ -22,7 +22,7 @@
             android:lines="1"
             android:maxLines="1"
             android:digits="0123456789"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/colorWhite"
             android:imeOptions="actionDone"
             style="@style/EditTextStyle"
             />

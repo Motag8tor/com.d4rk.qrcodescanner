@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorWhite">#131313</color>
+    <color name="colorPrimaryText">#E0E0E0</color>
+    <color name="colorSecondary">@color/colorTest</color>
 </resources>

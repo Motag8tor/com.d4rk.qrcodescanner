@@ -7,5 +7,4 @@
     android:ellipsize="marquee"
     android:textAlignment="inherit"
     style="?android:attr/spinnerItemStyle"
-    android:textColor="@color/colorTest"
-    />
+    android:textColor="@color/colorTest"/>

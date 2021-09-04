@@ -8,8 +8,7 @@
     android:orientation="horizontal"
     android:paddingHorizontal="@dimen/default_margin"
     android:paddingTop="@dimen/icon_button_with_delimiter_vertical_padding"
-    style="@style/ClickableBackground"
-    >
+    style="@style/ClickableBackground">
     <FrameLayout
         android:id="@+id/layout_image"
         android:layout_width="wrap_content"
@@ -17,15 +16,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="@dimen/icon_button_icon_padding"
-        android:background="@drawable/background_circle"
-        >
+        android:background="@drawable/background_circle">
         <ImageView
             android:id="@+id/image_view_schema"
             android:layout_width="@dimen/icon_button_icon_size"
             android:layout_height="@dimen/icon_button_icon_size"
             android:layout_gravity="center_vertical"
             tools:src="@drawable/ic_copy"
-            app:tint="@color/colorWhite" />
+            app:tint="@color/colorWhite"
+            tools:ignore="ContentDescription"/>
     </FrameLayout>
     <TextView
         android:id="@+id/text_view"
@@ -36,10 +35,9 @@
         app:layout_constraintBottom_toBottomOf="@id/layout_image"
         app:layout_constraintStart_toEndOf="@id/layout_image"
         app:layout_constraintEnd_toStartOf="@id/image_view_arrow"
-        android:textColor="@color/color_icon_button_icon_and_text"
+        android:textColor="@color/colorPrimaryText"
         tools:text="Copy"
-        style="@style/DefaultTextViewStyle"
-        />
+        style="@style/DefaultTextViewStyle"/>
     <ImageView
         android:id="@+id/image_view_arrow"
         android:layout_width="wrap_content"
@@ -49,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_arrow_right"
         android:visibility="visible"
-        />
+        tools:ignore="ContentDescription"/>
     <View
         android:id="@+id/delimiter"
         android:layout_width="0dp"
@@ -58,6 +56,5 @@
         app:layout_constraintStart_toStartOf="@id/text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_image"
-        android:background="@color/colorTest"
-        />
+        android:background="@color/colorSecondary"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

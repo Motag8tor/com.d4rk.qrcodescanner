@@ -10,7 +10,7 @@
     <color name="colorFirebaseOrange">#F57C00</color>
     <color name="colorTest">#E91E63</color>
     <color name="colorTest2">#009688</color>
-    <color name="colorSecondary">#e0e0e0</color>
+    <color name="colorSecondary">#E0E0E0</color>
     <color name="colorPrimaryText">@android:color/black</color>
     <color name="colorSecondaryText">#7D7D7D</color>
 </resources>
