@@ -1,8 +1,6 @@
 package com.d4rk.qrcodescanner.extension
-
 import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.d4rk.qrcodescanner.R
-
 fun BarcodeSchema.toImageId(): Int? {
     return when (this) {
         BarcodeSchema.BOOKMARK -> R.drawable.ic_bookmark
@@ -23,7 +21,6 @@ fun BarcodeSchema.toImageId(): Int? {
         else -> null
     }
 }
-
 fun BarcodeSchema.toStringId(): Int? {
     return when (this) {
         BarcodeSchema.BOOKMARK -> R.string.barcode_schema_bookmark

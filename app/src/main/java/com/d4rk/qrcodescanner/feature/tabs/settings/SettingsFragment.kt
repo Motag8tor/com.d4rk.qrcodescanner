@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.feature.tabs.settings
-
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -25,20 +24,15 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_settings.*
-
-
 class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
     private val disposable = CompositeDisposable()
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         supportEdgeToEdge()
     }
-
     override fun onResume() {
         super.onResume()
         handleButtonCheckedChanged()
@@ -46,20 +40,16 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         showSettings()
         showAppVersion()
     }
-
     override fun onDeleteConfirmed() {
         clearHistory()
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         disposable.clear()
     }
-
     fun supportEdgeToEdge() {
         app_bar_layout.applySystemWindowInsets(applyTop = true)
     }
-
     private fun handleButtonCheckedChanged() {
         button_inverse_barcode_colors_in_dark_theme.setCheckedChangedListener { settings.areBarcodeColorsInversed = it }
         button_open_links_automatically.setCheckedChangedListener { settings.openLinksAutomatically = it }
@@ -74,7 +64,6 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         button_do_not_save_duplicates.setCheckedChangedListener { settings.doNotSaveDuplicates = it }
         button_enable_error_reports.setCheckedChangedListener { settings.areErrorReportsEnabled = it }
     }
-
     private fun handleButtonClicks() {
         button_choose_theme.setOnClickListener { ChooseThemeActivity.start(requireActivity()) }
         button_choose_camera.setOnClickListener { ChooseCameraActivity.start(requireActivity()) }
@@ -85,10 +74,8 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         button_check_updates.setOnClickListener { showAppInMarket() }
         button_source_code.setOnClickListener { showSourceCode() }
     }
-
     private fun clearHistory() {
         button_clear_history.isEnabled = false
-
         barcodeDatabase.deleteAll()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -103,7 +90,6 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
             )
             .addTo(disposable)
     }
-
     private fun showSettings() {
         settings.apply {
             button_inverse_barcode_colors_in_dark_theme.isChecked = areBarcodeColorsInversed
@@ -120,12 +106,10 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
             button_enable_error_reports.isChecked = areErrorReportsEnabled
         }
     }
-
     private fun showDeleteHistoryConfirmationDialog() {
         val dialog = DeleteConfirmationDialogFragment.newInstance(R.string.dialog_delete_clear_history_message)
         dialog.show(childFragmentManager, "")
     }
-
     private fun showAppInMarket() {
         val uri = Uri.parse("market://details?id=" + requireContext().packageName)
         val intent = Intent(Intent.ACTION_VIEW, uri).apply {
@@ -135,14 +119,12 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
             startActivity(intent)
         }
     }
-
     private fun showSourceCode() {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/dmitriy-ilchenko/QrAndBarcodeScanner"))
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }
     }
-
     private fun showAppVersion() {
         button_app_version.hint = BuildConfig.VERSION_NAME
     }

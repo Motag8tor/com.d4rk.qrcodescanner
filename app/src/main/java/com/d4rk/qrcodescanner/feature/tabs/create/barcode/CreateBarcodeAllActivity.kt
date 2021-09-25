@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.feature.tabs.create.barcode
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -9,17 +8,13 @@ import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.feature.tabs.create.CreateBarcodeActivity
 import com.google.zxing.BarcodeFormat
 import kotlinx.android.synthetic.main.activity_create_barcode_all.*
-
 class CreateBarcodeAllActivity : BaseActivity() {
-
     companion object {
-
         fun start(context: Context) {
             val intent = Intent(context, CreateBarcodeAllActivity::class.java)
             context.startActivity(intent)
         }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_barcode_all)
@@ -27,17 +22,14 @@ class CreateBarcodeAllActivity : BaseActivity() {
         handleToolbarBackClicked()
         handleButtonsClicked()
     }
-
     private fun supportEdgeToEdge() {
         root_view.applySystemWindowInsets(applyTop = true, applyBottom = true)
     }
-
     private fun handleToolbarBackClicked() {
         toolbar.setNavigationOnClickListener {
             finish()
         }
     }
-
     private fun handleButtonsClicked() {
         button_data_matrix.setOnClickListener { CreateBarcodeActivity.start(this, BarcodeFormat.DATA_MATRIX) }
         button_aztec.setOnClickListener { CreateBarcodeActivity.start(this, BarcodeFormat.AZTEC) }

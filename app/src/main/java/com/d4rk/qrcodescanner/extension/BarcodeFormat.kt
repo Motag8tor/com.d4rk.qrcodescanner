@@ -1,8 +1,6 @@
 package com.d4rk.qrcodescanner.extension
-
 import com.d4rk.qrcodescanner.R
 import com.google.zxing.BarcodeFormat
-
 fun BarcodeFormat.toStringId(): Int {
     return when (this) {
         BarcodeFormat.AZTEC -> R.string.barcode_format_aztec
@@ -21,7 +19,6 @@ fun BarcodeFormat.toStringId(): Int {
         else -> R.string.barcode_format_qr_code
     }
 }
-
 fun BarcodeFormat.toImageId(): Int {
     return when (this) {
         BarcodeFormat.QR_CODE -> R.drawable.ic_qr_code
@@ -31,7 +28,6 @@ fun BarcodeFormat.toImageId(): Int {
         else -> R.drawable.ic_barcode
     }
 }
-
 fun BarcodeFormat.toColorId(): Int {
     return when (this) {
         BarcodeFormat.QR_CODE -> R.color.colorTest

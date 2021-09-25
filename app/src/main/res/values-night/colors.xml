@@ -3,4 +3,5 @@
     <color name="colorWhite">#131313</color>
     <color name="colorPrimaryText">#E0E0E0</color>
     <color name="colorSecondary">@color/colorTest</color>
+    <color name="colorSplashScreenText">#616161</color>
 </resources>

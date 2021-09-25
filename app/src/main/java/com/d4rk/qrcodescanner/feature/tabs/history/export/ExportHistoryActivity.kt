@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.feature.tabs.history.export
-
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -22,20 +21,16 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_export_history.*
-
 class ExportHistoryActivity : BaseActivity() {
     private val disposable = CompositeDisposable()
-
     companion object {
         private const val REQUEST_PERMISSIONS_CODE = 101
         private val PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-
         fun start(context: Context) {
             val intent = Intent(context, ExportHistoryActivity::class.java)
             context.startActivity(intent)
         }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_export_history)
@@ -45,29 +40,24 @@ class ExportHistoryActivity : BaseActivity() {
         initFileNameEditText()
         initExportButton()
     }
-
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (permissionsHelper.areAllPermissionsGranted(grantResults)) {
             exportHistory()
         }
     }
-
     override fun onDestroy() {
         super.onDestroy()
         disposable.clear()
     }
-
     private fun supportEdgeToEdge() {
         root_view.applySystemWindowInsets(applyTop = true, applyBottom = true)
     }
-
     private fun initToolbar() {
         toolbar.setNavigationOnClickListener {
             finish()
         }
     }
-
     private fun initExportTypeSpinner() {
         spinner_export_as.adapter = ArrayAdapter.createFromResource(
             this, R.array.activity_export_history_types, R.layout.item_spinner
@@ -75,23 +65,19 @@ class ExportHistoryActivity : BaseActivity() {
             setDropDownViewResource(R.layout.item_spinner_dropdown)
         }
     }
-
     private fun initFileNameEditText() {
         edit_text_file_name.addTextChangedListener {
             button_export.isEnabled = edit_text_file_name.isNotBlank()
         }
     }
-
     private fun initExportButton() {
         button_export.setOnClickListener {
             requestPermissions()
         }
     }
-
     private fun requestPermissions() {
         permissionsHelper.requestPermissions(this, PERMISSIONS, REQUEST_PERMISSIONS_CODE)
     }
-
     private fun exportHistory() {
         val fileName = edit_text_file_name.textString
         val saveFunc = when (spinner_export_as.selectedItemPosition) {
@@ -99,9 +85,7 @@ class ExportHistoryActivity : BaseActivity() {
             1 -> barcodeSaver::saveBarcodeHistoryAsJson
             else -> return
         }
-
         showLoading(true)
-
         barcodeDatabase
             .getAllForExport()
             .flatMapCompletable { barcodes ->
@@ -120,12 +104,10 @@ class ExportHistoryActivity : BaseActivity() {
             )
             .addTo(disposable)
     }
-
     private fun showLoading(isLoading: Boolean) {
         progress_bar_loading.isVisible = isLoading
         scroll_view.isVisible = isLoading.not()
     }
-
     private fun showHistoryExported() {
         Toast.makeText(this, R.string.activity_export_history_exported, Toast.LENGTH_LONG).show()
         finish()

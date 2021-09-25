@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.feature.common.dialog
-
 import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -7,9 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.model.SearchEngine
-
 class ChooseSearchEngineDialogFragment : DialogFragment() {
-
     companion object {
         private val ITEMS = arrayOf(
             SearchEngine.BING,
@@ -20,14 +17,11 @@ class ChooseSearchEngineDialogFragment : DialogFragment() {
             SearchEngine.YANDEX
         )
     }
-
     interface Listener {
         fun onSearchEngineSelected(searchEngine: SearchEngine)
     }
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val listener = requireActivity() as? Listener
-
         val items = arrayOf(
             getString(R.string.activity_choose_search_engine_bing),
             getString(R.string.activity_choose_search_engine_duck_duck_go),
@@ -36,7 +30,6 @@ class ChooseSearchEngineDialogFragment : DialogFragment() {
             getString(R.string.activity_choose_search_engine_yahoo),
             getString(R.string.activity_choose_search_engine_yandex)
         )
-
         val dialog = AlertDialog.Builder(requireActivity(), R.style.DialogTheme)
             .setItems(items) { _, itemClicked ->
                 val searchEngine = ITEMS[itemClicked]
@@ -44,11 +37,9 @@ class ChooseSearchEngineDialogFragment : DialogFragment() {
             }
             .setNegativeButton(R.string.activity_barcode_choose_search_engine_dialog_negative_button) { _, _ -> }
             .create()
-
         dialog.setOnShowListener {
             dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(requireContext(), R.color.colorGoogleRed))
         }
-
         return dialog
     }
 }

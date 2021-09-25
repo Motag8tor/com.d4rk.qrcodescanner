@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.feature.tabs.create.qr
-
 import android.content.Intent
 import android.content.pm.ResolveInfo
 import android.os.Bundle
@@ -19,40 +18,32 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_create_qr_code_app.*
-
 class CreateQrCodeAppFragment : BaseCreateBarcodeFragment() {
     private val disposable = CompositeDisposable()
     private val appAdapter by unsafeLazy { AppAdapter(parentActivity) }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_app, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
         loadApps()
     }
-
     override fun getBarcodeSchema(): Schema {
         return App.fromPackage("")
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         disposable.clear()
     }
-
     private fun initRecyclerView() {
         recycler_view_apps.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = appAdapter
         }
     }
-
     private fun loadApps() {
         showLoading(true)
-
         Single.just(getApps())
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -68,22 +59,18 @@ class CreateQrCodeAppFragment : BaseCreateBarcodeFragment() {
             )
             .addTo(disposable)
     }
-
     private fun getApps(): List<ResolveInfo> {
         val mainIntent = Intent(Intent.ACTION_MAIN).apply {
             addCategory(Intent.CATEGORY_LAUNCHER)
         }
-
         return requireContext().packageManager
             .queryIntentActivities(mainIntent, 0)
             .filter { it.activityInfo?.packageName != null }
     }
-
     private fun showLoading(isLoading: Boolean) {
         progress_bar_loading.isVisible = isLoading
         recycler_view_apps.isVisible = isLoading.not()
     }
-
     private fun showApps(apps: List<ResolveInfo>) {
         appAdapter.apps = apps
     }

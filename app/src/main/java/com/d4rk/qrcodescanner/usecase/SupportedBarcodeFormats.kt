@@ -1,7 +1,5 @@
 package com.d4rk.qrcodescanner.usecase
-
 import com.google.zxing.BarcodeFormat
-
 object SupportedBarcodeFormats {
     val FORMATS = listOf(
         BarcodeFormat.QR_CODE,

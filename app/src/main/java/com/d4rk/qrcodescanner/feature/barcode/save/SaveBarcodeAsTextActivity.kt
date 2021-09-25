@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.feature.barcode.save
-
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -20,9 +19,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_save_barcode_as_text.*
-
 class SaveBarcodeAsTextActivity : BaseActivity() {
-
     companion object {
         private const val REQUEST_PERMISSIONS_CODE = 101
         private val PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -36,13 +33,10 @@ class SaveBarcodeAsTextActivity : BaseActivity() {
             context.startActivity(intent)
         }
     }
-
     private val barcode by unsafeLazy {
         intent?.getSerializableExtra(BARCODE_KEY) as? Barcode ?: throw IllegalArgumentException("No barcode passed")
     }
-
     private val disposable = CompositeDisposable()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_save_barcode_as_text)
@@ -51,29 +45,24 @@ class SaveBarcodeAsTextActivity : BaseActivity() {
         initFormatSpinner()
         initSaveButton()
     }
-
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (permissionsHelper.areAllPermissionsGranted(grantResults)) {
             saveBarcode()
         }
     }
-
     override fun onDestroy() {
         super.onDestroy()
         disposable.clear()
     }
-
     private fun supportEdgeToEdge() {
         root_view.applySystemWindowInsets(applyTop = true, applyBottom = true)
     }
-
     private fun initToolbar() {
         toolbar.setNavigationOnClickListener {
             finish()
         }
     }
-
     private fun initFormatSpinner() {
         spinner_save_as.adapter = ArrayAdapter.createFromResource(
             this, R.array.activity_save_barcode_as_text_formats, R.layout.item_spinner
@@ -81,26 +70,21 @@ class SaveBarcodeAsTextActivity : BaseActivity() {
             setDropDownViewResource(R.layout.item_spinner_dropdown)
         }
     }
-
     private fun initSaveButton() {
         button_save.setOnClickListener {
             requestPermissions()
         }
     }
-
     private fun requestPermissions() {
         permissionsHelper.requestPermissions(this, PERMISSIONS, REQUEST_PERMISSIONS_CODE)
     }
-
     private fun saveBarcode() {
         val saveFunc = when (spinner_save_as.selectedItemPosition) {
             0 -> barcodeSaver::saveBarcodeAsCsv
             1 -> barcodeSaver::saveBarcodeAsJson
             else -> return
         }
-
         showLoading(true)
-
         saveFunc(this, barcode)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -113,12 +97,10 @@ class SaveBarcodeAsTextActivity : BaseActivity() {
             )
             .addTo(disposable)
     }
-
     private fun showLoading(isLoading: Boolean) {
         progress_bar_loading.isVisible = isLoading
         scroll_view.isVisible = isLoading.not()
     }
-
     private fun showBarcodeSaved() {
         Toast.makeText(this, R.string.activity_save_barcode_as_text_file_name_saved, Toast.LENGTH_LONG).show()
         finish()

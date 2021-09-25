@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.usecase
-
 import android.content.Context
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiEnterpriseConfig
@@ -10,10 +9,8 @@ import com.d4rk.qrcodescanner.extension.toCaps
 import com.d4rk.qrcodescanner.extension.wifiManager
 import io.reactivex.Completable
 import io.reactivex.schedulers.Schedulers
-
 object WifiConnector {    
     private val hexRegex = """^[0-9a-f]+$""".toRegex(RegexOption.IGNORE_CASE)
-
     fun connect(
             context: Context,
             authType: String,
@@ -47,7 +44,6 @@ object WifiConnector {
             }
             .subscribeOn(Schedulers.newThread())
     }
-
     private fun tryToConnect(
             context: Context,
             authType: String,
@@ -65,8 +61,6 @@ object WifiConnector {
             tryToConnectOldApi(context, authType, name, password, isHidden, anonymousIdentity, identity, eapMethod, phase2Method)
         }
     }
-
-
     @RequiresApi(Build.VERSION_CODES.Q)
     private fun tryToConnectNewApi(
             context: Context,

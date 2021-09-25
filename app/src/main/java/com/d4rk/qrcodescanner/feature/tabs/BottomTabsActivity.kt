@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.feature.tabs
-
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
@@ -13,26 +12,20 @@ import com.d4rk.qrcodescanner.feature.tabs.scan.ScanBarcodeFromCameraFragment
 import com.d4rk.qrcodescanner.feature.tabs.settings.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_bottom_tabs.*
-
 class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-
     companion object {
         private const val ACTION_CREATE_BARCODE = "${BuildConfig.APPLICATION_ID}.CREATE_BARCODE"
         private const val ACTION_HISTORY = "${BuildConfig.APPLICATION_ID}.HISTORY"
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_tabs)
-
         supportEdgeToEdge()
         initBottomNavigationView()
-
         if (savedInstanceState == null) {
             showInitialFragment()
         }
     }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         if (item.itemId == bottom_navigation_view.selectedItemId) {
             return false
@@ -40,7 +33,6 @@ class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItem
         showFragment(item.itemId)
         return true
     }
-
     override fun onBackPressed() {
         if (bottom_navigation_view.selectedItemId == R.id.item_scan) {
             super.onBackPressed()
@@ -48,17 +40,14 @@ class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItem
             bottom_navigation_view.selectedItemId = R.id.item_scan
         }
     }
-
     private fun supportEdgeToEdge() {
         bottom_navigation_view.applySystemWindowInsets(applyBottom = true)
     }
-
     private fun initBottomNavigationView() {
         bottom_navigation_view.apply {
             setOnNavigationItemSelectedListener(this@BottomTabsActivity)
         }
     }
-
     private fun showInitialFragment() {
         when (intent?.action) {
             ACTION_CREATE_BARCODE -> bottom_navigation_view.selectedItemId = R.id.item_create
@@ -66,7 +55,6 @@ class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItem
             else -> showFragment(R.id.item_scan)
         }
     }
-
     private fun showFragment(bottomItemId: Int) {
         val fragment = when (bottomItemId) {
             R.id.item_scan -> ScanBarcodeFromCameraFragment()
@@ -77,7 +65,6 @@ class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItem
         }
         fragment?.apply(::replaceFragment)
     }
-
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.layout_fragment_container, fragment)
