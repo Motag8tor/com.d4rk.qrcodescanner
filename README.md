@@ -3,7 +3,6 @@
 </p>
 
 ![Works with Android](https://img.shields.io/badge/Works%20with-Android-blue)
-![Android CI](https://github.com/D4rK7355608/com.d4rk.qrcodescanner/workflows/Android%20CI/badge.svg)
 ![GitHub issues](https://img.shields.io/github/issues/D4rK7355608/com.d4rk.qrcodescanner)
 ![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.qrcodescanner?label=Pull%20requests)
 ![GitHub license](https://img.shields.io/github/license/D4rK7355608/com.d4rk.qrcodescannerlabel=License)
