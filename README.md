@@ -1,5 +1,5 @@
 <p align="center">
-<img src="/app/src/main/play/listings/en-US/graphics/feature-graphic/feature_graphic.png" width="200">
+<img src="/app/src/play/listings/en-US/graphics/feature-graphic/feature_graphic.png">
 </p>
 
 ![Works with Android](https://img.shields.io/badge/Works%20with-Android-blue)
@@ -92,7 +92,7 @@ The app can create the following barcode formats:
 
 ## Screenshots:
 
-<img src="/app/src/main/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.jpg width="500">
+<img src="/app/src/play/listings/en-US/graphics/phone-screenshots/1-screenshot_main.png" width="300">
 
 <details>
   <summary>Special Thanks</summary>
