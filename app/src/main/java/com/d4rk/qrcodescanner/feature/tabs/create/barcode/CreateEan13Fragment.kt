@@ -18,7 +18,7 @@ class CreateEan13Fragment : BaseCreateBarcodeFragment() {
         super.onViewCreated(view, savedInstanceState)
         edit_text.requestFocus()
         edit_text.addTextChangedListener {
-            parentActivity.isCreateBarcodeButtonEnabled = edit_text.text.length == 12
+            parentActivity.isCreateBarcodeButtonEnabled = edit_text.text!!.length == 12
         }
     }
     override fun getBarcodeSchema(): Schema {

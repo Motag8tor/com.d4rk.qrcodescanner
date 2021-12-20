@@ -8,6 +8,7 @@
     android:orientation="vertical">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
+        android:background="@android:color/transparent"
         style="@style/AppBarLayoutStyle">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/default_margin_small"
             android:orientation="vertical">
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
@@ -52,7 +53,7 @@
                 app:iconBackground="@color/colorGoogleRed"
                 app:text="@string/barcode_format_pdf_417"
                 app:isDelimiterVisible="false"/>
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin_big"

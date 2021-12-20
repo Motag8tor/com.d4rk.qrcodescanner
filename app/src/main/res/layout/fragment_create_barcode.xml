@@ -7,6 +7,7 @@
     android:orientation="vertical">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
+        android:background="@android:color/transparent"
         style="@style/AppBarLayoutStyle">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,7 +22,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/default_margin_small"
             android:orientation="vertical">
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
@@ -80,7 +81,7 @@
                 app:text="@string/fragment_create_barcode_qr_code_show_all"
                 app:isDelimiterVisible="false"
                 app:isArrowVisible="true"/>
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin_big"

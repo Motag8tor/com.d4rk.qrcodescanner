@@ -27,7 +27,6 @@ import com.d4rk.qrcodescanner.model.ParsedBarcode
 import com.d4rk.qrcodescanner.model.SearchEngine
 import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.d4rk.qrcodescanner.model.schema.OtpAuth
-import com.d4rk.qrcodescanner.usecase.Logger
 import com.d4rk.qrcodescanner.usecase.save
 import com.d4rk.qrcodescanner.R
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -120,6 +119,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
             BarcodeSchema.VCARD -> addToContacts()
             BarcodeSchema.WIFI -> connectToWifi()
             BarcodeSchema.YOUTUBE -> openInYoutube()
+            BarcodeSchema.NZCOVIDTRACER -> openLink()
             else -> return
         }
     }
@@ -151,9 +151,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
     }
     private fun handleButtonsClicked() {
         button_edit_name.setOnClickListener { showEditBarcodeNameDialog() }
-        button_search_on_rate_and_goods.setOnClickListener { searchBarcodeTextOnRateAndGoods() }
-        button_search_on_amazon.setOnClickListener { searchBarcodeTextOnAmazon() }
-        button_search_on_ebay.setOnClickListener { searchBarcodeTextOnEbay() }
         button_search_on_web.setOnClickListener { searchBarcodeTextOnInternet() }
         button_add_to_calendar.setOnClickListener { addToCalendar() }
         button_add_to_contacts.setOnClickListener { addToContacts() }
@@ -393,18 +390,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         copyToClipboard(barcode.text)
         showToast(R.string.activity_barcode_copied)
     }
-    private fun searchBarcodeTextOnRateAndGoods() {
-        val url = "https://ratengoods.com/product/${barcode.text}/"
-        startActivityIfExists(Intent.ACTION_VIEW, url)
-    }
-    private fun searchBarcodeTextOnAmazon() {
-        val url = "https://www.amazon.com/s?k=${barcode.text}"
-        startActivityIfExists(Intent.ACTION_VIEW, url)
-    }
-    private fun searchBarcodeTextOnEbay() {
-        val url = "https://www.ebay.com/sch/i.html/?_nkw=${barcode.text}"
-        startActivityIfExists(Intent.ACTION_VIEW, url)
-    }
     private fun searchBarcodeTextOnInternet() {
         when (val searchEngine = settings.searchEngine) {
            SearchEngine.NONE -> performWebSearch()
@@ -427,7 +412,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
             val image = barcodeImageGenerator.generateBitmap(originalBarcode, 200, 200, 1)
             barcodeImageSaver.saveImageToCache(this, image, barcode)
         } catch (ex: Exception) {
-            Logger.log(ex)
             showError(ex)
             return
         }
@@ -442,7 +426,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         val barcodeImage = try {
             barcodeImageGenerator.generateBitmap(originalBarcode, 1000, 1000, 3)
         } catch (ex: Exception) {
-            Logger.log(ex)
             showError(ex)
             return
         }
@@ -508,7 +491,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                 layout_barcode_image_background.setPadding(0, 0, 0, 0)
             }
         } catch (ex: Exception) {
-            Logger.log(ex)
             image_view_barcode.isVisible = false
         }
     }
@@ -568,9 +550,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         if (isCreated) {
             return
         }
-        button_search_on_rate_and_goods.isVisible = barcode.isProductBarcode && currentLocale.isRussian
-        button_search_on_amazon.isVisible = barcode.isProductBarcode
-        button_search_on_ebay.isVisible = barcode.isProductBarcode
         button_search_on_web.isVisible = barcode.isProductBarcode
         button_search.isVisible = barcode.isProductBarcode.not()
         button_add_to_calendar.isVisible = barcode.schema == BarcodeSchema.VEVENT

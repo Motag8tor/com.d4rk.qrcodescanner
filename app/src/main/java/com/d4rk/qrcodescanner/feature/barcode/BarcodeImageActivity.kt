@@ -11,7 +11,6 @@ import com.d4rk.qrcodescanner.extension.toStringId
 import com.d4rk.qrcodescanner.extension.unsafeLazy
 import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.model.Barcode
-import com.d4rk.qrcodescanner.usecase.Logger
 import kotlinx.android.synthetic.main.activity_barcode_image.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -90,7 +89,6 @@ class BarcodeImageActivity : BaseActivity() {
                 layout_barcode_image_background.setPadding(0, 0, 0, 0)
             }
         } catch (ex: Exception) {
-            Logger.log(ex)
             image_view_barcode.isVisible = false
         }
     }

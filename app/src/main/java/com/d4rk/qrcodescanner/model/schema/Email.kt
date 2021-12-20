@@ -4,7 +4,6 @@ import com.d4rk.qrcodescanner.extension.appendIfNotNullOrBlank
 import com.d4rk.qrcodescanner.extension.joinToStringNotNullOrBlankWithLineSeparator
 import com.d4rk.qrcodescanner.extension.removePrefixIgnoreCase
 import com.d4rk.qrcodescanner.extension.startsWithIgnoreCase
-import com.d4rk.qrcodescanner.usecase.Logger
 data class Email(
     val email: String? = null,
     val subject: String? = null,
@@ -49,7 +48,6 @@ data class Email(
                 val mailto = MailTo.parse(text)
                 Email(mailto.to, mailto.subject, mailto.body)
             } catch (ex: Exception) {
-                Logger.log(ex)
                 null
             }
         }

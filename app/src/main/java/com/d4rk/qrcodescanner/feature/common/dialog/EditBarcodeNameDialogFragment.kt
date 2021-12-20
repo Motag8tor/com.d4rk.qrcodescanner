@@ -30,7 +30,7 @@ class EditBarcodeNameDialogFragment : DialogFragment() {
         val view = LayoutInflater
             .from(requireContext())
             .inflate(R.layout.dialog_edit_barcode_name, null, false)
-        val dialog = AlertDialog.Builder(requireActivity(), R.style.DialogTheme)
+        val dialog = AlertDialog.Builder(requireActivity())
             .setTitle(R.string.dialog_edit_barcode_name_title)
             .setView(view)
             .setPositiveButton(R.string.dialog_confirm_barcode_positive_button) { _, _ ->

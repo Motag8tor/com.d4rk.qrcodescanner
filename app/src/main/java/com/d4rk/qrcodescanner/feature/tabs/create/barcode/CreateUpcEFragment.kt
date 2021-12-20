@@ -18,7 +18,7 @@ class CreateUpcEFragment : BaseCreateBarcodeFragment() {
         super.onViewCreated(view, savedInstanceState)
         edit_text.requestFocus()
         edit_text.addTextChangedListener {
-            parentActivity.isCreateBarcodeButtonEnabled = edit_text.text.length == 7
+            parentActivity.isCreateBarcodeButtonEnabled = edit_text.text!!.length == 7
         }
     }
     override fun getBarcodeSchema(): Schema {

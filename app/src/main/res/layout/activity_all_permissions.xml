@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.google.android.material.appbar.AppBarLayout
+        android:background="@android:color/transparent"
         style="@style/AppBarLayoutStyle">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -19,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
@@ -48,7 +49,7 @@
                 app:hint="@string/activity_all_permissions_internet_hint"
                 app:isDelimiterVisible="true"
                 app:isSwitchVisible="false"/>
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
@@ -75,6 +76,13 @@
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_storage_title"
                 app:hint="@string/activity_all_permissions_storage_hint"
+                app:isDelimiterVisible="false"
+                app:isSwitchVisible="false"/>
+            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="@string/activity_all_query_all_packages_title"
+                app:hint="@string/activity_all_query_all_packages_hint"
                 app:isDelimiterVisible="false"
                 app:isSwitchVisible="false"/>
         </LinearLayout>

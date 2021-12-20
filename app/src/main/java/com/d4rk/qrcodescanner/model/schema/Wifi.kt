@@ -1,8 +1,6 @@
 package com.d4rk.qrcodescanner.model.schema
-
 import com.d4rk.qrcodescanner.extension.*
 import java.util.*
-
 class Wifi(
     val encryption: String? = null,
     val name: String? = null,
@@ -13,7 +11,6 @@ class Wifi(
     val eapMethod: String? = null,
     val phase2Method: String? = null
 ) : Schema {
-
     companion object {
         private val WIFI_REGEX = """^WIFI:((?:.+?:(?:[^\\;]|\\.)*;)+);?$""".toRegex()
         private val PAIR_REGEX = """(.+?):((?:[^\\;]|\\.)*);""".toRegex()
@@ -27,12 +24,10 @@ class Wifi(
         private const val EAP_PREFIX = "E:"
         private const val PHASE2_PREFIX = "PH2:"
         private const val SEPARATOR = ";"
-
         fun parse(text: String): Wifi? {
             if (text.startsWithIgnoreCase(SCHEMA_PREFIX).not()) {
                 return null
             }
-
             val keysAndValuesSubstring = WIFI_REGEX.matchEntire(text)?.groupValues?.get(1) ?: return null
             val keysAndValues = PAIR_REGEX
                 .findAll(keysAndValuesSubstring)
@@ -40,7 +35,6 @@ class Wifi(
                     "${pair.groupValues[1].uppercase(Locale.US)}:" to pair.groupValues[2]
                 }
                 .toMap()
-
             return Wifi(
                 keysAndValues[ENCRYPTION_PREFIX]?.unescape(),
                 keysAndValues[NAME_PREFIX]?.unescape(),
@@ -53,13 +47,10 @@ class Wifi(
             )
         }
     }
-
     override val schema = BarcodeSchema.WIFI
-
     override fun toFormattedText(): String {
         return listOf(name, encryption, password).joinToStringNotNullOrBlankWithLineSeparator()
     }
-
     override fun toBarcodeText(): String {
         return StringBuilder()
             .append(SCHEMA_PREFIX)

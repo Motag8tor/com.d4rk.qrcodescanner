@@ -18,7 +18,7 @@ class CreateItf14Fragment : BaseCreateBarcodeFragment() {
         super.onViewCreated(view, savedInstanceState)
         edit_text.requestFocus()
         edit_text.addTextChangedListener {
-            parentActivity.isCreateBarcodeButtonEnabled = edit_text.text.length % 2 == 0
+            parentActivity.isCreateBarcodeButtonEnabled = edit_text.text!!.length % 2 == 0
         }
     }
     override fun getBarcodeSchema(): Schema {

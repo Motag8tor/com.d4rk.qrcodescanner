@@ -6,15 +6,11 @@
     android:paddingTop="@dimen/default_margin_small"
     android:paddingHorizontal="@dimen/default_margin"
     android:paddingBottom="@dimen/default_margin"
-    android:orientation="vertical"
-    >
-
+    android:orientation="vertical">
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextInputLayoutStyle"
-        >
-        <EditText
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edit_text_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,19 +19,13 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_bookmark_title_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/colorWhite"
-            android:inputType="text"
-            style="@style/EditTextStyle"
-            />
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin_small"
-        style="@style/TextInputLayoutStyle"
-        >
-        <EditText
+        android:layout_marginTop="@dimen/default_margin_small">
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edit_text_url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,9 +34,6 @@
             android:maxLines="1"
             android:hint="@string/barcode_schema_url"
             android:inputType="textUri"
-            android:imeOptions="actionDone"
-            android:backgroundTint="@color/colorWhite"
-            style="@style/EditTextStyle"
-            />
+            android:imeOptions="actionDone"/>
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

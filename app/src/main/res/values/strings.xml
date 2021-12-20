@@ -129,7 +129,7 @@
     </string-array>
     <string name="fragment_create_qr_code_otp_algorithm_hint">Algorithm</string>
     <string-array name="fragment_create_qr_code_otp_algorithms">
-        <item>SHA1</item>
+        <item>SHA!</item>
         <item>SHA256</item>
         <item>SHA512</item>
     </string-array>
@@ -254,7 +254,7 @@
     <string name="activity_supported_formats_title">Supported formats</string>
 
     <!--Choose search engine activity-->
-    <string name="activity_choose_search_engine_title">Search engines</string>
+    <string name="activity_choose_search_engine_title">Search engines!</string>
     <string name="activity_choose_search_engine_none">None</string>
     <string name="activity_choose_search_engine_ask_every_time">Ask every time</string>
     <string name="activity_choose_search_engine_bing">Bing</string>
@@ -265,21 +265,23 @@
     <string name="activity_choose_search_engine_yandex">Yandex</string>
 
     <!--All permissions activity-->
-    <string name="activity_all_permissions_title">Permissions</string>
-    <string name="activity_all_permissions_normal_permissions">Normal</string>
-    <string name="activity_all_permissions_vibrate_title">Vibrate</string>
-    <string name="activity_all_permissions_vibrate_hint">Used to vibrate on scan</string>
-    <string name="activity_all_permissions_wifi_title">Wi-Fi</string>
-    <string name="activity_all_permissions_wifi_hint">Used to connect to Wi-Fi by scanning a QR code</string>
-    <string name="activity_all_permissions_internet_title">Internet</string>
+    <string name="activity_all_permissions_title">Permissions!</string>
+    <string name="activity_all_permissions_normal_permissions">Normal!</string>
+    <string name="activity_all_permissions_vibrate_title">Vibrate.</string>
+    <string name="activity_all_permissions_vibrate_hint">Used to vibrate on scan.</string>
+    <string name="activity_all_permissions_wifi_title">Wi-Fi.</string>
+    <string name="activity_all_permissions_wifi_hint">Used to connect to Wi-Fi by scanning a QR code.</string>
+    <string name="activity_all_permissions_internet_title">Internet.</string>
     <string name="activity_all_permissions_internet_hint">Used to send error reports. This can be disabled in settings.</string>
-    <string name="activity_all_permissions_runtime_permissions">Runtime</string>
-    <string name="activity_all_permissions_camera_title">Camera</string>
-    <string name="activity_all_permissions_camera_hint">Used to scan QR codes and barcodes from camera</string>
-    <string name="activity_all_permissions_read_contacts_title">Read contacts</string>
-    <string name="activity_all_permissions_read_contacts_hint">Used to create a QR code by selecting a contact from your contact list</string>
-    <string name="activity_all_permissions_storage_title">Storage</string>
-    <string name="activity_all_permissions_storage_hint">Used to access storage when you want to save your QR code or barcode as text or image</string>
+    <string name="activity_all_permissions_runtime_permissions">Runtime.</string>
+    <string name="activity_all_permissions_camera_title">Camera.</string>
+    <string name="activity_all_permissions_camera_hint">Used to scan QR codes and barcodes from camera.</string>
+    <string name="activity_all_permissions_read_contacts_title">Read contacts.</string>
+    <string name="activity_all_permissions_read_contacts_hint">Used to create a QR code by selecting a contact from your contact list.</string>
+    <string name="activity_all_permissions_storage_title">Storage.</string>
+    <string name="activity_all_permissions_storage_hint">Used to access storage when you want to save your QR code or barcode as text or image.</string>
+    <string name="activity_all_query_all_packages_title">Query Packages.</string>
+    <string name="activity_all_query_all_packages_hint">Used to open source code and find app on Play Store for update.</string>
 
     <!--Barcode activity-->
     <string name="activity_barcode_search_on_rate_and_goods">Search on Rate&amp;Goods</string>

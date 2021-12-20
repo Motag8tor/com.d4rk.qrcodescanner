@@ -5,14 +5,11 @@
     android:layout_height="match_parent"
     android:paddingTop="@dimen/default_margin_small"
     android:paddingHorizontal="@dimen/default_margin"
-    android:paddingBottom="@dimen/default_margin"
-    >
+    android:paddingBottom="@dimen/default_margin">
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextInputLayoutStyle"
-        >
-        <EditText
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,9 +18,6 @@
             android:inputType="textCapCharacters"
             android:lines="1"
             android:maxLines="1"
-            android:backgroundTint="@color/colorWhite"
-            android:textAllCaps="true"
-            style="@style/EditTextStyle"
-            />
+            android:textAllCaps="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 </FrameLayout>

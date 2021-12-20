@@ -30,7 +30,7 @@ class ChooseSearchEngineDialogFragment : DialogFragment() {
             getString(R.string.activity_choose_search_engine_yahoo),
             getString(R.string.activity_choose_search_engine_yandex)
         )
-        val dialog = AlertDialog.Builder(requireActivity(), R.style.DialogTheme)
+        val dialog = AlertDialog.Builder(requireActivity())
             .setItems(items) { _, itemClicked ->
                 val searchEngine = ITEMS[itemClicked]
                 listener?.onSearchEngineSelected(searchEngine)

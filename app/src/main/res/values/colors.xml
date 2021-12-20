@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorWhite">@android:color/white</color>
+    <color name="colorDayNight">@android:color/black</color>
     <color name="colorDarkShortcuts">#2D2D2D</color>
+    <color name="colorContainer">#D8E1FC</color>
+    <color name="colorBackground">#FDFBFE</color>
     <color name="colorAccent">#4285F4</color>
     <color name="colorGoogleGreen">#0F9D58</color>
     <color name="colorGoogleRed">#DB4437</color>
@@ -9,9 +12,6 @@
     <color name="colorAndroidGreen">#3DDC84</color>
     <color name="colorFirebaseOrange">#F57C00</color>
     <color name="colorTest">#E91E63</color>
-    <color name="colorTest2">#009688</color>
-    <color name="colorSecondary">#E0E0E0</color>
-    <color name="colorPrimaryText">@android:color/black</color>
+    <color name="colorTest1">#009688</color>
     <color name="colorSplashScreenText">#DFDFDF</color>
-    <color name="colorSecondaryText">#7D7D7D</color>
 </resources>

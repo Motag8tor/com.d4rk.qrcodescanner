@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.model.schema
-
 import com.d4rk.qrcodescanner.extension.joinToStringNotNullOrBlank
 import com.d4rk.qrcodescanner.extension.joinToStringNotNullOrBlankWithLineSeparator
 import com.d4rk.qrcodescanner.extension.startsWithIgnoreCase
@@ -8,7 +7,6 @@ import ezvcard.VCardVersion
 import ezvcard.property.*
 import ezvcard.property.Email
 import ezvcard.property.Url
-
 data class VCard(
     val firstName: String? = null,
     val lastName: String? = null,
@@ -31,16 +29,13 @@ data class VCard(
     val geoUri: String? = null,
     val url: String? = null
 ) : Schema {
-
     companion object {
         private const val SCHEMA_PREFIX = "BEGIN:VCARD"
         private const val ADDRESS_SEPARATOR = ","
-
         fun parse(text: String): VCard? {
             if (text.startsWithIgnoreCase(SCHEMA_PREFIX).not()) {
                 return null
             }
-
             val vCard = Ezvcard.parse(text).first() ?: return null
             val firstName = vCard.structuredName?.given
             val lastName = vCard.structuredName?.family
@@ -62,7 +57,6 @@ data class VCard(
             var tertiaryPhone: String? = null
             var tertiaryPhoneType: String? = null
             var address: String? = null
-
             vCard.emails?.getOrNull(0)?.apply {
                 email = value
                 emailType = types.getOrNull(0)?.value
@@ -75,7 +69,6 @@ data class VCard(
                 tertiaryEmail = value
                 tertiaryEmailType = types.getOrNull(0)?.value
             }
-
             vCard.telephoneNumbers?.getOrNull(0)?.apply {
                 phone = this.text
                 phoneType = types?.firstOrNull()?.value
@@ -88,7 +81,6 @@ data class VCard(
                 tertiaryPhone = this.text
                 tertiaryPhoneType = types?.firstOrNull()?.value
             }
-
             vCard.addresses.firstOrNull()?.apply {
                 address = listOf(
                     country,
@@ -98,7 +90,6 @@ data class VCard(
                     streetAddress
                 ).joinToStringNotNullOrBlank(ADDRESS_SEPARATOR)
             }
-
             return VCard(
                 firstName,
                 lastName,
@@ -123,9 +114,7 @@ data class VCard(
             )
         }
     }
-
     override val schema = BarcodeSchema.VCARD
-
     override fun toFormattedText(): String {
         return listOf(
             "${firstName.orEmpty()} ${lastName.orEmpty()}",
@@ -143,55 +132,42 @@ data class VCard(
             url
         ).joinToStringNotNullOrBlankWithLineSeparator()
     }
-
     override fun toBarcodeText(): String {
         val vCard = ezvcard.VCard()
-
         vCard.structuredName = StructuredName().apply {
             given = firstName
             family = lastName
         }
-
         if (nickname.isNullOrBlank().not()) {
             vCard.nickname = Nickname().apply { values.add(nickname) }
         }
-
         if (organization.isNullOrBlank().not()) {
             vCard.organization = Organization().apply { values.add(organization) }
         }
-
         if (title.isNullOrBlank().not()) {
             vCard.addTitle(Title(title))
         }
-
         if (email.isNullOrBlank().not()) {
             vCard.addEmail(Email(email))
         }
-
         if (secondaryEmail.isNullOrBlank().not()) {
             vCard.addEmail(Email(secondaryEmail))
         }
-
         if (tertiaryEmail.isNullOrBlank().not()) {
             vCard.addEmail(Email(tertiaryEmail))
         }
-
         if (phone.isNullOrBlank().not()) {
             vCard.addTelephoneNumber(Telephone(phone))
         }
-
         if (secondaryPhone.isNullOrBlank().not()) {
             vCard.addTelephoneNumber(Telephone(secondaryPhone))
         }
-
         if (tertiaryPhone.isNullOrBlank().not()) {
             vCard.addTelephoneNumber(Telephone(tertiaryPhoneType))
         }
-
         if (url.isNullOrBlank().not()) {
             vCard.addUrl(Url(url))
         }
-
         return Ezvcard
             .write(vCard)
             .version(VCardVersion.V4_0)

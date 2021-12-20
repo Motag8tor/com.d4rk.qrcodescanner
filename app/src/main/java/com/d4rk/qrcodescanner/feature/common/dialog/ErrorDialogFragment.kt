@@ -31,7 +31,7 @@ class ErrorDialogFragment : DialogFragment() {
     }
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val message = arguments?.getString(ERROR_MESSAGE_KEY).orEmpty()
-        val dialog = AlertDialog.Builder(requireActivity(), R.style.DialogTheme)
+        val dialog = AlertDialog.Builder(requireActivity())
             .setTitle(R.string.error_dialog_title)
             .setMessage(message)
             .setCancelable(false)

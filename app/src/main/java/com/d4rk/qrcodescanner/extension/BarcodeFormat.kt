@@ -30,7 +30,7 @@ fun BarcodeFormat.toImageId(): Int {
 }
 fun BarcodeFormat.toColorId(): Int {
     return when (this) {
-        BarcodeFormat.QR_CODE -> R.color.colorTest
+        BarcodeFormat.QR_CODE -> R.color.colorAccent
         BarcodeFormat.DATA_MATRIX, BarcodeFormat.AZTEC, BarcodeFormat.PDF_417, BarcodeFormat.MAXICODE -> R.color.colorTest
         else -> R.color.colorGoogleGreen
     }

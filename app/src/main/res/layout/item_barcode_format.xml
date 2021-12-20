@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/ClickableBackground"
-    >
-    <TextView
+    style="@style/ClickableBackground">
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_view_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -18,8 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/check_box"
         style="@style/DefaultTextViewStyle"
-        tools:text="Textffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-        />
+        tools:text="Textffffffffffffffffffffffffffffffffffffffffffffffffffffff"/>
     <View
         android:id="@+id/delimiter"
         android:layout_width="0dp"
@@ -29,9 +27,8 @@
         app:layout_constraintStart_toStartOf="@id/text_view_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_text"
-        android:background="@color/colorAccent"
-        />
-    <CheckBox
+        android:background="@color/colorAccent"/>
+    <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +36,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/delimiter"
         app:layout_constraintEnd_toEndOf="parent"
-        android:theme="@style/RadioButtonTheme"
-        android:background="@null"
-        />
+        android:background="@null"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

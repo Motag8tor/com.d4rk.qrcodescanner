@@ -1,13 +1,10 @@
 package com.d4rk.qrcodescanner.usecase
-
 import com.d4rk.qrcodescanner.model.Barcode
 import com.d4rk.qrcodescanner.model.schema.*
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import com.google.zxing.ResultMetadataType
-
 object BarcodeParser {
-
     fun parseResult(result: Result): Barcode {
         val schema = parseSchema(result.barcodeFormat, result.text)
         return Barcode(
@@ -20,12 +17,10 @@ object BarcodeParser {
             country = result.resultMetadata?.get(ResultMetadataType.POSSIBLE_COUNTRY) as? String
         )
     }
-
     fun parseSchema(format: BarcodeFormat, text: String): Schema {
         if (format != BarcodeFormat.QR_CODE) {
             return Other(text)
         }
-
         return App.parse(text)
             ?: Youtube.parse(text)
             ?: GoogleMaps.parse(text)
@@ -42,6 +37,7 @@ object BarcodeParser {
             ?: MeCard.parse(text)
             ?: VCard.parse(text)
             ?: OtpAuth.parse(text)
+            ?: NZCovidTracer.parse(text)
             ?: Other(text)
     }
 }

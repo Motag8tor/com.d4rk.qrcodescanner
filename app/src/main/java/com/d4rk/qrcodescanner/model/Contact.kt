@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.model
-
 class Contact {
     var firstName: String? = null
     var middleName: String? = null

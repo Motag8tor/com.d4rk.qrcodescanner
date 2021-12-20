@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     style="@style/ClickableBackground">
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_view_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -26,9 +26,8 @@
         android:layout_marginEnd="@dimen/default_margin"
         app:layout_constraintStart_toStartOf="@id/text_view_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_view_text"
-        android:background="@color/colorSecondary"/>
-    <RadioButton
+        app:layout_constraintTop_toBottomOf="@id/text_view_text"/>
+    <androidx.appcompat.widget.AppCompatRadioButton
         android:id="@+id/radio_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,6 +35,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/delimiter"
         app:layout_constraintEnd_toEndOf="parent"
-        android:theme="@style/RadioButtonTheme"
         android:background="@null"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

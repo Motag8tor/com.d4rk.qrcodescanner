@@ -22,7 +22,6 @@ object BarcodeImageGenerator {
             try {
                 emitter.onSuccess(generateBitmap(barcode, width, height, margin, codeColor, backgroundColor))
             } catch (ex: Exception) {
-                Logger.log(ex)
                 emitter.onError(ex)
             }
         }
@@ -53,7 +52,6 @@ object BarcodeImageGenerator {
             try {
                 emitter.onSuccess(generateSvg(barcode, width, height, margin))
             } catch (ex: Exception) {
-                Logger.log(ex)
                 emitter.onError(ex)
             }
         }

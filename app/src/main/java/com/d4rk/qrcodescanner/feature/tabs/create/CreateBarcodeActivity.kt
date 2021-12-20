@@ -22,7 +22,6 @@ import com.d4rk.qrcodescanner.model.Barcode
 import com.d4rk.qrcodescanner.model.schema.App
 import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.d4rk.qrcodescanner.model.schema.Schema
-import com.d4rk.qrcodescanner.usecase.Logger
 import com.d4rk.qrcodescanner.usecase.save
 import com.google.zxing.BarcodeFormat
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -146,7 +145,6 @@ class CreateBarcodeActivity : BaseActivity(), AppAdapter.Listener {
         val stream = try {
             contentResolver.openInputStream(uri) ?: return null
         } catch (e: Exception) {
-            Logger.log(e)
             return null
         }
         val fileContent = StringBuilder("")
@@ -156,7 +154,6 @@ class CreateBarcodeActivity : BaseActivity(), AppAdapter.Listener {
                 fileContent.append(ch.toChar())
             }
         } catch (e: Exception) {
-            Logger.log(e)
         }
         stream.close()
         return fileContent.toString()

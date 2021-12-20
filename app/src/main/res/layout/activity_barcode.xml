@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.google.android.material.appbar.AppBarLayout
+        android:background="@android:color/transparent"
         style="@style/AppBarLayoutStyle">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -41,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin_small"
                 android:orientation="horizontal">
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_view_date"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -50,18 +51,17 @@
                     tools:text="01.09.1993 12:00"
                     android:layout_gravity="center"
                     style="@style/SecondaryTextViewStyle"/>
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/button_edit_name"
                     android:layout_width="@dimen/icon_edit_barcode_name_size"
                     android:layout_height="@dimen/icon_edit_barcode_name_size"
                     android:layout_marginEnd="@dimen/default_margin"
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/ic_edit"
-                    app:tint="@color/colorPrimaryText"
                     android:visibility="gone"
                     tools:visibility="visible"/>
             </LinearLayout>
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_barcode_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 android:layout_marginHorizontal="@dimen/default_margin"
                 tools:text="Name"
                 style="@style/DefaultTextViewStyle"/>
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_barcode_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,9 +78,8 @@
                 android:lineSpacingMultiplier="1.2"
                 android:autoLink="all"
                 android:textColorLink="@color/colorAccent"
-                tools:text="Content"
-                style="@style/LargeTextViewStyle"/>
-            <TextView
+                tools:text="Content"/>
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_country"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,33 +93,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/default_margin_medium"/>
-            <com.d4rk.qrcodescanner.feature.common.view.IconButton
-                android:id="@+id/button_search_on_rate_and_goods"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:icon="@drawable/ic_search"
-                app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_search_on_rate_and_goods"
-                android:visibility="gone"
-                tools:visibility="visible"/>
-            <com.d4rk.qrcodescanner.feature.common.view.IconButton
-                android:id="@+id/button_search_on_amazon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:icon="@drawable/ic_search"
-                app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_search_on_amazon"
-                android:visibility="gone"
-                tools:visibility="visible"/>
-            <com.d4rk.qrcodescanner.feature.common.view.IconButton
-                android:id="@+id/button_search_on_ebay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:icon="@drawable/ic_search"
-                app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_search_on_ebay"
-                android:visibility="gone"
-                tools:visibility="visible"/>
             <com.d4rk.qrcodescanner.feature.common.view.IconButton
                 android:id="@+id/button_search_on_web"
                 android:layout_width="match_parent"

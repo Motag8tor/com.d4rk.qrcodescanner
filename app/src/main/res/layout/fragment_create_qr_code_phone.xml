@@ -6,9 +6,8 @@
     android:paddingTop="@dimen/default_margin_small"
     android:paddingHorizontal="@dimen/default_margin"
     android:paddingBottom="@dimen/default_margin"
-    android:orientation="vertical"
-    >
-    <EditText
+    android:orientation="vertical">
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +18,5 @@
         android:imeOptions="actionDone"
         android:backgroundTint="@color/colorAccent"
         android:inputType="phone"
-        android:digits="+0123456789"
-        style="@style/EditTextStyle"
-        />
+        android:digits="+0123456789"/>
 </LinearLayout>

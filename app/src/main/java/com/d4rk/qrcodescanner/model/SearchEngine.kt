@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.model
-
 enum class SearchEngine(val templateUrl: String) {
     NONE(""),
     ASK_EVERY_TIME(""),

@@ -27,7 +27,7 @@ class ConfirmBarcodeDialogFragment : DialogFragment() {
         val listener = parentFragment as? Listener
         val barcode = arguments?.getSerializable(BARCODE_KEY) as? Barcode ?: throw IllegalArgumentException("No barcode passed")
         val messageId = barcode.format.toStringId()
-        val dialog = AlertDialog.Builder(requireActivity(), R.style.DialogTheme)
+        val dialog = AlertDialog.Builder(requireActivity())
             .setTitle(R.string.dialog_confirm_barcode_title)
             .setMessage(messageId)
             .setCancelable(false)

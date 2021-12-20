@@ -5,7 +5,6 @@ class Geo : Schema {
     companion object {
         private const val PREFIX = "geo:"
         private const val SEPARATOR = ","
-
         fun parse(text: String): Geo? {
             if (text.startsWithIgnoreCase(PREFIX).not()) {
                 return null

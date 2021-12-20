@@ -6,15 +6,11 @@
     android:paddingTop="@dimen/default_margin_small"
     android:paddingHorizontal="@dimen/default_margin"
     android:paddingBottom="@dimen/default_margin"
-    android:orientation="vertical"
-    >
-
+    android:orientation="vertical">
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextInputLayoutStyle"
-        >
-        <EditText
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edit_text_latitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,20 +19,14 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_location_latitude_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/colorWhite"
             android:inputType="numberSigned"
-            android:digits="-.01234567890"
-            style="@style/EditTextStyle"
-            />
+            android:digits="-.01234567890"/>
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin_small"
-        style="@style/TextInputLayoutStyle"
-        >
-        <EditText
+        android:layout_marginTop="@dimen/default_margin_small">
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edit_text_longitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,20 +35,14 @@
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_location_longitude_hint"
             android:imeOptions="actionNext"
-            android:backgroundTint="@color/colorWhite"
             android:inputType="numberSigned"
-            android:digits="-.01234567890"
-            style="@style/EditTextStyle"
-            />
+            android:digits="-.01234567890"/>
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin_small"
-        style="@style/TextInputLayoutStyle"
-        >
-        <EditText
+        android:layout_marginTop="@dimen/default_margin_small">
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edit_text_altitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,11 +50,8 @@
             android:lines="1"
             android:maxLines="1"
             android:hint="@string/fragment_create_qr_code_location_altitude_hint"
-            android:backgroundTint="@color/colorWhite"
             android:imeOptions="actionDone"
             android:inputType="numberSigned"
-            android:digits="-.01234567890"
-            style="@style/EditTextStyle"
-            />
+            android:digits="-.01234567890"/>
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

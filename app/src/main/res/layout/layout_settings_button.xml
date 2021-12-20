@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/default_margin"
     style="@style/ClickableBackground">
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_view_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,10 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/switch_button"
         style="@style/DefaultTextViewStyle"
-        android:textColor="@color/colorPrimaryText"
-        tools:text="Textffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-        />
-    <TextView
+        tools:text="Textffffffffffffffffffffffffffffffffffffffffffffffffffffff"/>
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_view_hint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -30,8 +28,7 @@
         app:layout_constraintEnd_toStartOf="@id/switch_button"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textSize="@dimen/default_text_size_small2"
-        tools:text="Hint"
-        style="@style/SmallTextViewStyle"/>
+        tools:text="Hint"/>
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_button"
         android:layout_width="wrap_content"
@@ -39,6 +36,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@null"
-        android:theme="@style/SwitchTheme"/>
+        android:background="@null"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

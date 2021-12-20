@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.google.android.material.appbar.AppBarLayout
+        android:background="@android:color/transparent"
         android:id="@+id/app_bar_layout"
         style="@style/AppBarLayoutStyle">
         <androidx.appcompat.widget.Toolbar
@@ -21,7 +22,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/default_margin"
             android:orientation="vertical">
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,7 +30,7 @@
                 android:textSize="@dimen/default_text_size_very_large"
                 app:autoSizeTextType="uniform"
                 style="@style/DefaultTextViewStyle"/>
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_counter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,15 +38,14 @@
                 android:gravity="center"
                 android:visibility="gone"
                 style="@style/DefaultTextViewStyle"/>
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_refresh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
                 android:visibility="gone"
-                android:text="@string/activity_barcode_otp_refresh_otp"
-                style="@style/ButtonStyle"/>
-            <TextView
+                android:text="@string/activity_barcode_otp_refresh_otp"/>
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_timer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
