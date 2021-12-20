@@ -12,7 +12,7 @@ android {
         applicationId "com.d4rk.qrcodescanner"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 5
+        versionCode 6
         versionName '1.0_r1'
         vectorDrawables.useSupportLibrary  true
         archivesBaseName = "com.d4rk.qrcodescanner-v${versionName}"
