@@ -181,7 +181,6 @@ object WifiConnector {
             "WEP" -> connectToWepNetworkOldApi(context, name, password, isHidden)
         }
     }
-    @Suppress("DEPRECATION")
     private fun enableWifiIfNeeded(context: Context) {
         context.wifiManager?.apply {
             if (isWifiEnabled.not()) {
@@ -189,7 +188,6 @@ object WifiConnector {
             }
         }
     }
-    @Suppress("DEPRECATION")
     private fun connectToOpenNetworkOldApi(context: Context, name: String, isHidden: Boolean) {
         val wifiConfiguration = WifiConfiguration().apply {
             SSID = name.quote()
@@ -207,7 +205,6 @@ object WifiConnector {
         }
         connect(context, wifiConfiguration)
     }
-    @Suppress("DEPRECATION")
     private fun connectToWpaNetworkOldApi(context: Context, name: String, password: String, isHidden: Boolean) {
         val wifiConfiguration = WifiConfiguration().apply {
             SSID = name.quote()
@@ -225,7 +222,6 @@ object WifiConnector {
         }
         connect(context, wifiConfiguration)
     }
-    @Suppress("DEPRECATION")
     private fun connectToWpa2EapNetworkOldApi(
             context: Context,
             name: String,
@@ -261,7 +257,6 @@ object WifiConnector {
         }
         connect(context, wifiConfiguration)
     }
-    @Suppress("DEPRECATION")
     private fun connectToWepNetworkOldApi(context: Context, name: String, password: String, isHidden: Boolean) {
         val wifiConfiguration = WifiConfiguration().apply {
             SSID = name.quote()
@@ -281,7 +276,6 @@ object WifiConnector {
         }
         connect(context, wifiConfiguration)
     }
-    @Suppress("DEPRECATION")
     private fun connect(context: Context, wifiConfiguration: WifiConfiguration) {
         context.wifiManager?.apply {
             val id = addNetwork(wifiConfiguration)

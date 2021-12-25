@@ -307,7 +307,6 @@ class ScanBarcodeFromCameraFragment : Fragment(), ConfirmBarcodeDialogFragment.L
             }
             metadata[ResultMetadataType.BYTE_SEGMENTS]?.let {
                 var i = 0
-                @Suppress("UNCHECKED_CAST")
                 for (seg in it as Iterable<ByteArray>) {
                     intent.putExtra("SCAN_RESULT_BYTE_SEGMENTS_$i", seg)
                     ++i

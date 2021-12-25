@@ -4,8 +4,9 @@
 
 ![Works with Android](https://img.shields.io/badge/Works%20with-Android-blue)
 ![GitHub issues](https://img.shields.io/github/issues/D4rK7355608/com.d4rk.qrcodescanner)
-![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.qrcodescanner?label=Pull%20requests)
-![GitHub license](https://img.shields.io/github/license/D4rK7355608/com.d4rk.qrcodescannerlabel=License)
+![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.qrcodescanner)
+![GitHub license](https://img.shields.io/github/license/D4rK7355608/com.d4rk.qrcodescanner)
+![code-grade](https://api.codiga.io/project/30506/status/svg)
 
 ## D4rK QR & Bar Code Scanner
 

@@ -1,6 +1,6 @@
 package com.d4rk.qrcodescanner.extension
-import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.d4rk.qrcodescanner.R
+import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 fun BarcodeSchema.toImageId(): Int? {
     return when (this) {
         BarcodeSchema.BOOKMARK -> R.drawable.ic_bookmark

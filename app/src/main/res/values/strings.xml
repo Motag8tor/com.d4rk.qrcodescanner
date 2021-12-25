@@ -29,8 +29,6 @@
 
     <!--Edit barcode name dialog-->
     <string name="dialog_edit_barcode_name_title">Edit name</string>
-    <string name="dialog_edit_barcode_name_positive_button">OK</string>
-    <string name="dialog_edit_barcode_name_negative_button">Cancel</string>
 
     <!--Bottom tabs activity-->
     <string name="activity_bottom_tabs_scan_tab">Scan</string>
@@ -156,11 +154,6 @@
     <string name="fragment_create_qr_code_contact_email_hint">Email</string>
     <string name="fragment_create_qr_code_contact_phone_hint">Phone</string>
     <string name="fragment_create_qr_code_contact_fax_hint">Fax</string>
-    <string name="fragment_create_qr_code_contact_country_hint">Country</string>
-    <string name="fragment_create_qr_code_contact_region_hint">Region/State</string>
-    <string name="fragment_create_qr_code_contact_postcode_hint">Postcode</string>
-    <string name="fragment_create_qr_code_contact_city_hint">City</string>
-    <string name="fragment_create_qr_code_contact_street_hint">Street</string>
     <string name="fragment_create_qr_code_contact_website_hint">Website</string>
     <string name="fragment_create_qr_code_contact_alternative">- Open your contacts app\n- Open an existing contact or create a new one\n- Click \"Share\" from the menu\n- Select this app</string>
 
@@ -230,9 +223,6 @@
     <string name="fragment_settings_advanced_settings">Advanced</string>
     <string name="fragment_settings_choose_search_engines">Search Engines</string>
     <string name="fragment_settings_choose_search_engines_hint">Choose a search engine for web searches</string>
-    <string name="fragment_settings_error_reports">Error reports</string>
-    <string name="fragment_settings_enable_error_reports">Enable error reports</string>
-    <string name="fragment_settings_enable_error_reports_hint">Help us to fix bugs</string>
     <string name="fragment_settings_about">About</string>
     <string name="fragment_settings_check_updates">Check for updates</string>
     <string name="fragment_settings_permissions">Permissions</string>
@@ -284,9 +274,6 @@
     <string name="activity_all_query_all_packages_hint">Used to open source code and find app on Play Store for update.</string>
 
     <!--Barcode activity-->
-    <string name="activity_barcode_search_on_rate_and_goods">Search on Rate&amp;Goods</string>
-    <string name="activity_barcode_search_on_amazon">Search on Amazon</string>
-    <string name="activity_barcode_search_on_ebay">Search on eBay</string>
     <string name="activity_barcode_add_to_calendar">Add to calendar</string>
     <string name="activity_barcode_add_to_contacts">Add to contacts</string>
     <string name="activity_barcode_call_phone">Call %s</string>
@@ -317,8 +304,6 @@
     <string name="activity_barcode_delete">Delete</string>
     <string name="activity_barcode_connecting_to_wifi">Connecting…</string>
     <string name="activity_barcode_copied">Copied to clipboard</string>
-    <string name="activity_barcode_barcode_image_saved">Saved to Gallery</string>
-    <string name="activity_barcode_barcode_text_saved">Saved to Downloads</string>
     <string name="activity_barcode_no_app">No app found for this action</string>
     <string name="activity_barcode_choose_search_engine_dialog_negative_button">Cancel</string>
 
@@ -358,7 +343,6 @@
     <string name="barcode_schema_cryptocurrency">Bitcoin</string>
     <string name="barcode_schema_email">Email</string>
     <string name="barcode_schema_geo">Location</string>
-    <string name="barcode_schema_google_maps">Address</string>
     <string name="barcode_schema_google_play">App</string>
     <string name="barcode_schema_mms">MMS</string>
     <string name="barcode_schema_me_card">Contact (MeCard)</string>

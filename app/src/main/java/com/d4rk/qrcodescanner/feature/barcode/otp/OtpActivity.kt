@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit
 class OtpActivity : BaseActivity() {
     companion object {
         private const val OTP_KEY = "OTP_KEY"
-
         fun start(context: Context, opt: OtpAuth) {
             val intent = Intent(context, OtpActivity::class.java).apply {
                 putExtra(OTP_KEY, opt)

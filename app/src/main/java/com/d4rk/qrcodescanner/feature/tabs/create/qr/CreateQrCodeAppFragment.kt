@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.d4rk.qrcodescanner.R
-import com.d4rk.qrcodescanner.extension.*
+import com.d4rk.qrcodescanner.extension.showError
+import com.d4rk.qrcodescanner.extension.unsafeLazy
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.App
 import com.d4rk.qrcodescanner.model.schema.Schema

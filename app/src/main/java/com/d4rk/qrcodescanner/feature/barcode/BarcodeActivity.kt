@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.print.PrintHelper
+import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.di.*
 import com.d4rk.qrcodescanner.extension.*
 import com.d4rk.qrcodescanner.feature.BaseActivity
@@ -28,7 +29,6 @@ import com.d4rk.qrcodescanner.model.SearchEngine
 import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.d4rk.qrcodescanner.model.schema.OtpAuth
 import com.d4rk.qrcodescanner.usecase.save
-import com.d4rk.qrcodescanner.R
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo

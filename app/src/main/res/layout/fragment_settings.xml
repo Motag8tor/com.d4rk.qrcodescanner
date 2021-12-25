@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_view_appearance_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
@@ -41,9 +40,7 @@
                 android:layout_height="wrap_content"
                 app:text="@string/fragment_settings_inverse_barcode_colors_in_dark_theme"
                 app:hint="@string/fragment_settings_inverse_barcode_colors_in_dark_theme_hint"/>
-            <View
-                android:id="@+id/delimiter_appearance"
-                style="@style/DelimiterStyle"/>
+            <View style="@style/DelimiterStyle"/>
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

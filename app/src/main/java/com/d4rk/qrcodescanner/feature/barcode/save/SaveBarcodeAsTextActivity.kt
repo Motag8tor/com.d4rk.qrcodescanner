@@ -23,9 +23,7 @@ class SaveBarcodeAsTextActivity : BaseActivity() {
     companion object {
         private const val REQUEST_PERMISSIONS_CODE = 101
         private val PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-
         private const val BARCODE_KEY = "BARCODE_KEY"
-
         fun start(context: Context, barcode: Barcode) {
             val intent = Intent(context, SaveBarcodeAsTextActivity::class.java).apply {
                 putExtra(BARCODE_KEY, barcode)

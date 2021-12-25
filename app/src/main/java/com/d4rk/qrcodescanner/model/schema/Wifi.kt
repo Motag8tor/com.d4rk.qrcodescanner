@@ -1,5 +1,8 @@
 package com.d4rk.qrcodescanner.model.schema
-import com.d4rk.qrcodescanner.extension.*
+import com.d4rk.qrcodescanner.extension.appendIfNotNullOrBlank
+import com.d4rk.qrcodescanner.extension.joinToStringNotNullOrBlankWithLineSeparator
+import com.d4rk.qrcodescanner.extension.startsWithIgnoreCase
+import com.d4rk.qrcodescanner.extension.unescape
 import java.util.*
 class Wifi(
     val encryption: String? = null,

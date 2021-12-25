@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.usecase
-import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
@@ -7,7 +6,6 @@ import android.database.Cursor
 import android.provider.ContactsContract
 import com.d4rk.qrcodescanner.extension.orZero
 import com.d4rk.qrcodescanner.model.Contact
-@SuppressLint("Range")
 object ContactHelper {
     private val PHONE_PROJECTION = arrayOf(ContactsContract.CommonDataKinds.Phone.NUMBER)
     private val CONTACT_PROJECTION = arrayOf(ContactsContract.Data.LOOKUP_KEY)

@@ -130,7 +130,6 @@ object BarcodeSaver {
             openFileOutputStreamNewSdk(context, fileName, mimeType)
         }
     }
-    @Suppress("DEPRECATION")
     private fun openFileOutputStreamOldSdk(fileName: String): OutputStream {
         val dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
         val file = File(dir, fileName)

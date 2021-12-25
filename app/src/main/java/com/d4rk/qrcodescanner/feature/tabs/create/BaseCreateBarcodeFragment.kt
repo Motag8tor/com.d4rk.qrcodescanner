@@ -1,6 +1,6 @@
 package com.d4rk.qrcodescanner.feature.tabs.create
 import androidx.fragment.app.Fragment
-import com.d4rk.qrcodescanner.extension.*
+import com.d4rk.qrcodescanner.extension.unsafeLazy
 import com.d4rk.qrcodescanner.model.Contact
 import com.d4rk.qrcodescanner.model.schema.Other
 import com.d4rk.qrcodescanner.model.schema.Schema

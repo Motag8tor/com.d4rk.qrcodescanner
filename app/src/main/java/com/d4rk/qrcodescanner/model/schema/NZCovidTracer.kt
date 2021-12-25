@@ -5,7 +5,6 @@ import com.d4rk.qrcodescanner.extension.startsWithIgnoreCase
 import org.apache.commons.codec.binary.Base64
 import org.json.JSONException
 import org.json.JSONObject
-import java.lang.Exception
 class NZCovidTracer(
     val title: String? = null,
     val addr: String? = null,
@@ -17,9 +16,9 @@ class NZCovidTracer(
             if (text.startsWithIgnoreCase(PREFIX).not()) {
                 return null
             }
-            var title: String? = null
-            var addr: String? = null
-            var decodedBytes: String? = null
+            val title: String?
+            var addr: String?
+            val decodedBytes: String?
             try {
                 decodedBytes = String(Base64().decode(text.removePrefixIgnoreCase(PREFIX)))
             }

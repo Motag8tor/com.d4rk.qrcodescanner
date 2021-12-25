@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.extension
-import android.annotation.SuppressLint
 import android.view.View
 import android.view.WindowInsets
 fun View.applySystemWindowInsets(
@@ -9,14 +8,10 @@ fun View.applySystemWindowInsets(
     applyBottom: Boolean = false
 ) {
     doOnApplyWindowInsets { view, insets, padding ->
-        val left = if (applyLeft)
-            insets.systemWindowInsetLeft else 0
-        val top = if (applyTop)
-            insets.systemWindowInsetTop else 0
-        val right = if (applyRight)
-            insets.systemWindowInsetRight else 0
-        val bottom = if (applyBottom)
-            insets.systemWindowInsetBottom else 0
+        val left = if (applyLeft) insets.systemWindowInsetLeft else 0
+        val top = if (applyTop) insets.systemWindowInsetTop else 0
+        val right = if (applyRight) insets.systemWindowInsetRight else 0
+        val bottom = if (applyBottom) insets.systemWindowInsetBottom else 0
         view.setPadding(
             padding.left + left,
             padding.top + top,
@@ -25,7 +20,6 @@ fun View.applySystemWindowInsets(
         )
     }
 }
-@SuppressLint("RestrictedApi")
 fun View.doOnApplyWindowInsets(f: (View, WindowInsets, InitialPadding) -> Unit) {
     val initialPadding = recordInitialPaddingForView(this)
     setOnApplyWindowInsetsListener { v, insets ->
