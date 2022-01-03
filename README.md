@@ -35,7 +35,7 @@ height="90">](https://www.deviantart.com/d4rk7355608)
 alt="PayPall"
 height="90">](https://bit.ly/D4rK-S-A-D)
 
-It uses the [ZXing][zxing] scanning library. Is compatible with Material-You design on Android 12+ devices with changeable themes in settings.
+It uses the [ZXing](https://github.com/zxing/zxing) scanning library. Is compatible with Material-You design on Android 12+ devices with changeable themes in settings.
 You can customize you app experience, like preferred camera or preferred theme using app settings.
 
 Bugs can be reported here.
@@ -54,41 +54,41 @@ __🖤 D4rK QR & Bar Code Scanner is 100% free, open-source inspired by QrAndBar
 <details>
   <summary>The app can read the following barcode formats:</summary>
 
-* [AZTEC][aztec]
-* [CODABAR][codabar]
-* [CODE-39][code_39]
-* [CODE-93][code_93]
-* [CODE-128][code_128]
-* [DATA MATRIX][data_matrix]
-* [EAN-8][ean_8]
-* [EAN-13][ean_13]
-* [ITF][itf]
-* [PDF417][pdf417]
-* [QR CODE][qr_code]
-* [RSS 14][rss]
-* [RSS EXPANDED][rss]
-* [UPC-A][upc_a]
-* [UPC-E][upc_e]
-* [UPC-EAN EXTENSION][upc_ean]
+* [AZTEC](https://en.wikipedia.org/wiki/Aztec_Code)
+* [CODABAR](https://en.wikipedia.org/wiki/Codabar)
+* [CODE-39](https://en.wikipedia.org/wiki/Code_39)
+* [CODE-128](https://en.wikipedia.org/wiki/Code_128)
+* [DATA MATRIX](https://en.wikipedia.org/wiki/Data_Matrix)
+* [EAN-8](https://en.wikipedia.org/wiki/EAN-8)
+* [EAN-13]( https://en.wikipedia.org/wiki/International_Article_Number)
+* [ITF](https://en.wikipedia.org/wiki/Interleaved_2_of_5)
+* [PDF417](https://en.wikipedia.org/wiki/PDF417)
+* [QR CODE](https://en.wikipedia.org/wiki/QR_code)
+* [RSS 14](https://en.wikipedia.org/wiki/GS1_DataBar)
+* [RSS EXPANDED](https://en.wikipedia.org/wiki/GS1_DataBar)
+* [UPC-A](https://en.wikipedia.org/wiki/Universal_Product_Code)
+* [UPC-E](https://en.wikipedia.org/wiki/Universal_Product_Code#UPC-E)
+* [UPC-EAN EXTENSION](https://en.wikipedia.org/wiki/Universal_Product_Code#EAN-13)
 
 ### Create
 
 The app can create the following barcode formats:
-* [AZTEC][aztec]
-* [CODABAR][codabar]
-* [CODE 39][code_39]
-* [CODE 93][code_93]
-* [CODE 128][code_128]
-* [DATA MATRIX][data_matrix]
-* [EAN-8][ean_8]
-* [EAN-13][ean_13]
-* [ITF][itf]
-* [PDF417][pdf417]
-* [QR CODE][qr_code]
-* [UPC-A][upc_a]
-* [UPC-E][upc_e]
+* [AZTEC](https://en.wikipedia.org/wiki/Aztec_Code)
+* [CODABAR](https://en.wikipedia.org/wiki/Codabar)
+* [CODE 39](https://en.wikipedia.org/wiki/Code_39)
+* [CODE 128](https://en.wikipedia.org/wiki/Code_128)
+* [DATA MATRIX](https://en.wikipedia.org/wiki/Data_Matrix)
+* [EAN-8](https://en.wikipedia.org/wiki/EAN-8)
+* [EAN-13](https://en.wikipedia.org/wiki/International_Article_Number)
+* [ITF](https://en.wikipedia.org/wiki/Interleaved_2_of_5)
+* [PDF417](https://en.wikipedia.org/wiki/PDF417)
+* [QR CODE](https://en.wikipedia.org/wiki/QR_code)
+* [UPC-A](https://en.wikipedia.org/wiki/Universal_Product_Code)
+* [UPC-E](https://en.wikipedia.org/wiki/Universal_Product_Code#UPC-E)
 
 </details>
+
+## Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.qrcodescanner/master/CHANGELOG.md)!
 
 ## Screenshots:
 
@@ -101,26 +101,6 @@ The app can create the following barcode formats:
 
 </details>
 
-
-__Privacy Policy:__ https://bit.ly/qrcodescannerprivacypolicy
+__Privacy Policy__ [here](https://bit.ly/qrcodescannerprivacypolicy).
 
 ![license](https://imgur.com/QQlcEVT.png)
-
-[zxing]: https://github.com/zxing/zxing
-[aztec]: https://en.wikipedia.org/wiki/Aztec_Code
-[codabar]: https://en.wikipedia.org/wiki/Codabar
-[code_39]: https://en.wikipedia.org/wiki/Code_39
-[code_93]: https://en.wikipedia.org/wiki/Code_93
-[code_128]: https://en.wikipedia.org/wiki/Code_128
-[data_matrix]: https://en.wikipedia.org/wiki/Data_Matrix
-[ean_8]: https://en.wikipedia.org/wiki/EAN-8
-[ean_13]: https://en.wikipedia.org/wiki/International_Article_Number
-[itf]: https://en.wikipedia.org/wiki/Interleaved_2_of_5
-[maxicode]: https://en.wikipedia.org/wiki/MaxiCode
-[pdf417]: https://en.wikipedia.org/wiki/PDF417
-[qr_code]: https://en.wikipedia.org/wiki/QR_code
-[rss]: https://en.wikipedia.org/wiki/GS1_DataBar
-[upc_a]: https://en.wikipedia.org/wiki/Universal_Product_Code
-[upc_e]: https://en.wikipedia.org/wiki/Universal_Product_Code#UPC-E
-[upc_ean]: https://en.wikipedia.org/wiki/Universal_Product_Code#EAN-13
-[rs]: https://developer.android.com/guide/topics/renderscript/compute

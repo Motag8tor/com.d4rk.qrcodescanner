@@ -10,7 +10,16 @@ import com.d4rk.qrcodescanner.extension.unsafeLazy
 import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.feature.common.view.SettingsRadioButton
 import com.d4rk.qrcodescanner.model.SearchEngine
-import kotlinx.android.synthetic.main.activity_choose_search_engine.*
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_ask_every_time
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_bing
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_duck_duck_go
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_google
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_none
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_qwant
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_yahoo
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_yandex
+import kotlinx.android.synthetic.main.activity_choose_search_engine.root_view
+import kotlinx.android.synthetic.main.activity_choose_search_engine.toolbar
 class ChooseSearchEngineActivity : BaseActivity() {
     companion object {
         fun start(context: Context) {

@@ -11,9 +11,14 @@ import com.d4rk.qrcodescanner.extension.toStringId
 import com.d4rk.qrcodescanner.extension.unsafeLazy
 import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.model.Barcode
-import kotlinx.android.synthetic.main.activity_barcode_image.*
+import kotlinx.android.synthetic.main.activity_barcode_image.root_view
+import kotlinx.android.synthetic.main.activity_barcode_image.toolbar
+import kotlinx.android.synthetic.main.activity_barcode_image.image_view_barcode
+import kotlinx.android.synthetic.main.activity_barcode_image.text_view_date
+import kotlinx.android.synthetic.main.activity_barcode_image.layout_barcode_image_background
+import kotlinx.android.synthetic.main.activity_barcode_image.text_view_barcode_text
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 class BarcodeImageActivity : BaseActivity() {
     companion object {
         private const val BARCODE_KEY = "BARCODE_KEY"

@@ -5,7 +5,8 @@ import android.os.Bundle
 import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.extension.applySystemWindowInsets
 import com.d4rk.qrcodescanner.feature.BaseActivity
-import kotlinx.android.synthetic.main.activity_all_permissions.*
+import kotlinx.android.synthetic.main.activity_all_permissions.toolbar
+import kotlinx.android.synthetic.main.activity_all_permissions.root_view
 class AllPermissionsActivity : BaseActivity() {
     companion object {
         fun start(context: Context) {

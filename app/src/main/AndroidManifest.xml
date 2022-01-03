@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:logo="@mipmap/ic_launcher_foreground"
+        android:logo="@drawable/ic_launcher_foreground"
         android:supportsRtl="true"
         android:appCategory="image"
         android:hardwareAccelerated="true"
@@ -30,6 +30,18 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:name=".feature.tabs.BottomTabsActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="fullSensor"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN"/>
             </intent-filter>
         </activity>
         <provider
@@ -51,19 +63,6 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-        <activity
-            android:name=".feature.tabs.BottomTabsActivity"
-            android:configChanges="orientation|screenSize"
-            android:screenOrientation="fullSensor"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.zxing.client.android.SCAN"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
-        </activity>
         <activity
             android:name=".feature.tabs.scan.file.ScanBarcodeFromFileActivity"
             android:configChanges="orientation|screenSize"

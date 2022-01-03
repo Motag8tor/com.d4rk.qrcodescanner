@@ -2,7 +2,7 @@ package com.d4rk.qrcodescanner.extension
 import android.provider.ContactsContract
 import dev.turingcomplete.kotlinonetimepassword.HmacAlgorithm
 import org.apache.commons.codec.binary.Base32
-import java.util.*
+import java.util.Locale
 private val escapedRegex = """\\([\\;,":])""".toRegex()
 fun String.unescape(): String {
     return replace(escapedRegex) { escaped ->

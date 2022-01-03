@@ -1,7 +1,14 @@
 package com.d4rk.qrcodescanner.usecase
 import android.content.Context
 import androidx.paging.DataSource
-import androidx.room.*
+import androidx.room.TypeConverter
+import androidx.room.Room
+import androidx.room.Query
+import androidx.room.Database
+import androidx.room.Dao
+import androidx.room.RoomDatabase
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.d4rk.qrcodescanner.model.Barcode

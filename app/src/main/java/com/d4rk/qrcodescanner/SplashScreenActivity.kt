@@ -5,6 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.d4rk.qrcodescanner.feature.tabs.BottomTabsActivity
+import com.d4rk.qrcodescanner.di.settings
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,6 +14,9 @@ class SplashScreenActivity : AppCompatActivity() {
             val intent = Intent(this, BottomTabsActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000)
+        }, 2000)
+    }
+    private fun applyTheme() {
+        settings.reapplyTheme()
     }
 }

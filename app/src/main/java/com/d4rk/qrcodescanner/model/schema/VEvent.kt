@@ -1,7 +1,14 @@
 package com.d4rk.qrcodescanner.model.schema
-import com.d4rk.qrcodescanner.extension.*
+import com.d4rk.qrcodescanner.extension.unsafeLazy
+import com.d4rk.qrcodescanner.extension.removePrefixIgnoreCase
+import com.d4rk.qrcodescanner.extension.startsWithIgnoreCase
+import com.d4rk.qrcodescanner.extension.parseOrNull
+import com.d4rk.qrcodescanner.extension.formatOrNull
+import com.d4rk.qrcodescanner.extension.appendIfNotNullOrBlank
+import com.d4rk.qrcodescanner.extension.joinToStringNotNullOrBlankWithLineSeparator
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
+import java.util.TimeZone
 data class VEvent(
     val uid: String? = null,
     val stamp: String? = null,

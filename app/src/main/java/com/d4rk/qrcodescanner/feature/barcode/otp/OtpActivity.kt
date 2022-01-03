@@ -14,7 +14,12 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
-import kotlinx.android.synthetic.main.activity_barcode_otp.*
+import kotlinx.android.synthetic.main.activity_barcode_otp.root_view
+import kotlinx.android.synthetic.main.activity_barcode_otp.toolbar
+import kotlinx.android.synthetic.main.activity_barcode_otp.button_refresh
+import kotlinx.android.synthetic.main.activity_barcode_otp.text_view_counter
+import kotlinx.android.synthetic.main.activity_barcode_otp.text_view_password
+import kotlinx.android.synthetic.main.activity_barcode_otp.text_view_timer
 import java.util.concurrent.TimeUnit
 class OtpActivity : BaseActivity() {
     companion object {

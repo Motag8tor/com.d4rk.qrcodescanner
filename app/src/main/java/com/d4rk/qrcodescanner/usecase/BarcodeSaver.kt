@@ -19,7 +19,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 object BarcodeSaver {
     private const val JSON_MIME_TYPE = "application/json"
     private const val JSON_FILE_EXTENSION = ".json"

@@ -11,7 +11,11 @@ import android.view.MotionEvent.ACTION_UP
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.d4rk.qrcodescanner.R
-import com.d4rk.qrcodescanner.di.*
+import com.d4rk.qrcodescanner.di.permissionsHelper
+import com.d4rk.qrcodescanner.di.barcodeParser
+import com.d4rk.qrcodescanner.di.settings
+import com.d4rk.qrcodescanner.di.barcodeImageScanner
+import com.d4rk.qrcodescanner.di.barcodeDatabase
 import com.d4rk.qrcodescanner.extension.applySystemWindowInsets
 import com.d4rk.qrcodescanner.extension.showError
 import com.d4rk.qrcodescanner.feature.BaseActivity
@@ -24,7 +28,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_scan_barcode_from_file.*
+import kotlinx.android.synthetic.main.activity_scan_barcode_from_file.root_view
+import kotlinx.android.synthetic.main.activity_scan_barcode_from_file.crop_image_view
+import kotlinx.android.synthetic.main.activity_scan_barcode_from_file.button_scan
+import kotlinx.android.synthetic.main.activity_scan_barcode_from_file.toolbar
+import kotlinx.android.synthetic.main.activity_scan_barcode_from_file.progress_bar_loading
 import java.util.concurrent.TimeUnit
 class ScanBarcodeFromFileActivity : BaseActivity() {
     companion object {

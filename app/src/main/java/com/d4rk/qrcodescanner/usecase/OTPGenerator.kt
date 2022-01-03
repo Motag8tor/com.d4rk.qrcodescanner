@@ -2,7 +2,11 @@ package com.d4rk.qrcodescanner.usecase
 import com.d4rk.qrcodescanner.extension.decodeBase32
 import com.d4rk.qrcodescanner.extension.toHmacAlgorithm
 import com.d4rk.qrcodescanner.model.schema.OtpAuth
-import dev.turingcomplete.kotlinonetimepassword.*
+import dev.turingcomplete.kotlinonetimepassword.HmacAlgorithm
+import dev.turingcomplete.kotlinonetimepassword.HmacOneTimePasswordGenerator
+import dev.turingcomplete.kotlinonetimepassword.HmacOneTimePasswordConfig
+import dev.turingcomplete.kotlinonetimepassword.TimeBasedOneTimePasswordConfig
+import dev.turingcomplete.kotlinonetimepassword.TimeBasedOneTimePasswordGenerator
 import java.util.concurrent.TimeUnit
 object OTPGenerator {
     private const val DEFAULT_DIGITS = 6

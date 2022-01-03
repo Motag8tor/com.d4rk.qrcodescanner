@@ -4,7 +4,11 @@ import com.d4rk.qrcodescanner.extension.joinToStringNotNullOrBlankWithLineSepara
 import com.d4rk.qrcodescanner.extension.startsWithIgnoreCase
 import ezvcard.Ezvcard
 import ezvcard.VCardVersion
-import ezvcard.property.*
+import ezvcard.property.Organization
+import ezvcard.property.StructuredName
+import ezvcard.property.Nickname
+import ezvcard.property.Title
+import ezvcard.property.Telephone
 import ezvcard.property.Email
 import ezvcard.property.Url
 data class VCard(

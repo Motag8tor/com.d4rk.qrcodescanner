@@ -7,10 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.d4rk.qrcodescanner.R
-import kotlinx.android.synthetic.main.layout_icon_button_with_delimiter.view.*
+import kotlinx.android.synthetic.main.layout_icon_button_with_delimiter.view.layout_image
+import kotlinx.android.synthetic.main.layout_icon_button_with_delimiter.view.text_view
+import kotlinx.android.synthetic.main.layout_icon_button_with_delimiter.view.image_view_arrow
+import kotlinx.android.synthetic.main.layout_icon_button_with_delimiter.view.delimiter
+import kotlinx.android.synthetic.main.layout_icon_button_with_delimiter.view.image_view_schema
 class IconButtonWithDelimiter : FrameLayout {
     private val view: View = LayoutInflater
         .from(context)
@@ -33,7 +38,7 @@ class IconButtonWithDelimiter : FrameLayout {
         view.image_view_schema.setImageDrawable(icon)
     }
     private fun showIconBackgroundColor(attributes: TypedArray) {
-        val color = attributes.getColor(R.styleable.IconButtonWithDelimiter_iconBackground, view.context.resources.getColor(R.color.colorGoogleGreen))
+        val color = attributes.getColor(R.styleable.IconButtonWithDelimiter_iconBackground, ContextCompat.getColor(context, R.color.colorGoogleGreen))
         (view.layout_image.background.mutate() as GradientDrawable).setColor(color)
     }
     private fun showText(attributes: TypedArray) {

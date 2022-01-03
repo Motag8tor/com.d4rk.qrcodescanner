@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.multidex.BuildConfig
+import com.d4rk.qrcodescanner.BuildConfig
 import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.di.barcodeDatabase
 import com.d4rk.qrcodescanner.di.settings
@@ -23,7 +23,27 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_settings.*
+import kotlinx.android.synthetic.main.fragment_settings.app_bar_layout
+import kotlinx.android.synthetic.main.fragment_settings.button_app_version
+import kotlinx.android.synthetic.main.fragment_settings.button_check_updates
+import kotlinx.android.synthetic.main.fragment_settings.button_choose_camera
+import kotlinx.android.synthetic.main.fragment_settings.button_choose_search_engine
+import kotlinx.android.synthetic.main.fragment_settings.button_choose_theme
+import kotlinx.android.synthetic.main.fragment_settings.button_clear_history
+import kotlinx.android.synthetic.main.fragment_settings.button_confirm_scans_manually
+import kotlinx.android.synthetic.main.fragment_settings.button_continuous_scanning
+import kotlinx.android.synthetic.main.fragment_settings.button_copy_to_clipboard
+import kotlinx.android.synthetic.main.fragment_settings.button_do_not_save_duplicates
+import kotlinx.android.synthetic.main.fragment_settings.button_flashlight
+import kotlinx.android.synthetic.main.fragment_settings.button_inverse_barcode_colors_in_dark_theme
+import kotlinx.android.synthetic.main.fragment_settings.button_open_links_automatically
+import kotlinx.android.synthetic.main.fragment_settings.button_permissions
+import kotlinx.android.synthetic.main.fragment_settings.button_simple_auto_focus
+import kotlinx.android.synthetic.main.fragment_settings.button_save_scanned_barcodes
+import kotlinx.android.synthetic.main.fragment_settings.button_vibrate
+import kotlinx.android.synthetic.main.fragment_settings.button_select_supported_formats
+import kotlinx.android.synthetic.main.fragment_settings.button_source_code
+import kotlinx.android.synthetic.main.fragment_settings.button_save_created_barcodes
 class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
     private val disposable = CompositeDisposable()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -118,7 +138,7 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         }
     }
     private fun showSourceCode() {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/D4rK7355608/com.d4rk.qrcodescanner"))
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://bit.ly/qrcodescannergithub"))
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }

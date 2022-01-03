@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.model
-
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
@@ -7,7 +6,6 @@ import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.d4rk.qrcodescanner.usecase.BarcodeDatabaseTypeConverter
 import com.google.zxing.BarcodeFormat
 import java.io.Serializable
-
 @Entity(tableName = "codes")
 @TypeConverters(BarcodeDatabaseTypeConverter::class)
 data class Barcode(

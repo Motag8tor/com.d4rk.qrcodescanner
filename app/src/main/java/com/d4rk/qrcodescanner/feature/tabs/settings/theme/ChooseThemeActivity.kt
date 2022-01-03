@@ -9,7 +9,11 @@ import com.d4rk.qrcodescanner.extension.applySystemWindowInsets
 import com.d4rk.qrcodescanner.extension.unsafeLazy
 import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.usecase.Settings
-import kotlinx.android.synthetic.main.activity_choose_theme.*
+import kotlinx.android.synthetic.main.activity_choose_theme.button_dark_theme
+import kotlinx.android.synthetic.main.activity_choose_theme.button_light_theme
+import kotlinx.android.synthetic.main.activity_choose_theme.button_system_theme
+import kotlinx.android.synthetic.main.activity_choose_theme.toolbar
+import kotlinx.android.synthetic.main.activity_choose_theme.root_view
 class ChooseThemeActivity : BaseActivity() {
     companion object {
         fun start(context: Context) {

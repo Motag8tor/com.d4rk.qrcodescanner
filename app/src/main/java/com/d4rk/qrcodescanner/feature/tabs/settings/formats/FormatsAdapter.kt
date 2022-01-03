@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.extension.toStringId
 import com.google.zxing.BarcodeFormat
-import kotlinx.android.synthetic.main.item_barcode_format.view.*
+import kotlinx.android.synthetic.main.item_barcode_format.view.delimiter
+import kotlinx.android.synthetic.main.item_barcode_format.view.check_box
+import kotlinx.android.synthetic.main.item_barcode_format.view.text_view_text
 class FormatsAdapter(
     private val listener: Listener,
     private val formats: List<BarcodeFormat>,

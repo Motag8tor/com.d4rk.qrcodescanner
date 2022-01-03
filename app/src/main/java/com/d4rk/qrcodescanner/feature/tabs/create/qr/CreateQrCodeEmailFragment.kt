@@ -10,7 +10,9 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Email
 import com.d4rk.qrcodescanner.model.schema.Schema
-import kotlinx.android.synthetic.main.fragment_create_qr_code_email.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_email.edit_text_email
+import kotlinx.android.synthetic.main.fragment_create_qr_code_email.edit_text_message
+import kotlinx.android.synthetic.main.fragment_create_qr_code_email.edit_text_subject
 class CreateQrCodeEmailFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_email, container, false)

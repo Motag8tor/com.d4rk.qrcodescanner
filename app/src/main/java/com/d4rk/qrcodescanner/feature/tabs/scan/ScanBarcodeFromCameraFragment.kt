@@ -11,10 +11,22 @@ import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.budiyev.android.codescanner.*
+import com.budiyev.android.codescanner.CodeScanner
+import com.budiyev.android.codescanner.AutoFocusMode
+import com.budiyev.android.codescanner.ErrorCallback
+import com.budiyev.android.codescanner.ScanMode
+import com.budiyev.android.codescanner.DecodeCallback
 import com.d4rk.qrcodescanner.R
-import com.d4rk.qrcodescanner.di.*
-import com.d4rk.qrcodescanner.extension.*
+import com.d4rk.qrcodescanner.di.barcodeDatabase
+import com.d4rk.qrcodescanner.di.scannerCameraHelper
+import com.d4rk.qrcodescanner.di.barcodeParser
+import com.d4rk.qrcodescanner.di.permissionsHelper
+import com.d4rk.qrcodescanner.di.settings
+import com.d4rk.qrcodescanner.extension.applySystemWindowInsets
+import com.d4rk.qrcodescanner.extension.showError
+import com.d4rk.qrcodescanner.extension.equalTo
+import com.d4rk.qrcodescanner.extension.vibrator
+import com.d4rk.qrcodescanner.extension.vibrateOnce
 import com.d4rk.qrcodescanner.feature.barcode.BarcodeActivity
 import com.d4rk.qrcodescanner.feature.common.dialog.ConfirmBarcodeDialogFragment
 import com.d4rk.qrcodescanner.feature.tabs.scan.file.ScanBarcodeFromFileActivity
@@ -28,7 +40,14 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.*
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.image_view_flash
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.scanner_view
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.seek_bar_zoom
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.image_view_scan_from_file
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.button_decrease_zoom
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.button_increase_zoom
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.layout_flash_container
+import kotlinx.android.synthetic.main.fragment_scan_barcode_from_camera.layout_scan_from_file_container
 import java.util.concurrent.TimeUnit
 class ScanBarcodeFromCameraFragment : Fragment(), ConfirmBarcodeDialogFragment.Listener {
     companion object {
@@ -306,10 +325,8 @@ class ScanBarcodeFromCameraFragment : Fragment(), ConfirmBarcodeDialogFragment.L
                 intent.putExtra("SCAN_RESULT_UPC_EAN_EXTENSION", it.toString())
             }
             metadata[ResultMetadataType.BYTE_SEGMENTS]?.let {
-                var i = 0
-                for (seg in it as Iterable<ByteArray>) {
+                for ((i, seg) in (it as Iterable<ByteArray>).withIndex()) {
                     intent.putExtra("SCAN_RESULT_BYTE_SEGMENTS_$i", seg)
-                    ++i
                 }
             }
         }

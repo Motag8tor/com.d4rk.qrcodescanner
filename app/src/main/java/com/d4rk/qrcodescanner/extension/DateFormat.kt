@@ -1,6 +1,6 @@
 package com.d4rk.qrcodescanner.extension
 import java.text.DateFormat
-import java.util.*
+import java.util.Date
 fun DateFormat.parseOrNull(date: String?): Date? {
     return try {
         parse(date.orEmpty())

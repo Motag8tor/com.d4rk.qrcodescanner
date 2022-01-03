@@ -14,7 +14,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_barcode_history.*
+import kotlinx.android.synthetic.main.fragment_barcode_history.app_bar_layout
+import kotlinx.android.synthetic.main.fragment_barcode_history.view_pager
+import kotlinx.android.synthetic.main.fragment_barcode_history.toolbar
+import kotlinx.android.synthetic.main.fragment_barcode_history.tab_layout
 class BarcodeHistoryFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
     private val disposable = CompositeDisposable()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

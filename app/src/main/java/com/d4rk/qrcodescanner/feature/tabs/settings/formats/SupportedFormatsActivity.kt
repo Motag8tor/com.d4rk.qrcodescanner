@@ -10,7 +10,9 @@ import com.d4rk.qrcodescanner.extension.unsafeLazy
 import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.usecase.SupportedBarcodeFormats
 import com.google.zxing.BarcodeFormat
-import kotlinx.android.synthetic.main.activity_supported_formats.*
+import kotlinx.android.synthetic.main.activity_supported_formats.root_view
+import kotlinx.android.synthetic.main.activity_supported_formats.recycler_view_formats
+import kotlinx.android.synthetic.main.activity_supported_formats.toolbar
 class SupportedFormatsActivity : BaseActivity(), FormatsAdapter.Listener {
     companion object {
         fun start(context: Context) {

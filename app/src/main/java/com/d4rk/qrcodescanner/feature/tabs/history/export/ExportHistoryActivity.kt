@@ -20,7 +20,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_export_history.*
+import kotlinx.android.synthetic.main.activity_export_history.root_view
+import kotlinx.android.synthetic.main.activity_export_history.toolbar
+import kotlinx.android.synthetic.main.activity_export_history.spinner_export_as
+import kotlinx.android.synthetic.main.activity_export_history.edit_text_file_name
+import kotlinx.android.synthetic.main.activity_export_history.button_export
+import kotlinx.android.synthetic.main.activity_export_history.scroll_view
+import kotlinx.android.synthetic.main.activity_export_history.progress_bar_loading
 class ExportHistoryActivity : BaseActivity() {
     private val disposable = CompositeDisposable()
     companion object {

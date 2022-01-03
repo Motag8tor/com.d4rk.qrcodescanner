@@ -12,7 +12,15 @@ import com.d4rk.qrcodescanner.feature.tabs.create.barcode.CreateBarcodeAllActivi
 import com.d4rk.qrcodescanner.feature.tabs.create.qr.CreateQrCodeAllActivity
 import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.google.zxing.BarcodeFormat
-import kotlinx.android.synthetic.main.fragment_create_barcode.*
+import kotlinx.android.synthetic.main.fragment_create_barcode.app_bar_layout
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_clipboard
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_text
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_wifi
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_url
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_location
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_contact_vcard
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_show_all_qr_code
+import kotlinx.android.synthetic.main.fragment_create_barcode.button_create_barcode
 class CreateBarcodeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_barcode, container, false)

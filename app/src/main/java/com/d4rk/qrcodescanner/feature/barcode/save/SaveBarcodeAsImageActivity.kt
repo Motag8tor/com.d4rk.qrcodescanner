@@ -19,7 +19,12 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_save_barcode_as_image.*
+import kotlinx.android.synthetic.main.activity_save_barcode_as_image.root_view
+import kotlinx.android.synthetic.main.activity_save_barcode_as_image.toolbar
+import kotlinx.android.synthetic.main.activity_save_barcode_as_image.button_save
+import kotlinx.android.synthetic.main.activity_save_barcode_as_image.spinner_save_as
+import kotlinx.android.synthetic.main.activity_save_barcode_as_image.progress_bar_loading
+import kotlinx.android.synthetic.main.activity_save_barcode_as_image.scroll_view
 class SaveBarcodeAsImageActivity : BaseActivity() {
     companion object {
         private const val REQUEST_PERMISSIONS_CODE = 101

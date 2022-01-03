@@ -11,7 +11,7 @@ import com.d4rk.qrcodescanner.feature.tabs.history.BarcodeHistoryFragment
 import com.d4rk.qrcodescanner.feature.tabs.scan.ScanBarcodeFromCameraFragment
 import com.d4rk.qrcodescanner.feature.tabs.settings.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_bottom_tabs.*
+import kotlinx.android.synthetic.main.activity_bottom_tabs.bottom_navigation_view
 class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     companion object {
         private const val ACTION_CREATE_BARCODE = "${BuildConfig.APPLICATION_ID}.CREATE_BARCODE"

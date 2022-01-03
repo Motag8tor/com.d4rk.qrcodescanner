@@ -18,7 +18,12 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_save_barcode_as_text.*
+import kotlinx.android.synthetic.main.activity_save_barcode_as_text.root_view
+import kotlinx.android.synthetic.main.activity_save_barcode_as_text.toolbar
+import kotlinx.android.synthetic.main.activity_save_barcode_as_text.button_save
+import kotlinx.android.synthetic.main.activity_save_barcode_as_text.spinner_save_as
+import kotlinx.android.synthetic.main.activity_save_barcode_as_text.scroll_view
+import kotlinx.android.synthetic.main.activity_save_barcode_as_text.progress_bar_loading
 class SaveBarcodeAsTextActivity : BaseActivity() {
     companion object {
         private const val REQUEST_PERMISSIONS_CODE = 101

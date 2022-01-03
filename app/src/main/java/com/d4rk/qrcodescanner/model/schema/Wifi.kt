@@ -3,7 +3,7 @@ import com.d4rk.qrcodescanner.extension.appendIfNotNullOrBlank
 import com.d4rk.qrcodescanner.extension.joinToStringNotNullOrBlankWithLineSeparator
 import com.d4rk.qrcodescanner.extension.startsWithIgnoreCase
 import com.d4rk.qrcodescanner.extension.unescape
-import java.util.*
+import java.util.Locale
 class Wifi(
     val encryption: String? = null,
     val name: String? = null,

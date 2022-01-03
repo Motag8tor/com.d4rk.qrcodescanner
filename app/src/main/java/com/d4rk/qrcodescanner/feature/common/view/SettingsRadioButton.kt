@@ -7,7 +7,9 @@ import android.view.View
 import android.widget.FrameLayout
 import androidx.core.view.isInvisible
 import com.d4rk.qrcodescanner.R
-import kotlinx.android.synthetic.main.layout_settings_radio_button.view.*
+import kotlinx.android.synthetic.main.layout_settings_radio_button.view.radio_button
+import kotlinx.android.synthetic.main.layout_settings_radio_button.view.delimiter
+import kotlinx.android.synthetic.main.layout_settings_radio_button.view.text_view_text
 class SettingsRadioButton : FrameLayout {
     private val view: View = LayoutInflater
         .from(context)

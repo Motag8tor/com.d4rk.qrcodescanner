@@ -9,9 +9,10 @@ import androidx.core.content.ContextCompat
 import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.extension.formatOrNull
 import com.github.florent37.singledateandtimepicker.dialog.SingleDateAndTimePickerDialog
-import kotlinx.android.synthetic.main.layout_date_time_picker_button.view.*
+import kotlinx.android.synthetic.main.layout_date_time_picker_button.view.text_view_hint
+import kotlinx.android.synthetic.main.layout_date_time_picker_button.view.text_view_date_time
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 class DateTimePickerButton : FrameLayout {
     private val dateFormatter = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.ENGLISH)
     private val view: View = LayoutInflater

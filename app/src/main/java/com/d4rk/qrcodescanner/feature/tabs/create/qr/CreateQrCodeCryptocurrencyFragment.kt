@@ -11,7 +11,11 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Cryptocurrency
 import com.d4rk.qrcodescanner.model.schema.Schema
-import kotlinx.android.synthetic.main.fragment_create_qr_code_cryptocurrency.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_cryptocurrency.spinner_cryptocurrency
+import kotlinx.android.synthetic.main.fragment_create_qr_code_cryptocurrency.edit_text_address
+import kotlinx.android.synthetic.main.fragment_create_qr_code_cryptocurrency.edit_text_amount
+import kotlinx.android.synthetic.main.fragment_create_qr_code_cryptocurrency.edit_text_label
+import kotlinx.android.synthetic.main.fragment_create_qr_code_cryptocurrency.edit_text_message
 class CreateQrCodeCryptocurrencyFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_cryptocurrency, container, false)

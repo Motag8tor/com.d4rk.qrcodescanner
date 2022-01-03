@@ -11,7 +11,7 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Schema
 import com.google.zxing.BarcodeFormat
-import kotlinx.android.synthetic.main.fragment_create_qr_code_text.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_text.edit_text
 class CreateQrCodeTextFragment : BaseCreateBarcodeFragment() {
     companion object {
         private const val DEFAULT_TEXT_KEY = "DEFAULT_TEXT_KEY"

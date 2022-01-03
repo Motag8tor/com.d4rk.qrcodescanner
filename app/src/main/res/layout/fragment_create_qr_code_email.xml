@@ -47,7 +47,7 @@
             android:gravity="start|top"
             android:lines="1"
             android:maxLines="1"
-            android:hint="@string/fragment_create_qr_code_email_message_hint"
+            android:hint="@string/fragment_create_qr_code_message_hint"
             android:inputType="text"
             android:imeOptions="actionDone"/>
     </com.google.android.material.textfield.TextInputLayout>

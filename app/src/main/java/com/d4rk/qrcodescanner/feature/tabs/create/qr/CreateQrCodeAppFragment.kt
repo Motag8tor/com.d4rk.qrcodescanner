@@ -18,7 +18,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_create_qr_code_app.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_app.recycler_view_apps
+import kotlinx.android.synthetic.main.fragment_create_qr_code_app.progress_bar_loading
 class CreateQrCodeAppFragment : BaseCreateBarcodeFragment() {
     private val disposable = CompositeDisposable()
     private val appAdapter by unsafeLazy { AppAdapter(parentActivity) }

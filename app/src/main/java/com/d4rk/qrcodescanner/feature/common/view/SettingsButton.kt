@@ -7,7 +7,9 @@ import android.view.View
 import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import com.d4rk.qrcodescanner.R
-import kotlinx.android.synthetic.main.layout_settings_button.view.*
+import kotlinx.android.synthetic.main.layout_settings_button.view.switch_button
+import kotlinx.android.synthetic.main.layout_settings_button.view.text_view_hint
+import kotlinx.android.synthetic.main.layout_settings_button.view.text_view_text
 class SettingsButton : FrameLayout {
     private val view: View = LayoutInflater
         .from(context)

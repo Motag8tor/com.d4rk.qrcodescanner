@@ -10,7 +10,7 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Schema
 import com.d4rk.qrcodescanner.model.schema.Url
-import kotlinx.android.synthetic.main.fragment_create_qr_code_url.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_url.edit_text
 class CreateQrCodeUrlFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_url, container, false)

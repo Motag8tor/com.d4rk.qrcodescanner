@@ -9,7 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.d4rk.qrcodescanner.R
-import kotlinx.android.synthetic.main.dialog_edit_barcode_name.view.*
+import kotlinx.android.synthetic.main.dialog_edit_barcode_name.view.edit_text_barcode_name
 class EditBarcodeNameDialogFragment : DialogFragment() {
     interface Listener {
         fun onNameConfirmed(name: String)

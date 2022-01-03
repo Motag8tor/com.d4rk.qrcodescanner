@@ -16,8 +16,17 @@ import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.OtpAuth
 import com.d4rk.qrcodescanner.model.schema.Schema
 import dev.turingcomplete.kotlinonetimepassword.RandomSecretGenerator
-import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.*
-import java.util.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.edit_text_issuer
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.edit_text_digits
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.edit_text_account
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.edit_text_period
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.edit_text_secret
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.spinner_opt_types
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.button_generate_random_secret
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.text_input_layout_counter
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.spinner_algorithms
+import kotlinx.android.synthetic.main.fragment_create_qr_code_otp.edit_text_counter
+import java.util.Locale
 class CreateQrCodeOtpFragment : BaseCreateBarcodeFragment() {
     private val randomGenerator = RandomSecretGenerator()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

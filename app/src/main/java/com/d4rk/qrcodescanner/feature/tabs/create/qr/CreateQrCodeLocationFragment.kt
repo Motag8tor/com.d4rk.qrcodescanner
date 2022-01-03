@@ -10,7 +10,9 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Geo
 import com.d4rk.qrcodescanner.model.schema.Schema
-import kotlinx.android.synthetic.main.fragment_create_qr_code_location.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_location.edit_text_longitude
+import kotlinx.android.synthetic.main.fragment_create_qr_code_location.edit_text_latitude
+import kotlinx.android.synthetic.main.fragment_create_qr_code_location.edit_text_altitude
 class CreateQrCodeLocationFragment : BaseCreateBarcodeFragment() {
     override val latitude: Double?
         get() = edit_text_latitude.textString.toDoubleOrNull()

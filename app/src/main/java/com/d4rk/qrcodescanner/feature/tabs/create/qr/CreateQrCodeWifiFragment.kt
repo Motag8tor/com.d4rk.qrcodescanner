@@ -13,7 +13,11 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Schema
 import com.d4rk.qrcodescanner.model.schema.Wifi
-import kotlinx.android.synthetic.main.fragment_create_qr_code_wifi.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_wifi.edit_text_network_name
+import kotlinx.android.synthetic.main.fragment_create_qr_code_wifi.edit_text_password
+import kotlinx.android.synthetic.main.fragment_create_qr_code_wifi.check_box_is_hidden
+import kotlinx.android.synthetic.main.fragment_create_qr_code_wifi.spinner_encryption
+import kotlinx.android.synthetic.main.fragment_create_qr_code_wifi.text_input_layout_password
 class CreateQrCodeWifiFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_wifi, container, false)

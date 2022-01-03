@@ -8,7 +8,11 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Schema
 import com.d4rk.qrcodescanner.model.schema.VEvent
-import kotlinx.android.synthetic.main.fragment_create_qr_code_vevent.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vevent.edit_text_title
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vevent.edit_text_summary
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vevent.edit_text_organizer
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vevent.button_date_time_start
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vevent.button_date_time_end
 class CreateQrCodeEventFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_vevent, container, false)

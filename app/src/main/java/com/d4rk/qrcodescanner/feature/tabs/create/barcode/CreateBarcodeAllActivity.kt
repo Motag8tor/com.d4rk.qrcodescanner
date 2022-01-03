@@ -7,7 +7,20 @@ import com.d4rk.qrcodescanner.extension.applySystemWindowInsets
 import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.feature.tabs.create.CreateBarcodeActivity
 import com.google.zxing.BarcodeFormat
-import kotlinx.android.synthetic.main.activity_create_barcode_all.*
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_aztec
+import kotlinx.android.synthetic.main.activity_create_barcode_all.root_view
+import kotlinx.android.synthetic.main.activity_create_barcode_all.toolbar
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_codabar
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_code_128
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_code_39
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_code_93
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_data_matrix
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_pdf_417
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_ean_13
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_upc_a
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_itf_14
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_upc_e
+import kotlinx.android.synthetic.main.activity_create_barcode_all.button_ean_8
 class CreateBarcodeAllActivity : BaseActivity() {
     companion object {
         fun start(context: Context) {

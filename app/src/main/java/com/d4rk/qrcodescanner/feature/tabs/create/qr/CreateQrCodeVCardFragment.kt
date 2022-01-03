@@ -9,7 +9,14 @@ import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.Contact
 import com.d4rk.qrcodescanner.model.schema.Schema
 import com.d4rk.qrcodescanner.model.schema.VCard
-import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_first_name
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_last_name
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_email
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_phone
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_job
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_organization
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_website
+import kotlinx.android.synthetic.main.fragment_create_qr_code_vcard.edit_text_fax
 class CreateQrCodeVCardFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_vcard, container, false)

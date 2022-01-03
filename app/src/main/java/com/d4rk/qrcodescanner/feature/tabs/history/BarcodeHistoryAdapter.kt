@@ -14,9 +14,15 @@ import com.d4rk.qrcodescanner.extension.toColorId
 import com.d4rk.qrcodescanner.extension.toImageId
 import com.d4rk.qrcodescanner.extension.toStringId
 import com.d4rk.qrcodescanner.model.Barcode
-import kotlinx.android.synthetic.main.item_barcode_history.view.*
+import kotlinx.android.synthetic.main.item_barcode_history.view.text_view_format
+import kotlinx.android.synthetic.main.item_barcode_history.view.text_view_text
+import kotlinx.android.synthetic.main.item_barcode_history.view.text_view_date
+import kotlinx.android.synthetic.main.item_barcode_history.view.image_view_schema
+import kotlinx.android.synthetic.main.item_barcode_history.view.image_view_favorite
+import kotlinx.android.synthetic.main.item_barcode_history.view.delimiter
+import kotlinx.android.synthetic.main.item_barcode_history.view.layout_image
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 class BarcodeHistoryAdapter(private val listener: Listener) : PagedListAdapter<Barcode, BarcodeHistoryAdapter.ViewHolder>(DiffUtilCallback) {
     interface Listener {
         fun onBarcodeClicked(barcode: Barcode)

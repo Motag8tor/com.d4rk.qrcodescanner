@@ -10,7 +10,8 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Bookmark
 import com.d4rk.qrcodescanner.model.schema.Schema
-import kotlinx.android.synthetic.main.fragment_create_qr_code_bookmark.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_bookmark.edit_text_title
+import kotlinx.android.synthetic.main.fragment_create_qr_code_bookmark.edit_text_url
 class CreateQrCodeBookmarkFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_bookmark, container, false)

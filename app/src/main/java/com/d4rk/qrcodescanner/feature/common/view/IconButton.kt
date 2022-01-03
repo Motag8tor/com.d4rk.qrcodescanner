@@ -9,7 +9,9 @@ import android.widget.FrameLayout
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import com.d4rk.qrcodescanner.R
-import kotlinx.android.synthetic.main.layout_icon_button.view.*
+import kotlinx.android.synthetic.main.layout_icon_button.view.layout_image
+import kotlinx.android.synthetic.main.layout_icon_button.view.text_view
+import kotlinx.android.synthetic.main.layout_icon_button.view.image_view_schema
 class IconButton : FrameLayout {
     private val view: View = LayoutInflater
         .from(context)

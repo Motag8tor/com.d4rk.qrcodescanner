@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.firebase-perf'
+    id 'com.google.firebase.crashlytics'
 }
 android {
     compileSdkVersion 32
@@ -12,8 +13,8 @@ android {
         applicationId "com.d4rk.qrcodescanner"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 7
-        versionName '1.0_r2'
+        versionCode 8
+        versionName '1.0_r3'
         vectorDrawables.useSupportLibrary  true
         archivesBaseName = "com.d4rk.qrcodescanner-v${versionName}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -37,7 +38,6 @@ android {
             shrinkResources true
             resValue("bool", "FIREBASE_CRASH_ENABLED", "true")
             resValue("bool", "FIREBASE_ANALYTICS_DEACTIVATED", "false")
-            buildConfigField("String","VERSION_NAME","\"${defaultConfig.versionName}\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -50,17 +50,17 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation platform('com.google.firebase:firebase-bom:29.0.3')
-    implementation 'com.google.android.material:material:1.6.0-alpha01'
     implementation 'com.google.firebase:firebase-perf:20.0.4'
     implementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.6'
     implementation 'com.googlecode.ez-vcard:ez-vcard:0.11.3'
+    implementation 'com.google.android.material:material:1.6.0-alpha01'
     implementation 'androidx.core:core-ktx:1.8.0-alpha02'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.room:room-runtime:2.4.0'
     implementation 'androidx.room:room-rxjava2:2.4.0'
-    implementation "androidx.multidex:multidex:2.0.1"
     implementation "android.arch.paging:runtime:1.0.1"
     implementation "android.arch.paging:rxjava2:1.0.1"
     implementation 'com.github.florent37:singledateandtimepicker:2.2.8'
@@ -68,9 +68,8 @@ dependencies {
     implementation 'com.budiyev.android:code-scanner:2.1.0'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:2.2.0"
-    //noinspection GradleDependency
     implementation 'commons-codec:commons-codec:1.15'
-    implementation 'dev.turingcomplete:kotlin-onetimepassword:2.1.0'
+    implementation 'dev.turingcomplete:kotlin-onetimepassword:2.2.0'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10'
     kapt 'androidx.room:room-compiler:2.4.0'

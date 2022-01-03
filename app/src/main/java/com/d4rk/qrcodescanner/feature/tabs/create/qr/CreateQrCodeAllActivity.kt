@@ -8,7 +8,23 @@ import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.feature.tabs.create.CreateBarcodeActivity
 import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
 import com.google.zxing.BarcodeFormat
-import kotlinx.android.synthetic.main.activity_create_qr_code_all.*
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.root_view
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_text
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_app
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_bookmark
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_url
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_otp
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_wifi
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_contact_vcard
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_contact_mecard
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_phone
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_sms
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_email
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_location
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_mms
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_cryptocurrency
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.toolbar
+import kotlinx.android.synthetic.main.activity_create_qr_code_all.button_event
 class CreateQrCodeAllActivity : BaseActivity() {
     companion object {
         fun start(context: Context) {

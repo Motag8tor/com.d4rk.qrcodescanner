@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.RecyclerView
 import com.d4rk.qrcodescanner.R
-import kotlinx.android.synthetic.main.item_app.view.*
+import kotlinx.android.synthetic.main.item_app.view.delimiter
+import kotlinx.android.synthetic.main.item_app.view.text_view
+import kotlinx.android.synthetic.main.item_app.view.image_view
 class AppAdapter(private val listener: Listener) : RecyclerView.Adapter<AppAdapter.ViewHolder>() {
     interface Listener {
         fun onAppClicked(packageName: String)

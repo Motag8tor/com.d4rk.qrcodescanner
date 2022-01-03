@@ -1,1 +1,0 @@
-Leitor de código de barras e QR

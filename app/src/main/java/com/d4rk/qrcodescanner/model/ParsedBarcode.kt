@@ -1,5 +1,15 @@
 package com.d4rk.qrcodescanner.model
-import com.d4rk.qrcodescanner.model.schema.*
+import com.d4rk.qrcodescanner.model.schema.BarcodeSchema
+import com.d4rk.qrcodescanner.model.schema.Bookmark
+import com.d4rk.qrcodescanner.model.schema.Email
+import com.d4rk.qrcodescanner.model.schema.App
+import com.d4rk.qrcodescanner.model.schema.VEvent
+import com.d4rk.qrcodescanner.model.schema.Sms
+import com.d4rk.qrcodescanner.model.schema.MeCard
+import com.d4rk.qrcodescanner.model.schema.Phone
+import com.d4rk.qrcodescanner.model.schema.VCard
+import com.d4rk.qrcodescanner.model.schema.Wifi
+import com.d4rk.qrcodescanner.model.schema.NZCovidTracer
 import com.google.zxing.BarcodeFormat
 class ParsedBarcode(barcode: Barcode) {
     var id = barcode.id

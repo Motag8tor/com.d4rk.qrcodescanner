@@ -10,7 +10,8 @@ import com.d4rk.qrcodescanner.extension.textString
 import com.d4rk.qrcodescanner.feature.tabs.create.BaseCreateBarcodeFragment
 import com.d4rk.qrcodescanner.model.schema.Schema
 import com.d4rk.qrcodescanner.model.schema.Sms
-import kotlinx.android.synthetic.main.fragment_create_qr_code_sms.*
+import kotlinx.android.synthetic.main.fragment_create_qr_code_sms.edit_text_phone
+import kotlinx.android.synthetic.main.fragment_create_qr_code_sms.edit_text_message
 class CreateQrCodeSmsFragment : BaseCreateBarcodeFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_create_qr_code_sms, container, false)

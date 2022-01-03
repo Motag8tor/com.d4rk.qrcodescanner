@@ -6,7 +6,10 @@ import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.di.settings
 import com.d4rk.qrcodescanner.extension.applySystemWindowInsets
 import com.d4rk.qrcodescanner.feature.BaseActivity
-import kotlinx.android.synthetic.main.activity_choose_camera.*
+import kotlinx.android.synthetic.main.activity_choose_camera.button_back_camera
+import kotlinx.android.synthetic.main.activity_choose_camera.button_front_camera
+import kotlinx.android.synthetic.main.activity_choose_camera.root_view
+import kotlinx.android.synthetic.main.activity_choose_camera.toolbar
 class ChooseCameraActivity : BaseActivity() {
     companion object {
         fun start(context: Context) {
