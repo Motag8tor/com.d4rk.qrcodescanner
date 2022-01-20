@@ -14,11 +14,13 @@
 - ║║║║╩╣╚╣═╣║║║║║╩╣
 - ╚══╩═╩═╩═╩═╩╩╩╩═╝
 
-# D4rK QR & Bar Code Scanner is an ad-free, open-source scanner app.
+# D4rK QR & Bar Code Scanner is a free open-source scanner app for every Android.✌
+
+## Check the trailer [here](https://youtu.be/CgX31Oy2etM)!
 
 [<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/google_play_store.png"
 alt="Get it on Google Play"
-height="90">](https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner)
+height="90">](https://bit.ly/qrandbarcodescanner)
 [<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/youtube.png"
 alt="YouTube"
 height="90">](https://bit.ly/D4rKYouTube)
@@ -35,8 +37,15 @@ height="90">](https://www.deviantart.com/d4rk7355608)
 alt="PayPall"
 height="90">](https://bit.ly/D4rK-S-A-D)
 
-It uses the [ZXing](https://github.com/zxing/zxing) scanning library. Is compatible with Material-You design on Android 12+ devices with changeable themes in settings.
-You can customize you app experience, like preferred camera or preferred theme using app settings.
+It uses the [ZXing](https://github.com/zxing/zxing) scanning library and is compatible with latest Material-You design on Android 12+ devices with changeable themes in settings for new and old devices. 📱
+
+QR & Bar Code Scanner app is also QR code generator in your pocket. Using QR generator is extremely easy to use, simply enter the data you wish on QR code and click to generate QR codes. After generating your code you can export it as SVG or PNG file type. 🖼️
+
+QR and bar codes are everywhere! Install QR & Bar Code Scanner app to scan every code you want. QR & Bar Code Scanner app is the only free scanner app you will ever need. 📷 Turn on the flashlight for scanning in the dark or use pinch to zoom to scan QRs far away. 📸
+
+Also D4rK QR & Bar Code Scanner scan all common barcode formats: QR, Data Matrix, Aztec, UPC, EAN and many more. It can use flashlight to scan in the dark, zoom to read barcodes from far distances and links, connect to Wi-Fi, view geolocations, add calendar events, find product information, etc.
+
+You can customize in app experience, like preferred camera (back or front) or preferred theme using app settings.
 
 Bugs can be reported here.
 

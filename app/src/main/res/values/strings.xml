@@ -222,6 +222,8 @@
     <string name="fragment_settings_check_updates">Check for updates…</string>
     <string name="fragment_settings_permissions">Permissions.</string>
     <string name="fragment_settings_source_code">Source code.</string>
+    <string name="fragment_settings_changelog">Changelog.</string>
+    <string name="fragment_settings_license_title">Open-source libraries.</string>
     <string name="fragment_settings_app_version">App version.</string>
 
     <!--Choose theme activity-->
@@ -366,4 +368,55 @@
     <string name="barcode_format_upc_a" translatable="false">UPC-A</string>
     <string name="barcode_format_upc_e" translatable="false">UPC-E</string>
 
+    <string name="changelog" translatable="false">
+	<br> </br>
+		<b>Version 1.0_r4:\n</b>
+    <br> </br>
+			•Added changelog;\n
+    <br> </br>
+			•Updated description + README.md file;\n
+	<br> </br>
+			•Under the hood improvements;\n
+	<br> </br>
+			•Added open-source libraries.\n
+    <br> </br>
+\n
+	<br> </br>
+		<b>Version 1.0_r3:\n</b>
+    <br> </br>
+			•Updated Gradle dependencies;\n
+	<br> </br>
+			•Icon tweaks;\n
+	<br> </br>
+			•Implemented Firebase Crashlytics;\n
+	<br> </br>
+			•Added shortcuts;\n
+	<br> </br>
+			•Updated README.md;\n
+	<br> </br>
+			•Improvements for strings &amp; translations;\n
+	<br> </br>
+			•Fixed versions on settings.\n
+	<br> </br>
+\n
+	<br> </br>
+		<b>Version 1.0_r2:\n</b>
+	<br> </br>
+			•Fixed GitHub README.md;\n
+    <br> </br>
+			•Added missing files in project;\n
+	<br> </br>
+			•Fixed versions on settings (I hope);\n
+	<br> </br>
+			•Updated dependencies;\n
+    <br> </br>
+			•Fixed some icons.\n
+	<br> </br>
+\n
+	<br> </br>
+		<b>Version 1.0_r1:\n</b>
+	<br> </br>
+			•Initial stable release build.\n
+    <br> </br>
+	</string>
 </resources>

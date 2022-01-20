@@ -1,3 +1,9 @@
+# Version 1.0_r4:
+- Added changelog;
+- Updated description + README.md file;
+- Under the hood improvements;
+- Added open-source libraries.
+
 # Version 1.0_r3:
 - Updated Gradle dependencies;
 - Icon tweaks;

@@ -1,10 +1,12 @@
 package com.d4rk.qrcodescanner.feature.tabs.settings
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.d4rk.qrcodescanner.BuildConfig
 import com.d4rk.qrcodescanner.R
@@ -19,6 +21,7 @@ import com.d4rk.qrcodescanner.feature.tabs.settings.formats.SupportedFormatsActi
 import com.d4rk.qrcodescanner.feature.tabs.settings.permissions.AllPermissionsActivity
 import com.d4rk.qrcodescanner.feature.tabs.settings.search.ChooseSearchEngineActivity
 import com.d4rk.qrcodescanner.feature.tabs.settings.theme.ChooseThemeActivity
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -43,7 +46,9 @@ import kotlinx.android.synthetic.main.fragment_settings.button_save_scanned_barc
 import kotlinx.android.synthetic.main.fragment_settings.button_vibrate
 import kotlinx.android.synthetic.main.fragment_settings.button_select_supported_formats
 import kotlinx.android.synthetic.main.fragment_settings.button_source_code
+import kotlinx.android.synthetic.main.fragment_settings.button_changelog
 import kotlinx.android.synthetic.main.fragment_settings.button_save_created_barcodes
+import kotlinx.android.synthetic.main.fragment_settings.button_oss_libraries
 class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
     private val disposable = CompositeDisposable()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -90,8 +95,10 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         button_clear_history.setOnClickListener { showDeleteHistoryConfirmationDialog() }
         button_choose_search_engine.setOnClickListener { ChooseSearchEngineActivity.start(requireContext()) }
         button_permissions.setOnClickListener { AllPermissionsActivity.start(requireActivity()) }
+        button_oss_libraries.setOnClickListener { ossLicensesActivity() }
         button_check_updates.setOnClickListener { showAppInMarket() }
         button_source_code.setOnClickListener { showSourceCode() }
+        button_changelog.setOnClickListener { showChangelog() }
     }
     private fun clearHistory() {
         button_clear_history.isEnabled = false
@@ -128,6 +135,11 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         val dialog = DeleteConfirmationDialogFragment.newInstance(R.string.dialog_delete_clear_history_message)
         dialog.show(childFragmentManager, "")
     }
+    private fun ossLicensesActivity() {
+        OssLicensesMenuActivity.setActivityTitle(getString(R.string.fragment_settings_license_title))
+        val intent = Intent(activity, OssLicensesMenuActivity::class.java)
+        startActivity(intent)
+    }
     private fun showAppInMarket() {
         val uri = Uri.parse("market://details?id=" + requireContext().packageName)
         val intent = Intent(Intent.ACTION_VIEW, uri).apply {
@@ -142,6 +154,13 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }
+    }
+    private fun showChangelog() {
+        val alertDialog = AlertDialog.Builder(requireActivity())
+        alertDialog.setTitle(R.string.fragment_settings_changelog)
+        alertDialog.setMessage(R.string.changelog)
+        alertDialog.setPositiveButton("Cool!") { dialog: DialogInterface, _: Int -> dialog.dismiss() }
+        alertDialog.show()
     }
     private fun showAppVersion() {
         button_app_version.hint = BuildConfig.VERSION_NAME

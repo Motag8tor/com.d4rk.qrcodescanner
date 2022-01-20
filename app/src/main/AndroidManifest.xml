@@ -25,16 +25,11 @@
         android:theme="@style/AppTheme"
         tools:targetApi="o">
         <activity
-            android:name=".SplashScreenActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
-        </activity>
+            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
+            android:theme="@style/AppThemeActionBar"/>
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
+            android:theme="@style/AppThemeActionBar"/>
         <activity
             android:name=".feature.tabs.BottomTabsActivity"
             android:configChanges="orientation|screenSize"
@@ -42,7 +37,12 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.zxing.client.android.SCAN"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
         </activity>
         <provider
             android:name="androidx.core.content.FileProvider"

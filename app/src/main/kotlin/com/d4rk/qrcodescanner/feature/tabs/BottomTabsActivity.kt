@@ -1,6 +1,7 @@
 package com.d4rk.qrcodescanner.feature.tabs
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.multidex.BuildConfig
 import com.d4rk.qrcodescanner.R
@@ -19,6 +20,7 @@ class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItem
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val splashScreen = installSplashScreen()
         setContentView(R.layout.activity_bottom_tabs)
         supportEdgeToEdge()
         initBottomNavigationView()
