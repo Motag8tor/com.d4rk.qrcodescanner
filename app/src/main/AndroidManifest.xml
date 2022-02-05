@@ -23,7 +23,8 @@
         android:appCategory="image"
         android:hardwareAccelerated="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="o">
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        tools:targetApi="s">
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:theme="@style/AppThemeActionBar"/>

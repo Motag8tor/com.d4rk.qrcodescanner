@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_choose_search_engine.button_googl
 import kotlinx.android.synthetic.main.activity_choose_search_engine.button_none
 import kotlinx.android.synthetic.main.activity_choose_search_engine.button_qwant
 import kotlinx.android.synthetic.main.activity_choose_search_engine.button_yahoo
+import kotlinx.android.synthetic.main.activity_choose_search_engine.button_startpage
 import kotlinx.android.synthetic.main.activity_choose_search_engine.button_yandex
 import kotlinx.android.synthetic.main.activity_choose_search_engine.root_view
 import kotlinx.android.synthetic.main.activity_choose_search_engine.toolbar
@@ -28,7 +29,7 @@ class ChooseSearchEngineActivity : BaseActivity() {
         }
     }
     private val buttons by unsafeLazy {
-        listOf(button_none, button_ask_every_time, button_bing, button_duck_duck_go, button_google, button_qwant, button_yahoo, button_yandex)
+        listOf(button_none, button_ask_every_time, button_bing, button_duck_duck_go, button_google, button_qwant, button_startpage, button_yahoo, button_yandex)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +49,7 @@ class ChooseSearchEngineActivity : BaseActivity() {
         when (settings.searchEngine) {
             SearchEngine.NONE -> button_none.isChecked = true
             SearchEngine.ASK_EVERY_TIME -> button_ask_every_time.isChecked = true
+            SearchEngine.STARTPAGE -> button_startpage.isChecked = true
             SearchEngine.BING -> button_bing.isChecked = true
             SearchEngine.DUCK_DUCK_GO -> button_duck_duck_go.isChecked = true
             SearchEngine.GOOGLE -> button_google.isChecked = true
@@ -60,6 +62,7 @@ class ChooseSearchEngineActivity : BaseActivity() {
         button_none.setCheckedChangedListener(SearchEngine.NONE)
         button_ask_every_time.setCheckedChangedListener(SearchEngine.ASK_EVERY_TIME)
         button_bing.setCheckedChangedListener(SearchEngine.BING)
+        button_startpage.setCheckedChangedListener(SearchEngine.STARTPAGE)
         button_duck_duck_go.setCheckedChangedListener(SearchEngine.DUCK_DUCK_GO)
         button_google.setCheckedChangedListener(SearchEngine.GOOGLE)
         button_qwant.setCheckedChangedListener(SearchEngine.QWANT)

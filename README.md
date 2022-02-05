@@ -18,24 +18,7 @@
 
 ## Check the trailer [here](https://youtu.be/CgX31Oy2etM)!
 
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/google_play_store.png"
-alt="Get it on Google Play"
-height="90">](https://bit.ly/qrandbarcodescanner)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/youtube.png"
-alt="YouTube"
-height="90">](https://bit.ly/D4rKYouTube)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/patreon.png"
-alt="Patreon"
-height="90">](https://www.patreon.com/d4rk7355608)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/paypal.png"
-alt="PayPall"
-height="90">](https://www.paypal.me/d4rkmichaeltutorials)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/deviant_art.png"
-alt="PayPall"
-height="90">](https://www.deviantart.com/d4rk7355608)
-[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/gamejolt.png"
-alt="PayPall"
-height="90">](https://bit.ly/D4rK-S-A-D)
+[![YouTube Trailer](https://yt-embed.herokuapp.com/embed?v=CgX31Oy2etM)](https://youtu.be/CgX31Oy2etM)
 
 It uses the [ZXing](https://github.com/zxing/zxing) scanning library and is compatible with latest Material-You design on Android 12+ devices with changeable themes in settings for new and old devices. 📱
 
@@ -45,7 +28,11 @@ QR and bar codes are everywhere! Install QR & Bar Code Scanner app to scan every
 
 Also D4rK QR & Bar Code Scanner scan all common barcode formats: QR, Data Matrix, Aztec, UPC, EAN and many more. It can use flashlight to scan in the dark, zoom to read barcodes from far distances and links, connect to Wi-Fi, view geolocations, add calendar events, find product information, etc.
 
-You can customize in app experience, like preferred camera (back or front) or preferred theme using app settings.
+Designed with security as a top priority, the best QR utility on the market offers a simple interface with abundant functionality This functionality for improved usability requires access to certain permissions in your device. 🛡️
+
+In case if anyone have curiosity about permissions check on settings to see for what is needed specific permissions. ⚙️
+
+You can customize in app experience, like preferred camera (back or front), search engine, history settings or preferred theme using app settings. ⚙️
 
 Bugs can be reported here.
 
@@ -61,8 +48,10 @@ Bugs can be reported here.
 __🖤 D4rK QR & Bar Code Scanner is 100% free, open-source inspired by QrAndBarcodeScanner by wewewe718, ad free, and scan everything it claims to!__
 
 <details>
-  <summary>The app can read the following barcode formats:</summary>
 
+### Read:
+
+The app can read the following barcode formats:
 * [AZTEC](https://en.wikipedia.org/wiki/Aztec_Code)
 * [CODABAR](https://en.wikipedia.org/wiki/Codabar)
 * [CODE-39](https://en.wikipedia.org/wiki/Code_39)
@@ -79,7 +68,7 @@ __🖤 D4rK QR & Bar Code Scanner is 100% free, open-source inspired by QrAndBar
 * [UPC-E](https://en.wikipedia.org/wiki/Universal_Product_Code#UPC-E)
 * [UPC-EAN EXTENSION](https://en.wikipedia.org/wiki/Universal_Product_Code#EAN-13)
 
-### Create
+### Create:
 
 The app can create the following barcode formats:
 * [AZTEC](https://en.wikipedia.org/wiki/Aztec_Code)
@@ -95,6 +84,17 @@ The app can create the following barcode formats:
 * [UPC-A](https://en.wikipedia.org/wiki/Universal_Product_Code)
 * [UPC-E](https://en.wikipedia.org/wiki/Universal_Product_Code#UPC-E)
 
+### Search engines:
+
+Also the app can support the next search engines:
+* [Bing](https://www.bing.com/)
+* [DuckDuckGo](https://duckduckgo.com/)
+* [Google](https://www.google.com/)
+* [Qwant](https://www.qwant.com/)
+* [StartPage](https://www.startpage.com/)
+* [Yahoo](https://search.yahoo.com/)
+* [Yandex](https://yandex.com/)
+
 </details>
 
 ## Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.qrcodescanner/master/CHANGELOG.md)!
@@ -109,6 +109,22 @@ The app can create the following barcode formats:
 - Thanks [wewewe718](https://github.com/wewewe718) for [QrAndBarcodeScanner](https://github.com/wewewe718/QrAndBarcodeScanner);
 
 </details>
+
+### 👨🏻‍💻 &nbsp;More About Me:
+<a href="mailto:d4rk7355608@gmail.com"><img src="https://img.shields.io/badge/-d4rk7355608@gmail.com-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
+<a href="https://developers.google.com/profile/u/D4rK7355608"><img src="https://img.shields.io/badge/-Android%20Developers-3DDC84?style=flat&logo=Android&logoColor=white"/></a>
+<a href="https://www.deviantart.com/d4rk7355608"><img src="https://img.shields.io/badge/-d4rk7355608-05CC46?style=flat&logo=Deviantart&logoColor=white"/></a>
+<a href="https://gamejolt.com/@D4rK_S-A-D"><img src="https://img.shields.io/badge/-D4rK7355608-307f70?style=flat&logo=Gamejolt&logoColor=white"/></a>
+<a href="https://www.youtube.com/channel/UCLDi-rmSRry0pNL-oVvGJAw"><img src="https://img.shields.io/badge/-D4rK-FF0000?style=flat&logo=Youtube&logoColor=white"/></a>
+<a href="https://www.youtube.com/channel/UCee5YBhGHVCF4JnQzoLFzVA"><img src="https://img.shields.io/badge/-Michael Tutorials-FF0000?style=flat&logo=Youtube&logoColor=white"/></a>
+<a href="https://www.youtube.com/channel/UCgtHCg34rrDvdkjjjPW2jhQ"><img src="https://img.shields.io/badge/-Desene Animate-FF0000?style=flat&logo=Youtube&logoColor=white"/></a>
+<a href="https://patreon.com/D4rK7355608"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DD4rK7355608%26type%3Dpatrons&style=flat"/></a>
+<a href="https://www.paypal.me/d4rkmichaeltutorials"><img src="https://img.shields.io/badge/PayPal-white?style=flat&logo=PayPal"/></a>
+<a href="https://twitter.com/D4rK7355608/"><img src="https://img.shields.io/twitter/follow/D4rK7355608?style=social"/></a>
+
+[<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/google_play_store.png"
+alt="Get it on Google Play"
+height="90">](https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner)
 
 __Privacy Policy__ [here](https://bit.ly/qrcodescannerprivacypolicy).
 

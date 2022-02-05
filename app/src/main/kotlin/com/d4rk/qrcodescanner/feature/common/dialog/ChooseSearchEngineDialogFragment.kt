@@ -12,6 +12,7 @@ class ChooseSearchEngineDialogFragment : DialogFragment() {
             SearchEngine.BING,
             SearchEngine.DUCK_DUCK_GO,
             SearchEngine.GOOGLE,
+            SearchEngine.STARTPAGE,
             SearchEngine.QWANT,
             SearchEngine.YAHOO,
             SearchEngine.YANDEX
@@ -27,6 +28,7 @@ class ChooseSearchEngineDialogFragment : DialogFragment() {
             getString(R.string.activity_choose_search_engine_duck_duck_go),
             getString(R.string.activity_choose_search_engine_google),
             getString(R.string.activity_choose_search_engine_qwant),
+            getString(R.string.activity_choose_search_engine_startpage),
             getString(R.string.activity_choose_search_engine_yahoo),
             getString(R.string.activity_choose_search_engine_yandex)
         )

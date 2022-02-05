@@ -5,6 +5,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.multidex.BuildConfig
 import com.d4rk.qrcodescanner.R
+import com.d4rk.qrcodescanner.di.settings
 import com.d4rk.qrcodescanner.extension.applySystemWindowInsets
 import com.d4rk.qrcodescanner.feature.BaseActivity
 import com.d4rk.qrcodescanner.feature.tabs.create.CreateBarcodeFragment
@@ -41,6 +42,9 @@ class BottomTabsActivity : BaseActivity(), BottomNavigationView.OnNavigationItem
         } else {
             bottom_navigation_view.selectedItemId = R.id.item_scan
         }
+    }
+    private fun applyTheme() {
+        settings.reapplyTheme()
     }
     private fun supportEdgeToEdge() {
         bottom_navigation_view.applySystemWindowInsets(applyBottom = true)

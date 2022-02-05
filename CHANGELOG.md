@@ -1,3 +1,8 @@
+# Version 1.0_r5:
+- Added Startpage engine;
+- Improvements to shortcuts;
+- Under the hood improvements.
+
 # Version 1.0_r4:
 - Added changelog;
 - Updated description + README.md file;
