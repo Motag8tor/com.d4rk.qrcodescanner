@@ -203,6 +203,12 @@
                 app:isDelimiterVisible="false"
                 app:isSwitchVisible="false"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+                android:id="@+id/button_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="More."
+                app:isSwitchVisible="false"/>
+            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:id="@+id/button_app_version"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

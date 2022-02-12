@@ -18,6 +18,7 @@ import com.d4rk.qrcodescanner.extension.showError
 import com.d4rk.qrcodescanner.feature.common.dialog.DeleteConfirmationDialogFragment
 import com.d4rk.qrcodescanner.feature.tabs.settings.camera.ChooseCameraActivity
 import com.d4rk.qrcodescanner.feature.tabs.settings.formats.SupportedFormatsActivity
+import com.d4rk.qrcodescanner.feature.tabs.settings.more.MoreFragment
 import com.d4rk.qrcodescanner.feature.tabs.settings.permissions.AllPermissionsActivity
 import com.d4rk.qrcodescanner.feature.tabs.settings.search.ChooseSearchEngineActivity
 import com.d4rk.qrcodescanner.feature.tabs.settings.theme.ChooseThemeActivity
@@ -49,6 +50,7 @@ import kotlinx.android.synthetic.main.fragment_settings.button_source_code
 import kotlinx.android.synthetic.main.fragment_settings.button_changelog
 import kotlinx.android.synthetic.main.fragment_settings.button_save_created_barcodes
 import kotlinx.android.synthetic.main.fragment_settings.button_oss_libraries
+import kotlinx.android.synthetic.main.fragment_settings.button_more
 class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
     private val disposable = CompositeDisposable()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -99,6 +101,7 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         button_check_updates.setOnClickListener { showAppInMarket() }
         button_source_code.setOnClickListener { showSourceCode() }
         button_changelog.setOnClickListener { showChangelog() }
+        button_more.setOnClickListener { showMore() }
     }
     private fun clearHistory() {
         button_clear_history.isEnabled = false
@@ -136,6 +139,10 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         dialog.show(childFragmentManager, "")
     }
     private fun ossLicensesActivity() {
+        val intent = Intent(activity, MoreFragment::class.java)
+        startActivity(intent)
+    }
+    private fun showMore() {
         OssLicensesMenuActivity.setActivityTitle(getString(R.string.fragment_settings_license_title))
         val intent = Intent(activity, OssLicensesMenuActivity::class.java)
         startActivity(intent)

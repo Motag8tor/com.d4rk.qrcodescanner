@@ -19,6 +19,11 @@
         <item name="colorSwitchThumbNormal">#ECECEC</item>
         <item name="android:colorForeground">#787878</item>
     </style>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/colorBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
     <style name="AppThemeActionBar" parent="Theme.Material3.DayNight">
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimary">@color/colorAccent</item>

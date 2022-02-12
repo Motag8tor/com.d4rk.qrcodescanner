@@ -45,6 +45,10 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts"/>
         </activity>
+        <activity
+            android:name=".feature.tabs.settings.more.MoreFragment"
+            android:label="More."
+            android:theme="@style/AppTheme"/>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.d4rk.qrcodescanner.fileprovider"
