@@ -47,8 +47,8 @@
         </activity>
         <activity
             android:name=".feature.tabs.settings.more.MoreFragment"
-            android:label="More."
-            android:theme="@style/AppTheme"/>
+            android:label="@string/fragment_more_tittle"
+            android:theme="@style/AppThemeActionBar"/>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.d4rk.qrcodescanner.fileprovider"

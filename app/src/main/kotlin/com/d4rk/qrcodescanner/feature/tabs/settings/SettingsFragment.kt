@@ -139,12 +139,12 @@ class SettingsFragment : Fragment(), DeleteConfirmationDialogFragment.Listener {
         dialog.show(childFragmentManager, "")
     }
     private fun ossLicensesActivity() {
-        val intent = Intent(activity, MoreFragment::class.java)
+        OssLicensesMenuActivity.setActivityTitle(getString(R.string.fragment_settings_license_title))
+        val intent = Intent(activity, OssLicensesMenuActivity::class.java)
         startActivity(intent)
     }
     private fun showMore() {
-        OssLicensesMenuActivity.setActivityTitle(getString(R.string.fragment_settings_license_title))
-        val intent = Intent(activity, OssLicensesMenuActivity::class.java)
+        val intent = Intent(activity, MoreFragment::class.java)
         startActivity(intent)
     }
     private fun showAppInMarket() {

@@ -206,7 +206,7 @@
                 android:id="@+id/button_more"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:text="More."
+                app:text="@string/fragment_more_tittle"
                 app:isSwitchVisible="false"/>
             <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
                 android:id="@+id/button_app_version"

@@ -14,8 +14,8 @@ android {
         applicationId "com.d4rk.qrcodescanner"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 11
-        versionName '1.0_r6'
+        versionCode 12
+        versionName '1.0_r7'
         vectorDrawables.useSupportLibrary  true
         archivesBaseName = "com.d4rk.qrcodescanner-v${versionName}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -49,10 +49,10 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation platform('com.google.firebase:firebase-bom:29.0.4')
-    implementation 'com.google.firebase:firebase-perf:20.0.4'
-    implementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.7'
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-perf:20.0.5'
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.8'
     implementation 'com.googlecode.ez-vcard:ez-vcard:0.11.3'
     implementation 'com.google.android.material:material:1.6.0-alpha02'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'

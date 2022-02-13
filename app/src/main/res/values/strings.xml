@@ -165,6 +165,24 @@
     <string name="fragment_create_upc_a_hint">11 digits</string>
     <string name="fragment_create_upc_e_hint">7 digits</string>
 
+    <string name="fragment_more_tittle">More.</string>
+    <string name="fragment_more_github_tittle">GitHub.</string>
+    <string name="fragment_more_github_sum">My official GitHub profile. See more OSS apps and projects here,</string>
+    <string name="fragment_more_google_play_store_tittle">Google Play Store.</string>
+    <string name="fragment_more_google_play_store_sum">My official Google Play Store page. Check it for more apps!</string>
+    <string name="fragment_more_google_developers_tittle">Google Developers.</string>
+    <string name="fragment_more_google_developers_sum">My official Google developers page.</string>
+    <string name="fragment_more_youtube_d4rK_tittle">D4rK.</string>
+    <string name="fragment_more_youtube_d4rK_sum">My official YouTube channel.</string>
+    <string name="fragment_more_youtube_desene_animate_tittle">Desene Animate.</string>
+    <string name="fragment_more_youtube_desene_animate_sum">A simple channel with romanian translated cartoons.</string>
+    <string name="fragment_more_twitter_tittle">Twitter.</string>
+    <string name="fragment_more_twitter_sum">My official Twitter page.</string>
+    <string name="fragment_more_gamejolt_tittle">GameJolt.</string>
+    <string name="fragment_more_gamejolt_sum">My official GameJolt page.</string>
+    <string name="fragment_more_deviantart_tittle">DeviantArt.</string>
+    <string name="fragment_more_deviantart_sum">My official DeviantArt page.</string>
+
     <!--Barcode history fragment-->
     <string name="fragment_barcode_history_title">History</string>
     <string-array name="fragment_barcode_history_tab_titles">
@@ -369,8 +387,17 @@
     <string name="barcode_format_upc_a" translatable="false">UPC-A</string>
     <string name="barcode_format_upc_e" translatable="false">UPC-E</string>
 
-    <string name="changelog" translatable="false">
+    <string name="changelog">
 	<br> </br>
+		<b>Version 1.0_r7:\n</b>
+    <br> </br>
+			•Improvements to strings, icons &amp; shortcuts;\n
+	<br> </br>
+			•Bug fixes;\n
+	<br> </br>
+			•Under the hood improvements.\n
+    <br> </br>
+\n
 		<b>Version 1.0_r6:\n</b>
     <br> </br>
 			•Improvements to icons &amp; shortcuts;\n
