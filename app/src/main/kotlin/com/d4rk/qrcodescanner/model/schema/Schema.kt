@@ -1,5 +1,4 @@
 package com.d4rk.qrcodescanner.model.schema
-
 enum class BarcodeSchema {
     APP,
     BOOKMARK,
@@ -18,6 +17,7 @@ enum class BarcodeSchema {
     WIFI,
     YOUTUBE,
     NZCOVIDTRACER,
+    BOARDINGPASS,
     OTHER;
 }
 

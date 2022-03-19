@@ -11,6 +11,7 @@
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
     </style>
     <style name="SwitchStyle" parent="Theme.MaterialComponents.DayNight">
         <item name="enforceMaterialTheme">true</item>
@@ -90,5 +91,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
+    </style>
+    <style name="OverflowMenuTheme" parent="@style/Widget.Material3.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/card</item>
     </style>
 </resources>

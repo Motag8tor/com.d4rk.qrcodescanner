@@ -16,6 +16,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:splashScreenTheme">@style/Theme.App.Starting</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuTheme</item>
     </style>
     <style name="AppThemeActionBar" parent="Theme.Material3.DayNight">
         <item name="colorAccent">@color/colorAccent</item>

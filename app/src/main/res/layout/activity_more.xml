@@ -32,5 +32,5 @@
         android:id="@+id/about_image"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/ic_junk_files_card_illustration"/>
+        app:srcCompat="@drawable/ic_codes_card_illustration"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
