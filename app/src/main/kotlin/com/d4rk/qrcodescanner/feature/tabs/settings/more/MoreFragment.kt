@@ -13,16 +13,10 @@ class MoreFragment : AppCompatActivity() {
                 .replace(R.id.more, SettingsFragment())
                 .commit()
         }
-        val actionBar = supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.more, rootKey)
         }
-    }
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
     }
 }

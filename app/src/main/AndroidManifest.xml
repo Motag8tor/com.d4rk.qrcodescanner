@@ -48,7 +48,11 @@
         <activity
             android:name=".feature.tabs.settings.more.MoreFragment"
             android:label="@string/fragment_more_tittle"
-            android:theme="@style/AppThemeActionBar"/>
+            android:theme="@style/AppThemeActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".feature.tabs.settings.more.MoreFragment"/>
+        </activity>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.d4rk.qrcodescanner.fileprovider"

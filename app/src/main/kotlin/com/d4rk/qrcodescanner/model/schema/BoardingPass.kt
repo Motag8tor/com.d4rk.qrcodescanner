@@ -7,21 +7,21 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 class BoardingPass(
     val name: String? = null,
-    val pnr: String? = null,
+    private val pnr: String? = null,
     val from: String? = null,
     val to: String? = null,
-    val carrier: String? = null,
-    val flight: String? = null,
+    private val carrier: String? = null,
+    private val flight: String? = null,
     val date: String? = null,
-    val cabin: String? = null,
-    val seat: String? = null,
-    val seq: String? = null,
-    val ticket: String? = null,
-    val selectee: String? = null,
-    val ffAirline: String? = null,
-    val ffNo: String? = null,
-    val fasttrack: String? = null,
-    val blob: String? = null,
+    private val cabin: String? = null,
+    private val seat: String? = null,
+    private val seq: String? = null,
+    private val ticket: String? = null,
+    private val select: String? = null,
+    private val ffAirline: String? = null,
+    private val ffNo: String? = null,
+    private val fasttrack: String? = null,
+    private val blob: String? = null,
 ) : Schema {
     companion object {
         private const val TAG = "QRandBAR"
@@ -52,12 +52,12 @@ class BoardingPass(
             val seq: String = text.slice(52..56).trim()
             val today = Calendar.getInstance()
             today.set(Calendar.DAY_OF_YEAR, dateJ.toInt())
-            val date: String = DATE_FORMATTER.format(today.getTime())
-            var selectee : String = ""
-            var ticket : String = ""
-            var ffAirline : String = ""
-            var ffNo : String = ""
-            var fasttrack: String = ""
+            val date: String = DATE_FORMATTER.format(today.time)
+            var select = ""
+            var ticket = ""
+            var ffAirline = ""
+            var ffNo = ""
+            var fasttrack = ""
             if (fieldSize != 0) {
                 val size: Int = text.slice(62..63).toInt(16)
                 if (size != 0 && size != 24) {
@@ -68,7 +68,7 @@ class BoardingPass(
                     return null
                 } else {
                     ticket = text.slice(66+size..78+size).trim()
-                    selectee = text.slice(79+size..79+size)
+                    select = text.slice(79+size..79+size)
                     ffAirline = text.slice(84+size..86+size).trim()
                     ffNo = text.slice(87+size..102+size).trim()
                     if (size1 == 42) {
@@ -77,12 +77,12 @@ class BoardingPass(
                 }
             }
             return BoardingPass(name, pnr, from, to, carrier, flight, date,
-                cabin, seat, seq, ticket, selectee,
+                cabin, seat, seq, ticket, select,
                 ffAirline, ffNo, fasttrack,
                 text)
         }
     }
     override val schema = BarcodeSchema.BOARDINGPASS
-    override fun toFormattedText(): String = listOf(name, pnr, "$from->$to", "$carrier$flight", date, cabin, seat, seq, ticket, selectee, "$ffAirline$ffNo", fasttrack).joinToStringNotNullOrBlankWithLineSeparator()
+    override fun toFormattedText(): String = listOf(name, pnr, "$from->$to", "$carrier$flight", date, cabin, seat, seq, ticket, select, "$ffAirline$ffNo", fasttrack).joinToStringNotNullOrBlankWithLineSeparator()
     override fun toBarcodeText(): String = "$blob"
 }
