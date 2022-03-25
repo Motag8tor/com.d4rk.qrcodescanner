@@ -8,10 +8,7 @@ class MoreFragment : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_more)
         if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.more, SettingsFragment())
-                .commit()
+            supportFragmentManager.beginTransaction().replace(R.id.more, SettingsFragment()).commit()
         }
     }
     class SettingsFragment : PreferenceFragmentCompat() {
