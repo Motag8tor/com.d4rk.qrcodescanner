@@ -104,7 +104,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:183863193782:android:e28cb77280f6fd5707b617",
         "android_client_info": {
-          "package_name": "com.d4rk.qrcodescanner"
+          "package_name": "my.qrcode.scanner"
         }
       },
       "oauth_client": [

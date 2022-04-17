@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.d4rk.qrcodescanner">
+    package="my.qrcode.scanner">
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -36,7 +36,7 @@
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
             android:theme="@style/AppThemeActionBar"/>
         <activity
-            android:name=".feature.tabs.BottomTabsActivity"
+            android:name="my.qrcode.scanner.feature.tabs.BottomTabsActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"
             android:exported="true">
@@ -50,16 +50,16 @@
                 android:resource="@xml/shortcuts"/>
         </activity>
         <activity
-            android:name=".feature.tabs.settings.more.MoreFragment"
+            android:name="my.qrcode.scanner.feature.tabs.settings.more.MoreFragment"
             android:label="@string/fragment_more_tittle"
             android:theme="@style/AppThemeActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".feature.tabs.settings.more.MoreFragment"/>
+                android:value="my.qrcode.scanner.feature.tabs.settings.more.MoreFragment"/>
         </activity>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.d4rk.qrcodescanner.fileprovider"
+            android:authorities="my.qrcode.scanner.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -67,7 +67,7 @@
                 android:resource="@xml/file_paths"/>
         </provider>
         <service
-            android:name=".feature.tile.QuickSettingsTileService"
+            android:name="my.qrcode.scanner.feature.tile.QuickSettingsTileService"
             android:icon="@drawable/ic_scan"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -77,7 +77,7 @@
             </intent-filter>
         </service>
         <activity
-            android:name=".feature.tabs.scan.file.ScanBarcodeFromFileActivity"
+            android:name="my.qrcode.scanner.feature.tabs.scan.file.ScanBarcodeFromFileActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"
             tools:ignore="AppLinkUrlError"
@@ -94,7 +94,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.tabs.create.CreateBarcodeActivity"
+            android:name="my.qrcode.scanner.feature.tabs.create.CreateBarcodeActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"
             android:windowSoftInputMode="stateVisible"
@@ -111,55 +111,55 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.tabs.create.qr.CreateQrCodeAllActivity"
+            android:name="my.qrcode.scanner.feature.tabs.create.qr.CreateQrCodeAllActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.tabs.create.barcode.CreateBarcodeAllActivity"
+            android:name="my.qrcode.scanner.feature.tabs.create.barcode.CreateBarcodeAllActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.barcode.BarcodeActivity"
+            android:name="my.qrcode.scanner.feature.barcode.BarcodeActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.barcode.BarcodeImageActivity"
+            android:name="my.qrcode.scanner.feature.barcode.BarcodeImageActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.barcode.otp.OtpActivity"
+            android:name="my.qrcode.scanner.feature.barcode.otp.OtpActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.barcode.save.SaveBarcodeAsTextActivity"
+            android:name="my.qrcode.scanner.feature.barcode.save.SaveBarcodeAsTextActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.barcode.save.SaveBarcodeAsImageActivity"
+            android:name="my.qrcode.scanner.feature.barcode.save.SaveBarcodeAsImageActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.tabs.history.export.ExportHistoryActivity"
+            android:name="my.qrcode.scanner.feature.tabs.history.export.ExportHistoryActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.tabs.settings.theme.ChooseThemeActivity"
+            android:name="my.qrcode.scanner.feature.tabs.settings.theme.ChooseThemeActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.tabs.settings.camera.ChooseCameraActivity"
+            android:name="my.qrcode.scanner.feature.tabs.settings.camera.ChooseCameraActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.tabs.settings.formats.SupportedFormatsActivity"
+            android:name="my.qrcode.scanner.feature.tabs.settings.formats.SupportedFormatsActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.tabs.settings.search.ChooseSearchEngineActivity"
+            android:name="my.qrcode.scanner.feature.tabs.settings.search.ChooseSearchEngineActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".feature.tabs.settings.permissions.AllPermissionsActivity"
+            android:name="my.qrcode.scanner.feature.tabs.settings.permissions.AllPermissionsActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="fullSensor"/>
         <meta-data

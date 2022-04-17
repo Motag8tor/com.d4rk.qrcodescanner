@@ -28,7 +28,7 @@
                 android:layout_marginBottom="@dimen/default_margin"
                 android:layout_marginHorizontal="@dimen/default_margin"
                 android:padding="@dimen/default_margin_medium2">
-                <com.d4rk.qrcodescanner.feature.common.view.SquareImageView
+                <my.qrcode.scanner.feature.common.view.SquareImageView
                     android:id="@+id/image_view_barcode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

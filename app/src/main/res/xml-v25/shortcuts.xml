@@ -7,7 +7,7 @@
         android:shortcutLongLabel="@string/shortcut_scan_from_camera">
         <intent
             android:action=".SCAN_FROM_CAMERA"
-            android:targetPackage="com.d4rk.qrcodescanner"
+            android:targetPackage="my.qrcode.scanner"
             android:targetClass=".feature.tabs.BottomTabsActivity"/>
     </shortcut>
     <shortcut
@@ -18,7 +18,7 @@
         android:shortcutLongLabel="@string/shortcut_scan_from_file">
         <intent
             android:action=".SCAN_FROM_FILE"
-            android:targetPackage="com.d4rk.qrcodescanner"
+            android:targetPackage="my.qrcode.scanner"
             android:targetClass=".feature.tabs.scan.file.ScanBarcodeFromFileActivity"/>
     </shortcut>
     <shortcut
@@ -29,7 +29,7 @@
         android:shortcutLongLabel="@string/shortcut_create_barcode">
         <intent
             android:action=".CREATE_BARCODE"
-            android:targetPackage="com.d4rk.qrcodescanner"
+            android:targetPackage="my.qrcode.scanner"
             android:targetClass=".feature.tabs.BottomTabsActivity"/>
     </shortcut>
     <shortcut
@@ -40,7 +40,7 @@
         android:shortcutLongLabel="@string/shortcut_history">
         <intent
             android:action=".HISTORY"
-            android:targetPackage="com.d4rk.qrcodescanner"
+            android:targetPackage="my.qrcode.scanner"
             android:targetClass=".feature.tabs.BottomTabsActivity"/>
     </shortcut>
 </shortcuts>

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsRadioButton
+            <my.qrcode.scanner.feature.common.view.SettingsRadioButton
                 android:id="@+id/button_system_theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:text="@string/activity_choose_theme_system"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsRadioButton
+            <my.qrcode.scanner.feature.common.view.SettingsRadioButton
                 android:id="@+id/button_light_theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:text="@string/activity_choose_theme_light"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsRadioButton
+            <my.qrcode.scanner.feature.common.view.SettingsRadioButton
                 android:id="@+id/button_dark_theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

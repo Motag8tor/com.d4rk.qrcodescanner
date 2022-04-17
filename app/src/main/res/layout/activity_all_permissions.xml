@@ -28,21 +28,21 @@
                 android:layout_marginHorizontal="@dimen/default_margin"
                 android:text="@string/activity_all_permissions_normal_permissions"
                 style="@style/SettingsGroupTitleTextViewStyle"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+            <my.qrcode.scanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_vibrate_title"
                 app:hint="@string/activity_all_permissions_vibrate_hint"
                 app:isDelimiterVisible="true"
                 app:isSwitchVisible="false"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+            <my.qrcode.scanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_wifi_title"
                 app:hint="@string/activity_all_permissions_wifi_hint"
                 app:isDelimiterVisible="true"
                 app:isSwitchVisible="false"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+            <my.qrcode.scanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_internet_title"
@@ -57,28 +57,28 @@
                 android:layout_marginHorizontal="@dimen/default_margin"
                 android:text="@string/activity_all_permissions_runtime_permissions"
                 style="@style/SettingsGroupTitleTextViewStyle"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+            <my.qrcode.scanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_camera_title"
                 app:hint="@string/activity_all_permissions_camera_hint"
                 app:isDelimiterVisible="true"
                 app:isSwitchVisible="false"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+            <my.qrcode.scanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_read_contacts_title"
                 app:hint="@string/activity_all_permissions_read_contacts_hint"
                 app:isDelimiterVisible="true"
                 app:isSwitchVisible="false"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+            <my.qrcode.scanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_permissions_storage_title"
                 app:hint="@string/activity_all_permissions_storage_hint"
                 app:isDelimiterVisible="false"
                 app:isSwitchVisible="false"/>
-            <com.d4rk.qrcodescanner.feature.common.view.SettingsButton
+            <my.qrcode.scanner.feature.common.view.SettingsButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="@string/activity_all_query_all_packages_title"

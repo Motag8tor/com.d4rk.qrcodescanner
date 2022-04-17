@@ -3,9 +3,9 @@
 </p>
 
 ![Works with Android](https://img.shields.io/badge/Works%20with-Android-blue)
-![GitHub issues](https://img.shields.io/github/issues/D4rK7355608/com.d4rk.qrcodescanner)
-![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/com.d4rk.qrcodescanner)
-![GitHub license](https://img.shields.io/github/license/D4rK7355608/com.d4rk.qrcodescanner)
+![GitHub issues](https://img.shields.io/github/issues/D4rK7355608/my.qrcode.scanner)
+![Pull requests](https://img.shields.io/github/issues-pr/D4rK7355608/my.qrcode.scanner)
+![GitHub license](https://img.shields.io/github/license/D4rK7355608/my.qrcode.scanner)
 ![code-grade](https://api.codiga.io/project/30506/status/svg)
 
 ## D4rK QR & Bar Code Scanner
@@ -97,7 +97,7 @@ Also the app can support the next search engines:
 
 </details>
 
-## Changelog [here](https://raw.githubusercontent.com/D4rK7355608/com.d4rk.qrcodescanner/master/CHANGELOG.md)!
+## Changelog [here](https://raw.githubusercontent.com/D4rK7355608/my.qrcode.scanner/master/CHANGELOG.md)!
 
 ## Screenshots:
 
@@ -124,7 +124,7 @@ Also the app can support the next search engines:
 
 [<img src="https://github.com/D4rK7355608/com.d4rk.cleaner/blob/master/img/badges/google_play_store.png"
 alt="Get it on Google Play"
-height="90">](https://play.google.com/store/apps/details?id=com.d4rk.qrcodescanner)
+height="90">](https://play.google.com/store/apps/details?id=my.qrcode.scanner)
 
 __Privacy Policy__ [here](https://bit.ly/qrcodescannerprivacypolicy).
 

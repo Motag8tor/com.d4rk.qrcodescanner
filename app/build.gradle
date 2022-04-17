@@ -12,13 +12,13 @@ plugins {
 android {
     compileSdkVersion 32
     defaultConfig {
-        applicationId "com.d4rk.qrcodescanner"
+        applicationId "my.qrcode.scanner"
         minSdkVersion 21
         targetSdkVersion 32
         versionCode 13
         versionName '1.0_r8'
         vectorDrawables.useSupportLibrary  true
-        archivesBaseName = "com.d4rk.qrcodescanner-v${versionName}"
+        archivesBaseName = "my.qrcode.scanner-v${versionName}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {

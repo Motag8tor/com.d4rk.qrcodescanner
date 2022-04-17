@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/menu_scan_barcode_from_image"
         style="@style/ToolbarWithBackButtonStyle"/>
-    <com.d4rk.qrcodescanner.feature.tabs.scan.file.MyCropImageView
+    <my.qrcode.scanner.feature.tabs.scan.file.MyCropImageView
         android:id="@+id/crop_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
