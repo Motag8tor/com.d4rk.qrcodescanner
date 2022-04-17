@@ -95,3 +95,6 @@ atlassian-ide-plugin.xml
 
 # Sentry
 /sentry.properties
+
+# Other
+apikey.py

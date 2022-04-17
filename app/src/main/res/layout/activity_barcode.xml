@@ -42,15 +42,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin_small"
                 android:orientation="horizontal">
+
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_view_date"
+                    style="@style/SecondaryTextViewStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="@dimen/default_margin"
-                    tools:text="01.09.1993 12:00"
                     android:layout_gravity="center"
-                    style="@style/SecondaryTextViewStyle"/>
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_weight="1"
+                    android:alpha="0"
+                    tools:text="01.09.1993 12:00" />
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/button_edit_name"
                     android:layout_width="@dimen/icon_edit_barcode_name_size"
@@ -69,26 +71,42 @@
                 android:layout_marginHorizontal="@dimen/default_margin"
                 tools:text="Name"
                 style="@style/DefaultTextViewStyle"/>
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_barcode_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_margin_small"
                 android:layout_marginHorizontal="@dimen/default_margin"
-                android:lineSpacingMultiplier="1.2"
+                android:layout_marginTop="@dimen/default_margin_small"
                 android:autoLink="all"
+                android:lineSpacingMultiplier="1.2"
                 android:textColorLink="@color/colorAccent"
-                tools:text="Content"/>
+                tools:text="Content" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_country"
+                style="@style/SecondaryTextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_margin_small"
                 android:layout_marginStart="@dimen/default_margin"
-                tools:text="Russia"
+                android:layout_marginTop="@dimen/default_margin_small"
                 android:visibility="gone"
-                tools:visibility="visible"
-                style="@style/SecondaryTextViewStyle"/>
+                tools:text="England"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_barcode_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|top"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin_small"
+                android:autoLink="all"
+                android:lineSpacingMultiplier="1.2"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="24sp"
+                tools:text="Test Report" />
+
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

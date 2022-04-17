@@ -1,12 +1,13 @@
 plugins {
+
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
     id 'com.google.gms.google-services'
-    id 'com.google.firebase.firebase-perf'
-    id 'com.google.firebase.crashlytics'
-    id 'com.google.android.gms.oss-licenses-plugin'
+
+    // Python integration
+    id 'com.chaquo.python'
 }
 android {
     compileSdkVersion 32
@@ -24,7 +25,20 @@ android {
                 arguments = ["room.incremental":"true"]
             }
         }
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+
+        python {
+            pip {
+                // "-r"` followed by a requirements filename, relative to the
+                // project directory:
+                install "-r", "requirements.txt"
+            }
+        }
     }
+
     compileOptions {
         coreLibraryDesugaringEnabled true
         sourceCompatibility = JavaVersion.VERSION_1_8.toString()
@@ -37,8 +51,6 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            resValue("bool", "FIREBASE_CRASH_ENABLED", "true")
-            resValue("bool", "FIREBASE_ANALYTICS_DEACTIVATED", "false")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -49,10 +61,6 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation platform('com.google.firebase:firebase-bom:29.2.1')
-    implementation 'com.google.firebase:firebase-perf:20.0.6'
-    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.1'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.9'
     implementation 'com.googlecode.ez-vcard:ez-vcard:0.11.3'
     implementation 'com.google.android.material:material:1.6.0-alpha03'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'

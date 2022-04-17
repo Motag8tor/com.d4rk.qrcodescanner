@@ -1,18 +1,23 @@
 package com.d4rk.qrcodescanner.feature.barcode
+import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
 import android.provider.ContactsContract
 import android.provider.Settings
+import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.print.PrintHelper
+import com.chaquo.python.PyObject
+import com.chaquo.python.Python
 import com.d4rk.qrcodescanner.R
 import com.d4rk.qrcodescanner.di.settings
 import com.d4rk.qrcodescanner.di.barcodeDatabase
@@ -45,55 +50,15 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_barcode.toolbar
-import kotlinx.android.synthetic.main.activity_barcode.root_view
-import kotlinx.android.synthetic.main.activity_barcode.button_add_to_calendar
-import kotlinx.android.synthetic.main.activity_barcode.button_add_to_contacts
-import kotlinx.android.synthetic.main.activity_barcode.button_copy_network_name
-import kotlinx.android.synthetic.main.activity_barcode.button_connect_to_wifi
-import kotlinx.android.synthetic.main.activity_barcode.button_open_wifi_settings
-import kotlinx.android.synthetic.main.activity_barcode.button_edit_name
-import kotlinx.android.synthetic.main.activity_barcode.button_open_in_app_market
-import kotlinx.android.synthetic.main.activity_barcode.button_open_otp
-import kotlinx.android.synthetic.main.activity_barcode.button_open_link
-import kotlinx.android.synthetic.main.activity_barcode.button_open_bitcoin_uri
-import kotlinx.android.synthetic.main.activity_barcode.button_save_bookmark
-import kotlinx.android.synthetic.main.activity_barcode.button_call_phone_1
-import kotlinx.android.synthetic.main.activity_barcode.button_call_phone_2
-import kotlinx.android.synthetic.main.activity_barcode.button_call_phone_3
-import kotlinx.android.synthetic.main.activity_barcode.button_send_sms_or_mms_1
-import kotlinx.android.synthetic.main.activity_barcode.button_send_sms_or_mms_2
-import kotlinx.android.synthetic.main.activity_barcode.button_send_sms_or_mms_3
-import kotlinx.android.synthetic.main.activity_barcode.button_send_email_1
-import kotlinx.android.synthetic.main.activity_barcode.button_send_email_2
-import kotlinx.android.synthetic.main.activity_barcode.button_send_email_3
-import kotlinx.android.synthetic.main.activity_barcode.button_open_app
-import kotlinx.android.synthetic.main.activity_barcode.button_share_as_image
-import kotlinx.android.synthetic.main.activity_barcode.button_search_on_web
-import kotlinx.android.synthetic.main.activity_barcode.button_show_location
-import kotlinx.android.synthetic.main.activity_barcode.button_copy_network_password
-import kotlinx.android.synthetic.main.activity_barcode.button_open_in_youtube
-import kotlinx.android.synthetic.main.activity_barcode.button_show_otp
-import kotlinx.android.synthetic.main.activity_barcode.button_share_as_text
-import kotlinx.android.synthetic.main.activity_barcode.button_copy
-import kotlinx.android.synthetic.main.activity_barcode.button_search
-import kotlinx.android.synthetic.main.activity_barcode.button_save_as_text
-import kotlinx.android.synthetic.main.activity_barcode.button_save_as_image
-import kotlinx.android.synthetic.main.activity_barcode.button_print
-import kotlinx.android.synthetic.main.activity_barcode.layout_barcode_image_background
-import kotlinx.android.synthetic.main.activity_barcode.image_view_barcode
-import kotlinx.android.synthetic.main.activity_barcode.text_view_date
-import kotlinx.android.synthetic.main.activity_barcode.text_view_barcode_name
-import kotlinx.android.synthetic.main.activity_barcode.text_view_country
-import kotlinx.android.synthetic.main.activity_barcode.progress_bar_loading
-import kotlinx.android.synthetic.main.activity_barcode.scroll_view
-import kotlinx.android.synthetic.main.activity_barcode.text_view_barcode_text
+import kotlinx.android.synthetic.main.activity_barcode.*
+import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.Locale
 class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listener, ChooseSearchEngineDialogFragment.Listener, EditBarcodeNameDialogFragment.Listener {
     companion object {
         private const val BARCODE_KEY = "BARCODE_KEY"
         private const val IS_CREATED = "IS_CREATED"
+        private var reportContent = ""
         fun start(context: Context, barcode: Barcode, isCreated: Boolean = false) {
             val intent = Intent(context, BarcodeActivity::class.java).apply {
                 putExtra(BARCODE_KEY, barcode)
@@ -117,6 +82,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     }
     private var originalBrightness: Float = 0.5f
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_barcode)
@@ -126,10 +92,210 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         handleToolbarBackPressed()
         handleToolbarMenuClicked()
         handleButtonsClicked()
+        
+        // This is the important one
         showBarcode()
+
+        GlobalScope.launch(Dispatchers.Main) { // launch the coroutine immediately
+            generateReport()
+        }
+
         showOrHideButtons()
         showButtonText()
     }
+
+    private suspend fun generateReport() {
+        // Introduce Python
+        val py = Python.getInstance()
+
+        // Retrieve the analyser script
+        val module = py.getModule("analyser")
+
+        val content = originalBarcode.text
+
+        Log.d("FHJDEREUGHFDFDF", content)
+
+        // If no result then return 0"
+        Log.d("Result", content)
+        val result = module.callAttr("analyser", content).toString()
+        Log.d("Result", result)
+
+        if (result == "url" || result == "file") {
+            var retries = 3
+            val delay: Long = 10000
+
+            while (retries >= 0) { // More than to account for weird scenarios
+                var value = 0
+                if (result == "url") {
+                    value = checkURL(module)
+                } else if (result == "file") {
+                    value = checkFile(module)
+                }
+
+                if (value !=0) {
+                    when (value) {
+                        1 -> text_view_barcode_report.setTextColor(Color.GREEN)
+                        2 -> text_view_barcode_report.setTextColor(Color.YELLOW)
+                        3 -> text_view_barcode_report.setTextColor(Color.RED)
+                    }
+                    Log.d("Colour", "Colour changed to $value")
+                    break
+                }
+
+                if (retries == 0) {
+                    text_view_barcode_report.setTextColor(Color.RED)
+                    reportContent = "Scan timed out. Please try again later."
+                    showReport()
+                } else {
+                    Log.d("Test", "$retries")
+                    retries--
+                    delay(delay)
+                }
+            }
+        } else if (result == "wifi") {
+            checkWifi(module) // Check WiFi network's safety
+        }
+    }
+
+    private fun checkWifi(module: PyObject) {
+        val report = module.callAttr("get_wifi_analysis").toString()
+        Log.d("Wi-Fi Result", report)
+
+        var unsafe = false
+        when {
+            report.contains("hidden") -> reportContent += "This network is hidden.\n"
+        }
+        when {
+            report.contains("nopass") -> {
+                reportContent += "This network does not require a password!\n"
+                unsafe = true
+            }
+        }
+        when {
+            report.contains("noauth") -> {
+                reportContent += "This network is not encrypted!\n"
+                unsafe = true
+            }
+            report.contains("authWEP") -> {
+                reportContent += "This network uses the outdated WEP encryption!\n"
+                unsafe = true
+            }
+        }
+        if (unsafe) {
+            text_view_barcode_report.setTextColor(Color.RED)
+            reportContent += "This network is not safe to join."
+        } else {
+            text_view_barcode_report.setTextColor(Color.GREEN)
+            reportContent += "This network appears to be safe."
+        }
+        showReport()
+    }
+
+    private fun checkURL(module: PyObject): Int {
+        var value = 0
+        val (Green, Yellow, Red) = listOf(1, 2, 3)
+        val report = module.callAttr("get_url_analysis").toString()
+        Log.d("URL Report Value", report)
+        when (report) {
+            "1" -> {
+                value = if (value < Red) Red else value
+                reportContent =
+                    "Unable to generate a report. Please scan again or proceed with caution."
+            }
+            "2" -> {
+                text_view_barcode_report.setTextColor(Color.YELLOW)
+                reportContent = "Report is not ready yet. Please wait..."
+            }
+            "3" -> {
+                value = if (value < Green) Green else value
+                reportContent = "There was an error with the request. Aborting..."
+            }
+            else -> {
+                val conclusion = module.callAttr("get_url_conclusion").toString()
+                when (conclusion) {
+                    "malicious" -> {
+                        value = if (value < Red) Red else value
+                        reportContent =
+                            "This domain appears to be malicious. Avoiding this website is recommended.\n"
+                    }
+                    "suspicious" -> {
+                        value = if (value < Yellow) Yellow else value
+                        reportContent =
+                            "This domain appears to be suspicious. Proceed with caution.\n"
+                    }
+                    "harmless" -> {
+                        value = if (value < Green) Green else value
+                        reportContent = "This domain appears to be safe.\n"
+                    }
+                }
+
+                val creationDate = module.callAttr("get_url_creation_date").toInt()
+                if (creationDate == 0) {
+                    Log.d("Creation Date", "Unable to retrieve creation date")
+                } else if (creationDate < 31) {
+                    value = if (value < Yellow) Yellow else value
+                    reportContent += "This URL was registered in the last month. Proceed with caution.\n"
+                } else {
+                    value = if (value < Green) Green else value
+                    reportContent += "This URL was registered over a month ago.\n"
+                }
+
+                val downloadable = module.callAttr("get_url_downloadable").toString()
+                when (downloadable) {
+                    "True" -> {
+                        value = if (value < Yellow) Yellow else value
+                        reportContent += "This URL attempts to download a file. Proceed with caution."
+                    }
+                }
+            }
+        }
+        showReport()
+        return value
+    }
+
+    private suspend fun checkFile(module: PyObject): Int {
+        var value = 0
+        val (Green, Yellow, Red) = listOf(1, 2, 3)
+        delay(2000)
+        val report = module.callAttr("get_file_analysis").toString()
+        Log.d("File Report Value", report)
+        when (report) {
+            "1" -> {
+                value = if (value < Red) Red else value
+                reportContent =
+                    "Unable to generate a report. Please scan again or proceed with caution."
+            }
+            "2" -> {
+                text_view_barcode_report.setTextColor(Color.YELLOW)
+                reportContent = "Report is not ready yet. Please wait..."
+            }
+            "3" -> {
+                value = if (value < Red) Red else value
+                reportContent = "There was an error with the request. Aborting..."
+            }
+            else -> {
+                when (report) {
+                    "malicious" -> {
+                        value = if (value < Red) Red else value
+                        reportContent =
+                            "This QRCode appears to be malicious.\n"
+                    }
+                    "suspicious" -> {
+                        value = if (value < Yellow) Yellow else value
+                        reportContent =
+                            "This QRCode appears to be suspicious.\n"
+                    }
+                    "harmless" -> {
+                        value = if (value < Green) Green else value
+                        reportContent = "This QRCode appears to be safe.\n"
+                    }
+                }
+            }
+        }
+        showReport()
+        return value
+    }
+
     override fun onDeleteConfirmed() {
         deleteBarcode()
     }
@@ -498,6 +664,29 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
     private fun navigateToSaveBarcodeAsImageActivity() {
         SaveBarcodeAsImageActivity.start(this, originalBarcode)
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    // SHOW THE ACTUAL BARCODE
     private fun showBarcode() {
         showBarcodeMenuIfNeeded()
         showBarcodeIsFavorite()
@@ -505,6 +694,11 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         showBarcodeDate()
         showBarcodeFormat()
         showBarcodeName()
+
+
+
+
+        // BARCODE TEXT
         showBarcodeText()
         showBarcodeCountry()
     }
@@ -563,6 +757,22 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         text_view_barcode_name.isVisible = name.isNullOrBlank().not()
         text_view_barcode_name.text = name.orEmpty()
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ACTUAL BARCODE MESSAGE
     private fun showBarcodeText() {
         text_view_barcode_text.text = if (isCreated) {
             barcode.text
@@ -570,6 +780,21 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
             barcode.formattedText
         }
     }
+
+
+
+    private fun showReport() {
+        text_view_barcode_report.text = ""
+        if (reportContent.isEmpty()) {
+            text_view_barcode_report.text = ""
+        } else {
+            text_view_barcode_report.text = reportContent
+        }
+        reportContent = ""
+    }
+
+
+
     private fun showBarcodeCountry() {
         val country = barcode.country ?: return
         when (country.contains('/')) {
