@@ -1,6 +1,7 @@
 import validators, requests, re # Import external
 import apikey, wifi, url, file # Import local
 from io import BytesIO
+import sys
 
 apikey = apikey.apikey()
 url_class = None
@@ -147,7 +148,7 @@ def upload_file_for_scanning(contents):
 
 	VT_url = 'https://www.virustotal.com/api/v3/files'
 
-	data_file = BytesIO(bytes(contents, "utf-8"))
+	data_file = BytesIO(bytes(contents))
 	print(data_file.read())
 	data_file.seek(0)
 	files = {'file': ('file.exe', data_file)}
@@ -169,11 +170,12 @@ def upload_file_for_scanning(contents):
 # --------------------------------------------------------
 
 def analyser(qrcode):
-	print("\n" + qrcode + "\n")
-	data = qrcode.strip()
+	data = bytes(qrcode)
+	print(data)
+	data = data.decode("ISO-8859-1").strip()
 	print(data)
 
-	valid_url = validators.url(data)
+	valid_url = validators.urcol(data)
 	if valid_url:
 		global url_class
 		print("URL Found...")
@@ -192,7 +194,7 @@ def analyser(qrcode):
 		global file_class
 		print("Generic file upload")
 		file_class = None
-		return upload_file_for_scanning(data)
+		return upload_file_for_scanning(qrcode)
 	
 	return 0
 

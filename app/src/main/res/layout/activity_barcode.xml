@@ -126,280 +126,333 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/default_margin_medium"/>
+
+            <my.qrcode.scanner.feature.common.view.IconButton
+                android:id="@+id/button_warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:icon="@drawable/ic_settings"
+                app:iconBackground="@color/colorAccent"
+                app:text="Press here to view options"
+                tools:visibility="visible">
+
+            </my.qrcode.scanner.feature.common.view.IconButton>
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_search_on_web"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_search"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_search"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" >
+
+            </my.qrcode.scanner.feature.common.view.IconButton>
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_add_to_calendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_calendar"
                 app:iconBackground="@color/colorGoogleYellow"
                 app:text="@string/activity_barcode_add_to_calendar"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_add_to_contacts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_contact_add"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_add_to_contacts"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_call_phone_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_phone"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_call_phone"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_call_phone_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_phone"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_call_phone"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_call_phone_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_phone"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_call_phone"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_send_sms_or_mms_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_sms"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_send_sms"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_send_sms_or_mms_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_sms"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_send_sms"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_send_sms_or_mms_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_sms"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_send_sms"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_send_email_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_email"
                 app:iconBackground="@color/colorGoogleRed"
                 app:text="@string/activity_barcode_send_email"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_send_email_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_email"
                 app:iconBackground="@color/colorGoogleRed"
                 app:text="@string/activity_barcode_send_email"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_send_email_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_email"
                 app:iconBackground="@color/colorGoogleRed"
                 app:text="@string/activity_barcode_send_email"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_show_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_location"
                 app:iconBackground="@color/colorGoogleGreen"
                 app:text="@string/activity_barcode_show_location"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_connect_to_wifi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_wifi"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_connect_to_wifi"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_open_wifi_settings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_settings"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_open_wifi_settings"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_copy_network_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_copy"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_copy_network_name"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_copy_network_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_copy"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_copy_network_password"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_open_app"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_open_app"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_open_app"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_open_in_app_market"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_app"
                 app:iconBackground="@color/colorAndroidGreen"
                 app:text="@string/activity_barcode_open_in_app_market"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_open_in_youtube"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_youtube"
                 app:iconBackground="@color/colorGoogleRed"
                 app:text="@string/activity_barcode_open_in_youtube"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_show_otp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_otp"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_show_otp"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_open_otp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_app"
                 app:iconBackground="@color/colorAndroidGreen"
                 app:text="@string/activity_barcode_open_otp"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_open_bitcoin_uri"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_link"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_open_bitcoin_url"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_open_link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_link"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_open_link"
-                android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_save_bookmark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_bookmark"
                 app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_save_bookmark"
-                android:visibility="gone"
                 tools:visibility="visible" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_share_as_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:iconBackground="@color/colorAccent"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_share"
+                app:iconBackground="@color/colorAccent"
                 app:text="@string/activity_barcode_share_as_text" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_copy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_copy"
                 app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_copy"/>
+                app:text="@string/activity_barcode_copy" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_search"
                 app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_search"/>
+                app:text="@string/activity_barcode_search" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_save_as_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_download"
                 app:iconBackground="@color/colorGoogleGreen"
-                app:text="@string/activity_barcode_save_as_text"/>
+                app:text="@string/activity_barcode_save_as_text" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_share_as_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_share"
                 app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_share_as_image"/>
+                app:text="@string/activity_barcode_share_as_image" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_save_as_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_download"
                 app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_save_as_image"/>
+                app:text="@string/activity_barcode_save_as_image" />
+
             <my.qrcode.scanner.feature.common.view.IconButton
                 android:id="@+id/button_print"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="invisible"
                 app:icon="@drawable/ic_print"
                 app:iconBackground="@color/colorAccent"
-                app:text="@string/activity_barcode_print"/>
+                app:text="@string/activity_barcode_print" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     <ProgressBar

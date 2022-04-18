@@ -50,6 +50,9 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_barcode.*
+import kotlinx.android.synthetic.main.activity_barcode.scroll_view
+import kotlinx.android.synthetic.main.activity_barcode.toolbar
+import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -99,7 +102,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
             generateReport()
         }
 
-        showOrHideButtons()
         showButtonText()
     }
 
@@ -110,12 +112,10 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         // Retrieve the analyser script
         val module = py.getModule("analyser")
 
-        val content = originalBarcode.text
-
-        Log.d("FHJDEREUGHFDFDF", content)
+        //val content = originalBarcode.text
+        val content = originalBarcode.rawBytes
 
         // If no result then return 0"
-        Log.d("Result", content)
         val result = module.callAttr("analyser", content).toString()
         Log.d("Result", result)
 
@@ -154,6 +154,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         } else if (result == "wifi") {
             checkWifi(module) // Check WiFi network's safety
         }
+        showWarning()
     }
 
     private fun checkWifi(module: PyObject) {
@@ -368,6 +369,22 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
             }
             return@setOnMenuItemClickListener true
         }
+    }
+
+
+
+
+
+
+
+
+    private fun showWarning() {
+        button_warning.setOnClickListener { showWarningDialog() }
+        button_warning.isVisible = true
+    }
+    private fun showWarningDialog() {
+        button_warning.isVisible = false
+        showOrHideButtons()
     }
     private fun handleButtonsClicked() {
         button_edit_name.setOnClickListener { showEditBarcodeNameDialog() }
@@ -834,7 +851,16 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         if (isCreated) {
             return
         }
+
+
+        button_share_as_text.isVisible = true
+        button_copy.isVisible = true
         button_search_on_web.isVisible = barcode.isProductBarcode
+        button_save_as_text.isVisible = true
+        button_share_as_image.isVisible = true
+        button_save_as_image.isVisible = true
+
+
         button_search.isVisible = barcode.isProductBarcode.not()
         button_add_to_calendar.isVisible = barcode.schema == BarcodeSchema.VEVENT
         button_add_to_contacts.isVisible = barcode.schema == BarcodeSchema.VCARD || barcode.schema == BarcodeSchema.MECARD

@@ -1,4 +1,5 @@
 package my.qrcode.scanner.usecase
+import android.util.Log
 import my.qrcode.scanner.model.Barcode
 import my.qrcode.scanner.model.schema.Schema
 import my.qrcode.scanner.model.schema.App
@@ -23,12 +24,14 @@ import my.qrcode.scanner.model.schema.VEvent
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import com.google.zxing.ResultMetadataType
+import java.util.*
+
 object BarcodeParser {
     fun parseResult(result: Result): Barcode {
         val schema = parseSchema(result.barcodeFormat, result.text)
         return Barcode(
             text = result.text,
-            rawBytes = result.rawBytes,
+            rawBytes = getBytes(result),
             formattedText = schema.toFormattedText(),
             format = result.barcodeFormat,
             schema = schema.schema,
@@ -36,6 +39,17 @@ object BarcodeParser {
             errorCorrectionLevel = result.resultMetadata?.get(ResultMetadataType.ERROR_CORRECTION_LEVEL) as? String,
             country = result.resultMetadata?.get(ResultMetadataType.POSSIBLE_COUNTRY) as? String
         )
+    }
+    fun getBytes(result: Result) : ByteArray {
+        var rawBytes = ByteArray(0)
+        result.resultMetadata[ResultMetadataType.BYTE_SEGMENTS]?.let {
+            for ((i, seg) in (it as Iterable<ByteArray>).withIndex()) {
+                //Log.d("Result SEG", String(seg, Charsets.ISO_8859_1))
+                rawBytes += seg
+            }
+        }
+        //Log.d("Decoded bytes", String(rawBytes))
+        return rawBytes
     }
     fun parseSchema(format: BarcodeFormat, text: String): Schema {
         if (format != BarcodeFormat.QR_CODE) {
