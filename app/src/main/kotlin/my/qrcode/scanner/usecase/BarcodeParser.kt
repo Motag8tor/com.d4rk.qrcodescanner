@@ -43,9 +43,9 @@ object BarcodeParser {
     fun getBytes(result: Result) : ByteArray {
         var rawBytes = ByteArray(0)
         result.resultMetadata[ResultMetadataType.BYTE_SEGMENTS]?.let {
-            for ((i, seg) in (it as Iterable<ByteArray>).withIndex()) {
-                //Log.d("Result SEG", String(seg, Charsets.ISO_8859_1))
-                rawBytes += seg
+            for ((i, segment) in (it as Iterable<ByteArray>).withIndex()) {
+                //Log.d("Result segment", String(segment, Charsets.ISO_8859_1))
+                rawBytes += segment
             }
         }
         //Log.d("Decoded bytes", String(rawBytes))

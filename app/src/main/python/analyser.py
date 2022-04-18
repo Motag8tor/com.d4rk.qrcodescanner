@@ -175,7 +175,7 @@ def analyser(qrcode):
 	data = data.decode("ISO-8859-1").strip()
 	print(data)
 
-	valid_url = validators.urcol(data)
+	valid_url = validators.url(data)
 	if valid_url:
 		global url_class
 		print("URL Found...")

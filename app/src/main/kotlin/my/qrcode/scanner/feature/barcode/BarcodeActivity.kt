@@ -112,7 +112,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         // Retrieve the analyser script
         val module = py.getModule("analyser")
 
-        //val content = originalBarcode.text
         val content = originalBarcode.rawBytes
 
         // If no result then return 0"
