@@ -11,8 +11,69 @@ class URL:
         self.domain = None
         self.headers = None
         self.creation_date = None
-        self.conclusion = None
         self.downloadable = False
+
+        self.result = []
+    
+# --------------------------------------------------------
+
+    def generate_report(self):
+        if self.address.startswith("ftp://"):
+            self.downloadable = True
+        elif self.address.startswith("sftp://"):
+            self.downloadable = True
+        else:
+            try:
+                self.headers = requests.head(self.address).headers
+            except:
+                print(f'Unable to retrieve header.')
+            
+            if self.headers:
+                if self.headers.get("Content-Disposition"):
+                    self.downloadable = "attachment" in self.headers.get("Content-Disposition")
+                elif self.headers.get("Content-Type"):
+                    self.downloadable = "application/" in self.headers.get("Content-Type")
+
+        try:
+            tld = tldextract.extract(self.address)
+            self.domain = tld.registered_domain
+        except:
+            print(f'Unable to retrieve the top level domain.')
+
+        if self.domain:
+            registered = None
+            distance = None
+            try:
+                registered = whois.whois(self.domain)
+            except:
+                print(f'Unable to retrieve registration date')
+
+            try:
+                distance = datetime.datetime.now() - registered.creation_date[0]
+            except:
+                print(f'There was a problem calculating the date')
+            else:
+                try:
+                    distance = datetime.datetime.now() - registered.creation_date
+                except:
+                    print(f'There was a problem calculating the date')
+            
+
+            if distance:
+                if distance.days > 31:
+                    self.result.append("more")
+                else:
+                    self.result.append("less")
+        
+        if self.downloadable:
+            self.result.append("downloadable")
+
+        if self.malicious >= 1:
+            self.result.append("malicious")
+        elif self.suspicious >= 1:
+            self.result.append("suspicious")
+        else:
+            self.result.append("harmless")
 
     def set_harmless(self, value):
         self.harmless = int(value)
@@ -28,75 +89,6 @@ class URL:
     def get_ID(self):
         return self.ID
 
-    def get_conclusion(self):
-        return self.conclusion
-
-    def get_downloadable(self):
-        return self.downloadable
-
-    def get_creation_date(self):
-        return self.creation_date
-
-# --------------------------------------------------------
-
-    def generate_report(self):
-        if self.address.startswith("ftp://"):
-            self.downloadable = True
-            print("FTP URL")
-        elif self.address.startswith("sftp://"):
-            self.downloadable = True
-            print("SFTP URL")
-        else:
-            try:
-                self.headers = requests.head(self.address).headers
-            except:
-                print("Unable to retrieve header.")
-            
-            if self.headers:
-                if self.headers.get("Content-Disposition"):
-                    print(self.headers.get("Content-Disposition"))
-                    self.downloadable = "attachment" in self.headers.get("Content-Disposition")
-                elif self.headers.get("Content-Type"):
-                    print(self.headers.get("Content-Type"))
-                    self.downloadable = "application/" in self.headers.get("Content-Type")
-        print(self.downloadable)
-
-        try:
-            tld = tldextract.extract(self.address)
-            self.domain = tld.registered_domain
-        except:
-            print("Unable to retrieve the top level domain.")
-        print(self.domain)
-
-        if self.domain:
-            registered = None
-            distance = None
-            try:
-                registered = whois.whois(self.domain)
-            except:
-                print("Unable to retrieve registration date")
-
-            try:
-                distance = datetime.datetime.now() - registered.creation_date[0]
-            except:
-                pass
-            else:
-                try:
-                    distance = datetime.datetime.now() - registered.creation_date
-                except:
-                    pass
-            
-
-            if distance:
-                self.creation_date = distance.days
-                print(self.creation_date)
-            else:
-                self.creation_date = 0
-
-        if self.malicious >= 1:
-            self.conclusion = "malicious"
-        elif self.suspicious >= 1:
-            self.conclusion = "suspicious"
-        else:
-            self.conclusion = "harmless"
-        print(self.conclusion)
+    def get_results(self):
+        return self.result
+  

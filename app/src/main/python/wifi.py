@@ -6,24 +6,7 @@ class Wifi:
         self.hidden = False
         self.result = []
 
-    def set_SSID(self, SSID):
-        self.SSID = SSID
-
-    def set_password(self, password):
-        self.password = password
-
-    def set_authentication(self, authentication):
-        self.authentication = authentication
-
-    def set_hidden(self):
-        self.hidden = True
-
-    def get_SSID(self):
-        return self.SSID
-
     def get_report(self):
-        self.result.append(self.SSID)
-
         if not self.password:
             self.result.append("nopass")
 
@@ -36,3 +19,20 @@ class Wifi:
             self.result.append("hidden")
         
         return self.result
+
+    def set_SSID(self, SSID):
+        self.SSID = SSID
+
+    def set_password(self, password):
+        self.password = password
+
+    def set_authentication(self, authentication):
+        self.authentication = authentication
+
+    def set_hidden(self):
+        self.hidden = True
+
+# --------------------------------------------------------
+
+    def get_SSID(self):
+        return self.SSID

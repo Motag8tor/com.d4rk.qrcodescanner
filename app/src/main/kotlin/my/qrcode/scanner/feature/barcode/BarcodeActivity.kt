@@ -56,11 +56,14 @@ import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.Locale
+import kotlin.reflect.typeOf
+
 class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listener, ChooseSearchEngineDialogFragment.Listener, EditBarcodeNameDialogFragment.Listener {
     companion object {
         private const val BARCODE_KEY = "BARCODE_KEY"
         private const val IS_CREATED = "IS_CREATED"
         private var reportContent = ""
+        private var hexDump = ""
         fun start(context: Context, barcode: Barcode, isCreated: Boolean = false) {
             val intent = Intent(context, BarcodeActivity::class.java).apply {
                 putExtra(BARCODE_KEY, barcode)
@@ -112,22 +115,28 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         // Retrieve the analyser script
         val module = py.getModule("analyser")
 
-        val content = originalBarcode.rawBytes
+        val rawBytes = originalBarcode.rawBytes
+        val text = originalBarcode.text
 
-        // If no result then return 0"
-        val result = module.callAttr("analyser", content).toString()
+        val analyserClass = module.callAttr("Analyser", text, rawBytes)
+
+        // If no result then return 0
+        val result = analyserClass.callAttr("analyser").toString()
         Log.d("Result", result)
+
+        hexDump = analyserClass.callAttr("get_hexdump").toString()
 
         if (result == "url" || result == "file") {
             var retries = 3
             val delay: Long = 10000
 
-            while (retries >= 0) { // More than to account for weird scenarios
+            while (retries > 0) { // More than to account for weird scenarios
+                Log.d("Number of retries", "$retries")
                 var value = 0
                 if (result == "url") {
-                    value = checkURL(module)
+                    value = checkURL(analyserClass)
                 } else if (result == "file") {
-                    value = checkFile(module)
+                    value = checkFile(analyserClass)
                 }
 
                 if (value !=0) {
@@ -145,7 +154,6 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                     reportContent = "Scan timed out. Please try again later."
                     showReport()
                 } else {
-                    Log.d("Test", "$retries")
                     retries--
                     delay(delay)
                 }
@@ -156,46 +164,12 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         showWarning()
     }
 
-    private fun checkWifi(module: PyObject) {
-        val report = module.callAttr("get_wifi_analysis").toString()
-        Log.d("Wi-Fi Result", report)
-
-        var unsafe = false
-        when {
-            report.contains("hidden") -> reportContent += "This network is hidden.\n"
-        }
-        when {
-            report.contains("nopass") -> {
-                reportContent += "This network does not require a password!\n"
-                unsafe = true
-            }
-        }
-        when {
-            report.contains("noauth") -> {
-                reportContent += "This network is not encrypted!\n"
-                unsafe = true
-            }
-            report.contains("authWEP") -> {
-                reportContent += "This network uses the outdated WEP encryption!\n"
-                unsafe = true
-            }
-        }
-        if (unsafe) {
-            text_view_barcode_report.setTextColor(Color.RED)
-            reportContent += "This network is not safe to join."
-        } else {
-            text_view_barcode_report.setTextColor(Color.GREEN)
-            reportContent += "This network appears to be safe."
-        }
-        showReport()
-    }
-
     private fun checkURL(module: PyObject): Int {
         var value = 0
         val (Green, Yellow, Red) = listOf(1, 2, 3)
-        val report = module.callAttr("get_url_analysis").toString()
-        Log.d("URL Report Value", report)
-        when (report) {
+        val conclusion = module.callAttr("get_url_analysis")
+        Log.d("URL Report Values", conclusion.toString())
+        when (conclusion.toString()) {
             "1" -> {
                 value = if (value < Red) Red else value
                 reportContent =
@@ -210,41 +184,37 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                 reportContent = "There was an error with the request. Aborting..."
             }
             else -> {
-                val conclusion = module.callAttr("get_url_conclusion").toString()
-                when (conclusion) {
-                    "malicious" -> {
-                        value = if (value < Red) Red else value
-                        reportContent =
-                            "This domain appears to be malicious. Avoiding this website is recommended.\n"
-                    }
-                    "suspicious" -> {
-                        value = if (value < Yellow) Yellow else value
-                        reportContent =
-                            "This domain appears to be suspicious. Proceed with caution.\n"
-                    }
-                    "harmless" -> {
-                        value = if (value < Green) Green else value
-                        reportContent = "This domain appears to be safe.\n"
+                for (result in conclusion.asList()) {
+                    when (result.toString()) {
+                        "malicious" -> {
+                            value = if (value < Red) Red else value
+                            reportContent += "This domain is malicious.\n"
+                        }
+                        "suspicious" -> {
+                            value = if (value < Yellow) Yellow else value
+                            reportContent += "This domain appears to be suspicious.\n"
+                        }
+                        "harmless" -> {
+                            value = if (value < Green) Green else value
+                            reportContent += "This domain appears to be safe.\n"
+                        }
+                        "downloadable" -> {
+                            value = if (value < Yellow) Yellow else value
+                            reportContent += "This URL attempts to download a file.\n"
+                        }
+                        "less" -> {
+                            value = if (value < Yellow) Yellow else value
+                            reportContent += "This URL was registered in the last month.\n"
+                        }
+                        "more" -> {
+                            value = if (value < Green) Green else value
+                            reportContent += "This URL was registered over a month ago.\n"
+                        }
                     }
                 }
-
-                val creationDate = module.callAttr("get_url_creation_date").toInt()
-                if (creationDate == 0) {
-                    Log.d("Creation Date", "Unable to retrieve creation date")
-                } else if (creationDate < 31) {
-                    value = if (value < Yellow) Yellow else value
-                    reportContent += "This URL was registered in the last month. Proceed with caution.\n"
-                } else {
-                    value = if (value < Green) Green else value
-                    reportContent += "This URL was registered over a month ago.\n"
-                }
-
-                val downloadable = module.callAttr("get_url_downloadable").toString()
-                when (downloadable) {
-                    "True" -> {
-                        value = if (value < Yellow) Yellow else value
-                        reportContent += "This URL attempts to download a file. Proceed with caution."
-                    }
+                when (value) {
+                    2 -> reportContent += "Proceed with caution.\n"
+                    3 -> reportContent += "Avoid this code.\n"
                 }
             }
         }
@@ -293,6 +263,40 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         }
         showReport()
         return value
+    }
+
+    private fun checkWifi(module: PyObject) {
+        val report = module.callAttr("get_wifi_analysis").toString()
+        Log.d("Wi-Fi Result", report)
+
+        var unsafe = false
+        when {
+            report.contains("hidden") -> reportContent += "This network is hidden.\n"
+        }
+        when {
+            report.contains("nopass") -> {
+                reportContent += "This network does not require a password!\n"
+                unsafe = true
+            }
+        }
+        when {
+            report.contains("noauth") -> {
+                reportContent += "This network is not encrypted!\n"
+                unsafe = true
+            }
+            report.contains("authWEP") -> {
+                reportContent += "This network uses the outdated WEP encryption!\n"
+                unsafe = true
+            }
+        }
+        if (unsafe) {
+            text_view_barcode_report.setTextColor(Color.RED)
+            reportContent += "This network is not safe to join."
+        } else {
+            text_view_barcode_report.setTextColor(Color.GREEN)
+            reportContent += "This network appears to be safe."
+        }
+        showReport()
     }
 
     override fun onDeleteConfirmed() {
@@ -804,9 +808,9 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
             text_view_barcode_report.text = ""
         } else {
             text_view_barcode_report.text = reportContent
-            text_view_barcode_hex.text = "Hexdump:\n" + convert(barcode.rawBytes)
+            text_view_barcode_hex.text = hexDump
+            reportContent = ""
         }
-        reportContent = ""
     }
 
     private fun convert(yes: ByteArray) : String {

@@ -52,7 +52,7 @@ class Wifi(
     }
     override val schema = BarcodeSchema.WIFI
     override fun toFormattedText(): String {
-        return listOf(name, encryption, password).joinToStringNotNullOrBlankWithLineSeparator()
+        return listOf("Name: " + name, "Authentication Type: " + encryption, "Password: " + password).joinToStringNotNullOrBlankWithLineSeparator()
     }
     override fun toBarcodeText(): String {
         return StringBuilder()

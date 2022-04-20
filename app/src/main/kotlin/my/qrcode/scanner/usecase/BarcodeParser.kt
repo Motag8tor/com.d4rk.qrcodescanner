@@ -31,7 +31,7 @@ object BarcodeParser {
         val schema = parseSchema(result.barcodeFormat, result.text)
         return Barcode(
             text = result.text,
-            rawBytes = getBytes(result),
+            rawBytes = getByteSegments(result),
             formattedText = schema.toFormattedText(),
             format = result.barcodeFormat,
             schema = schema.schema,
@@ -40,15 +40,13 @@ object BarcodeParser {
             country = result.resultMetadata?.get(ResultMetadataType.POSSIBLE_COUNTRY) as? String
         )
     }
-    fun getBytes(result: Result) : ByteArray {
+    fun getByteSegments(result: Result) : ByteArray {
         var rawBytes = ByteArray(0)
         result.resultMetadata[ResultMetadataType.BYTE_SEGMENTS]?.let {
             for ((i, segment) in (it as Iterable<ByteArray>).withIndex()) {
-                //Log.d("Result segment", String(segment, Charsets.ISO_8859_1))
                 rawBytes += segment
             }
         }
-        //Log.d("Decoded bytes", String(rawBytes))
         return rawBytes
     }
     fun parseSchema(format: BarcodeFormat, text: String): Schema {
