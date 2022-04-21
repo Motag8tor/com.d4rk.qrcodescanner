@@ -17,9 +17,6 @@ class File:
     def get_ID(self):
         return self.ID
 
-    def get_result(self):
-        return self.result
-
     # --------------------------------------------------------
 
     def set_harmless(self, value):

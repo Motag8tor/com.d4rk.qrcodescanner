@@ -27,7 +27,6 @@ class Analyser:
             return 3 # If not then exit
 
         VT_url = "https://www.virustotal.com/api/v3/analyses/" + id
-        print(VT_url)
 	
         try:
             response = requests.request("GET", VT_url, headers=headers)

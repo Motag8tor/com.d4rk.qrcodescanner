@@ -124,7 +124,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         val result = analyserClass.callAttr("analyser").toString()
         Log.d("Result", result)
 
-        hexDump = analyserClass.callAttr("get_hexdump").toString()
+        hexDump = "Hexdump: " + analyserClass.callAttr("get_hexdump").toString()
 
         if (result == "url" || result == "file") {
             var retries = 3
@@ -134,9 +134,9 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                 Log.d("Number of retries", "$retries")
                 var value = 0
                 if (result == "url") {
-                    value = checkURL(analyserClass)
+                    value = checkURL(analyserClass) // Check URL safety
                 } else if (result == "file") {
-                    value = checkFile(analyserClass)
+                    value = checkFile(analyserClass) // Check File safety
                 }
 
                 if (value != 0) {
@@ -159,7 +159,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                 delay(delay)
             }
         } else if (result == "wifi") {
-            checkWifi(module) // Check WiFi network's safety
+            checkWifi(analyserClass) // Check WiFi network safety
         }
         showWarning()
     }
