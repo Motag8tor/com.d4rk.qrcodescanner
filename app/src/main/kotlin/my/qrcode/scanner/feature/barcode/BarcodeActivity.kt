@@ -139,7 +139,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                     value = checkFile(analyserClass)
                 }
 
-                if (value !=0) {
+                if (value != 0) {
                     when (value) {
                         1 -> text_view_barcode_report.setTextColor(Color.GREEN)
                         2 -> text_view_barcode_report.setTextColor(Color.YELLOW)
@@ -149,14 +149,14 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                     break
                 }
 
+                retries--
                 if (retries == 0) {
                     text_view_barcode_report.setTextColor(Color.RED)
                     reportContent = "Scan timed out. Please try again later."
                     showReport()
-                } else {
-                    retries--
-                    delay(delay)
+                    return
                 }
+                delay(delay)
             }
         } else if (result == "wifi") {
             checkWifi(module) // Check WiFi network's safety
@@ -210,6 +210,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                             value = if (value < Green) Green else value
                             reportContent += "This URL was registered over a month ago.\n"
                         }
+                        else -> reportContent += "Reason: " + (result.toString() + "\n\n")
                     }
                 }
                 when (value) {
@@ -222,13 +223,14 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         return value
     }
 
+
     private suspend fun checkFile(module: PyObject): Int {
         var value = 0
         val (Green, Yellow, Red) = listOf(1, 2, 3)
+        val conclusion = module.callAttr("get_file_analysis")
+        Log.d("File Report Value", conclusion.toString())
         delay(2000)
-        val report = module.callAttr("get_file_analysis").toString()
-        Log.d("File Report Value", report)
-        when (report) {
+        when (conclusion.toString()) {
             "1" -> {
                 value = if (value < Red) Red else value
                 reportContent =
@@ -239,31 +241,40 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                 reportContent = "Report is not ready yet. Please wait..."
             }
             "3" -> {
-                value = if (value < Red) Red else value
+                value = if (value < Green) Green else value
                 reportContent = "There was an error with the request. Aborting..."
             }
             else -> {
-                when (report) {
-                    "malicious" -> {
-                        value = if (value < Red) Red else value
-                        reportContent =
-                            "This QRCode appears to be malicious.\n"
+                for (result in conclusion.asList()) {
+                    Log.d("YEEEEEEEEEEEEEEEEEEEEEE", result.toString())
+                    when (result.toString()) {
+                        "malicious" -> {
+                            value = if (value < Red) Red else value
+                            reportContent +=
+                                "This QRCode appears to be malicious.\n"
+                        }
+                        "suspicious" -> {
+                            value = if (value < Yellow) Yellow else value
+                            reportContent +=
+                                "This QRCode appears to be suspicious.\n"
+                        }
+                        "harmless" -> {
+                            value = if (value < Green) Green else value
+                            reportContent += "This QRCode appears to be safe.\n"
+                        }
+                        else -> reportContent += "Reason: " + (result.toString() + "\n\n")
                     }
-                    "suspicious" -> {
-                        value = if (value < Yellow) Yellow else value
-                        reportContent =
-                            "This QRCode appears to be suspicious.\n"
-                    }
-                    "harmless" -> {
-                        value = if (value < Green) Green else value
-                        reportContent = "This QRCode appears to be safe.\n"
-                    }
+                }
+                when (value) {
+                    2 -> reportContent += "Proceed with caution.\n"
+                    3 -> reportContent += "Avoid this code.\n"
                 }
             }
         }
         showReport()
         return value
     }
+
 
     private fun checkWifi(module: PyObject) {
         val report = module.callAttr("get_wifi_analysis").toString()

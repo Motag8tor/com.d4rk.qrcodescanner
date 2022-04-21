@@ -27,6 +27,7 @@ class Analyser:
             return 3 # If not then exit
 
         VT_url = "https://www.virustotal.com/api/v3/analyses/" + id
+        print(VT_url)
 	
         try:
             response = requests.request("GET", VT_url, headers=headers)
@@ -36,9 +37,16 @@ class Analyser:
 
         if response:
             data = response.json()
-            status = data["data"]["attributes"]["status"]
+            status = data["data"]["attributes"]["status"]		
 		
-        if status == "completed":
+        if status == "completed":          
+            analysis = data["data"]["attributes"]["results"]
+            if analysis:
+                for scan in analysis.values():
+                    if scan["category"] == "malicious" or scan["category"] == "suspicious":
+                        self.url_class.set_reason(scan["result"])
+                        break
+
             print(data["data"]["attributes"]["stats"])
             self.url_class.set_harmless(data["data"]["attributes"]["stats"]["harmless"])
             self.url_class.set_malicious(data["data"]["attributes"]["stats"]["malicious"])
@@ -103,7 +111,7 @@ class Analyser:
                    "x-apikey": apikey.apikey()}
 
         VT_url = "https://www.virustotal.com/api/v3/files/" + id
-	
+
         try:
             response = requests.request("GET", VT_url, headers=headers)
         except requests.ConnectTimeout as timeout:
@@ -115,6 +123,11 @@ class Analyser:
             status = data["data"]["attributes"]["last_analysis_results"]
 		
         if status:
+            for scan in status.values():
+                if scan["result"]:
+                    self.file_class.set_reason(scan["result"])
+                    break
+
             print(data["data"]["attributes"]["last_analysis_stats"])
             self.file_class.set_harmless(data["data"]["attributes"]["last_analysis_stats"]["harmless"])
             self.file_class.set_malicious(data["data"]["attributes"]["last_analysis_stats"]["malicious"])

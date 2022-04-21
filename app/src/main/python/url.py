@@ -7,6 +7,7 @@ class URL:
         self.harmless = 0
         self.malicious = 0
         self.suspicious = 0
+        self.reason = None
 
         self.domain = None
         self.headers = None
@@ -18,6 +19,9 @@ class URL:
 # --------------------------------------------------------
 
     def generate_report(self):
+        if self.reason:
+            self.result.append(self.reason)
+
         if self.address.startswith("ftp://"):
             self.downloadable = True
         elif self.address.startswith("sftp://"):
@@ -51,12 +55,12 @@ class URL:
             try:
                 distance = datetime.datetime.now() - registered.creation_date[0]
             except:
-                print(f'There was a problem calculating the date')
+                print(f'Unable to calculate registration date')
             else:
                 try:
                     distance = datetime.datetime.now() - registered.creation_date
                 except:
-                    print(f'There was a problem calculating the date')
+                    print(f'Unable to calculate registration date')
             
 
             if distance:
@@ -83,6 +87,9 @@ class URL:
     
     def set_suspicious(self, value):
         self.suspicious = int(value)
+    
+    def set_reason(self, value):
+        self.reason = value
 
 # --------------------------------------------------------
 

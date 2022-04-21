@@ -11,10 +11,14 @@ class File:
         self.harmless = 0
         self.malicious = 0
         self.suspicious = 0
-        self.conclusion = None
+        self.reason = None
+        self.result = []
     
     def get_ID(self):
         return self.ID
+
+    def get_result(self):
+        return self.result
 
     # --------------------------------------------------------
 
@@ -26,14 +30,20 @@ class File:
     
     def set_suspicious(self, value):
         self.suspicious = int(value)
+    
+    def set_reason(self, value):
+        self.reason = value
 
     # --------------------------------------------------------
 
     def get_report(self):
+        if self.reason:
+            self.result.append(self.reason)
+
         if self.malicious >= 1:
-            self.conclusion = "malicious"
+            self.result.append("malicious")
         elif self.suspicious >= 1:
-            self.conclusion = "suspicious"
+            self.result.append("suspicious")
         else:
-            self.conclusion = "harmless"
-        return self.conclusion
+            self.result.append("harmless")
+        return self.result
