@@ -108,6 +108,28 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
         showButtonText()
     }
 
+    // TEST 1 AND 2 AND 3
+    /*private suspend fun generateReport() {
+        val py = Python.getInstance()
+        val module = py.getModule("analyser")
+        val rawBytes = originalBarcode.rawBytes
+        val text = originalBarcode.text
+        val analyserClass = module.callAttr("Analyser", text, rawBytes)
+        val result = analyserClass.callAttr("analyser").toString()
+        hexDump = "Hexdump:\n" + analyserClass.callAttr("get_hexdump").toString()
+        if (result == "url" || result == "file") {
+            var retries = 3
+            while (retries > 0) { // More than to account for weird scenarios
+                Log.d("Loop", "Loop initiated using the value $result iteration: $retries")
+                retries--
+            }
+        } else if (result == "wifi") {
+            Log.d("Loop", "Wi-Fi detected from the value: $result")
+        } else {
+            Log.d("Loop", "The value $result is not a valid input")
+        }
+    }*/
+
     private suspend fun generateReport() {
         // Introduce Python
         val py = Python.getInstance()
@@ -122,16 +144,17 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
 
         // If no result then return 0
         val result = analyserClass.callAttr("analyser").toString()
-        Log.d("Result", result)
+        //Log.d("Result", result)
 
-        hexDump = "Hexdump: " + analyserClass.callAttr("get_hexdump").toString()
+        //hexDump = "Hexdump:\n" + convert(barcode.rawBytes)
+        hexDump = "Hexdump:\n" + analyserClass.callAttr("get_hexdump").toString()
 
         if (result == "url" || result == "file") {
             var retries = 3
             val delay: Long = 10000
 
             while (retries > 0) { // More than to account for weird scenarios
-                Log.d("Number of retries", "$retries")
+                //Log.d("Number of retries", "$retries")
                 var value = 0
                 if (result == "url") {
                     value = checkURL(analyserClass) // Check URL safety
@@ -160,6 +183,10 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
             }
         } else if (result == "wifi") {
             checkWifi(analyserClass) // Check WiFi network safety
+        } else {
+            reportContent = result
+            text_view_barcode_report.setTextColor(Color.RED)
+            showReport()
         }
         showWarning()
     }
@@ -180,7 +207,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                 reportContent = "Report is not ready yet. Please wait..."
             }
             "3" -> {
-                value = if (value < Green) Green else value
+                value = if (value < Red) Red else value
                 reportContent = "There was an error with the request. Aborting..."
             }
             else -> {
@@ -241,7 +268,7 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
                 reportContent = "Report is not ready yet. Please wait..."
             }
             "3" -> {
-                value = if (value < Green) Green else value
+                value = if (value < Red) Red else value
                 reportContent = "There was an error with the request. Aborting..."
             }
             else -> {
@@ -279,7 +306,12 @@ class BarcodeActivity : BaseActivity(), DeleteConfirmationDialogFragment.Listene
     private fun checkWifi(module: PyObject) {
         val report = module.callAttr("get_wifi_analysis").toString()
         Log.d("Wi-Fi Result", report)
-
+        if (report == "unrecognised") {
+            text_view_barcode_report.setTextColor(Color.YELLOW)
+            reportContent = "Unrecognised network"
+            showReport()
+            return
+        }
         var unsafe = false
         when {
             report.contains("hidden") -> reportContent += "This network is hidden.\n"

@@ -55,8 +55,6 @@ class URL:
             try:
                 distance = datetime.datetime.now() - registered.creation_date[0]
             except:
-                print(f'Unable to calculate registration date')
-            else:
                 try:
                     distance = datetime.datetime.now() - registered.creation_date
                 except:
@@ -98,4 +96,3 @@ class URL:
 
     def get_results(self):
         return self.result
-  

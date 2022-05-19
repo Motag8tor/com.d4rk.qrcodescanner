@@ -7,6 +7,9 @@ class Wifi:
         self.result = []
 
     def get_report(self):
+        if not self.SSID:
+            return "unrecognised"
+
         if not self.password:
             self.result.append("nopass")
 
@@ -18,6 +21,7 @@ class Wifi:
         if self.hidden:
             self.result.append("hidden")
         
+        #print(str(self.result))
         return self.result
 
     def set_SSID(self, SSID):
